@@ -1,0 +1,591 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"id": "https://fmgarage.com/schemas/json2excel/v2-1-0.json",
+	"title": "json2excel",
+	"description": "generating xlsx spreadsheets from a json definition",
+	"$comment": "https://json-schema.org/understanding-json-schema/index.html",
+	"type": "object",
+	"properties": {
+		"$comment": {
+			"type": "string"
+		},
+		"schemaVersion": { 
+			"type": "string", 
+			"minLength": 1 
+		},
+		"filename": {
+			"type": "string"
+		},
+		"location": {
+			"type": "string",
+			"$comment": "folder path or field reference (S::a_container_)"
+		},
+		"formatRef": {"$ref": "#/definitions/formatRef"},
+		"format": {"$ref": "#/definitions/format"},
+		"display": {"$ref": "#/definitions/display"},
+		"print": {"$ref": "#/definitions/print"},
+		"columnWidth": {
+			"type": "integer",
+			"minimum": -1
+		},
+		"split": {"$ref": "#/definitions/split"},
+		"sheets": {
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"type": "object",
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"formatRef":  {"$ref": "#/definitions/formatRef"},
+					"format": {"$ref": "#/definitions/format"},
+					"display": {"$ref": "#/definitions/display"},
+					"print": {"$ref": "#/definitions/print"},
+					"split": {"$ref": "#/definitions/split"},
+					"columnWidth": {
+						"type": "integer",
+						"minimum": -1
+					},
+					"columns": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"pos": {
+									"anyOf": [
+										{
+											"type": "integer",
+											"minimum": -1
+										},
+										{
+											"type": "array",
+											"$comment": "start index, length. -1 or undefined for auto.",
+	    									"minItems": 1,
+											"maxItems": 2,
+											"items":{
+												"type": "integer",
+												"minimum": -1
+											}
+										}
+									]
+								},
+								"type": {
+									"type": "string",
+									"enum": ["header", "data", "summary"]
+								}, 
+								"width": {
+									"type": "integer",
+									"minValue": -1
+								},
+								"formatRef": {"$ref": "#/definitions/formatRef"},
+								"format": {"$ref": "#/definitions/format"},
+								"dataType": {"$ref": "#/definitions/dataType"},
+								"dataOnly": {
+									"type": "boolean"
+								},
+								"case": {
+									"anyOf": [
+										{
+											"type": "array",
+											"minItems": 1,
+											"items": {
+												"type": "object",
+												"properties": {
+													"if": {
+														"type": "object"
+													},
+													"then": {
+														"type": "object"
+													},
+													"else": {
+														"type": "object"
+													}
+												},
+												"required" : ["if", "then"]
+											}
+										},
+										{
+											"type": "object",
+											"properties": {
+												"if": {
+													"type": "object"
+												},
+												"then": {
+													"type": "object"
+												},
+												"else": {
+													"type": "object"
+												}
+											},
+											"required" : ["if", "then"]
+										}
+									]
+								}
+							},
+							"additionalProperties": false
+						},
+						"minItems": 1
+					},
+					"rows": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"type": {
+									"type": "string",
+									"enum": ["header", "data", "summary"]
+								},
+								"pos": {
+									"oneOf": [
+										{ 
+											"type": "integer",
+											"$comment": "Position of row. First column has pos 0",
+											"minimum": 0
+										},
+										{
+											"type": "array",
+											"$comment": "optional column offset",
+											"items": {
+												"type": "integer",
+												"minimum": 0
+											}
+										}
+									]
+								},
+								"formatRef": {"$ref": "#/definitions/formatRef"},
+								"format": {"$ref": "#/definitions/format"},
+								"values": {
+									"type": "array",
+									"oneOf": [
+										{
+											"items": {"$ref": "#/definitions/value"}
+										},
+										{
+											"items": {
+												"type": "array",
+												"items": {"$ref": "#/definitions/value"}
+											}
+										}
+									]
+								},
+								"path": {
+									"type": "string",
+									"$comment": "include path for data file"
+								},
+								"limit": {
+									"type": "integer",
+									"minimum": 0
+								},
+								"offset": {
+									"type": "integer",
+									"minimum": 0
+								},						
+								"contentType": {
+									"type": "string",
+									"enum": ["json", "csv", "tab"]
+								},
+								"fields": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									},
+									"minItems": 1
+								},
+								"height": {
+									"type": "integer"
+								},
+								"widths": {
+									"type": "array",
+									"items": {
+										"type": "integer",
+										"minValue": -1
+									}
+								}
+							},
+							"additionalProperties": false
+						},
+						"minItems": 1
+					},
+					"cells": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"pos": {
+									"type": "array",
+									"items": [
+										{
+											"type": "integer",
+											"minimum": 0
+										},
+										{
+											"type": "integer",
+											"minimum": 0
+										},
+										{
+											"type": "integer",
+											"minimum": -1
+										},
+										{
+											"type": "integer",
+											"minimum": -1
+										}
+									],
+									"minItems": 2,
+									"maxItems": 4,
+									"$comment": "col, row, col-length, row-length -- default length is 1"
+								},
+								"formatRef": {"$ref": "#/definitions/formatRef"},
+								"format": {"$ref": "#/definitions/format"},
+								"value": {"$ref": "#/definitions/value"},
+								"height": {
+									"type": "integer"
+								},
+								"width": {
+									"type": "integer"
+								},
+								"picture": {"$ref": "#/definitions/picture"},
+								"additionalProperties": false
+							},
+							"required": ["pos"]
+						},
+						"minItems": 1
+					},
+					"filters": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "object",
+							"properties": {}
+						}
+					},
+					"defaultColumn": {
+						"type": "object",
+						"properties": {
+							"width": {
+								"type": "integer",
+								"minValue": -1
+							},
+							"minWidth": {
+								"type": "integer",
+								"minValue": 1								
+							},
+							"maxWidth": {
+								"type": "integer",
+								"minValue": 1								
+							}
+						},
+						"additionalProperties": false
+					}
+				},
+				"additionalProperties": false
+			}
+		},
+		"formats": {
+			"type": "object",
+			"additionalProperties": {"$ref": "#/definitions/format"}
+		},
+		"fonts": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "object",
+				"properties": {
+					
+				}
+			}
+		},
+		"colors": {
+			"type": "object",
+			"additionalProperties": {
+				"oneOf": [
+					 {"$ref": "#/definitions/colorName" },
+					 {"$ref": "#/definitions/colorRgb" }
+				]
+			}
+		},
+		"pictures": {
+			"type": "object",
+			"title": "picture lib",
+			"description": "picture name as ref and path as field reference or file path",
+			"additionalProperties": {
+				"type": "string" 
+			}
+		},
+		"additionalProperties": false
+	},
+	"required": ["sheets"],
+	"additionalProperties": false,
+	"definitions": {
+		"formatRef": {
+			"type": "string"
+		},
+		"format": {
+			"type": "object",
+			"properties": {
+				"formatRef": {"$ref": "#/definitions/formatRef"},
+				"dataType": {
+					"type": "string",
+					"enum": ["string", "number", "date", "blank", "timestamp", "formula"]
+				},
+				"fontRef": {
+					"type": "string"
+				},
+				"fontColorRef": {"$ref": "#/definitions/colorRef" },
+				"fontColorName": {"$ref": "#/definitions/colorName" },
+				"fontColorRgb": {"$ref": "#/definitions/colorRgb" },
+				"fontName": {
+					"type": "string"
+				},
+				"fontSize": {
+					"type": "integer",
+					"minimum": 1
+				},
+				"alignH": {
+					"type": "integer",
+					"minValue": 1,
+					"$comment": "general, left, center, right, full, justify, merge, distributed"
+				},
+				"alignV": {
+					"type": "integer",
+					"minValue": 1,
+					"$comment": "top, center, bottom, justify, distributed"
+				},
+				"bold": {
+					"type": "boolean"
+				},
+				"italic": {
+					"type": "boolean"
+				},
+				"underline": {
+					"type": "string",
+					"enum": ["single", "double", "acc single", "acc double"]
+				},
+				"borderDiagonalStyle": {},
+				"numberFormat": {"$ref": "#/definitions/numberFormat" },
+				"numberFormatCustom": {"$ref": "#/definitions/numberFormatCustom" },
+				"border": {"$ref": "#/definitions/border"},
+				"borderTop": {"$ref": "#/definitions/border"},
+				"borderRight": {"$ref": "#/definitions/border"},
+				"borderBottom": {"$ref": "#/definitions/border"},
+				"borderLeft": {"$ref": "#/definitions/border"},
+				"borderDiagonal": {
+					"type": "string",
+					"enum": ["none", "up", "down", "both" ]
+				},
+				"borderColorRef": {"$ref": "#/definitions/colorRef"},
+				"borderColorName": {"$ref": "#/definitions/colorName"},
+				"borderColorRgb": {"$ref": "#/definitions/colorRgb"},
+				"borderTopColorRef": {"$ref": "#/definitions/colorRef"},
+				"borderTopColorName": {"$ref": "#/definitions/colorName"},
+				"borderTopColorRgb": {"$ref": "#/definitions/colorRgb"},
+				"borderRightColorRef": {"$ref": "#/definitions/colorRef"},
+				"borderRightColorName": {"$ref": "#/definitions/colorName"},
+				"borderRightColorRgb": {"$ref": "#/definitions/colorRgb"},
+				"borderBottomColorRef": {"$ref": "#/definitions/colorRef"},
+				"borderBottomColorName": {"$ref": "#/definitions/colorName"},
+				"borderBottomColorRgb": {"$ref": "#/definitions/colorRgb"},
+				"borderLeftColorRef": {"$ref": "#/definitions/colorRef"},
+				"borderLeftColorName": {"$ref": "#/definitions/colorName"},
+				"borderLeftColorRgb": {"$ref": "#/definitions/colorRef"},
+				"borderDiagonalColorRef": {"$ref": "#/definitions/colorRef"},
+				"borderDiagonalColorName": {"$ref": "#/definitions/colorName"},
+				"borderDiagonalColorRgb": {"$ref": "#/definitions/colorRgb"},
+				"pattern": {
+					"oneOf": [
+						{
+							"type": "string",
+							"enum": [ "none", "solid", "50% gray", "75% gray", "25% gray", "horizontal stripes", "vertical stripes", "reverse diagonal stripes", "diagonal stripes", "diagonal cross hatch", "thick diagonal stripe", "thin horizontal stripe", "thin vertical stripe", "thin reverse diagonal stripe", "thin diagonal stripe", "thin horizontal cross hatch", "thin diagonal cross hatch", "gray 12p5", "gray 6p25" ]
+						},
+						{
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 18,
+							"$comment": "see: https://www.mbsplugins.eu/XLFormatSetFillPattern.shtml"
+						}
+					],
+					"$comment": "see: https://www.mbsplugins.eu/XLFormatSetFillPattern.shtml"
+				},
+				"backgroundColorRef": {"$ref": "#/definitions/colorRef"},
+				"backgroundColorName": {"$ref": "#/definitions/colorName"},
+				"backgroundColorRgb": {"$ref": "#/definitions/colorRgb"},
+				"foregroundColorRef": {"$ref": "#/definitions/colorRef"},
+				"foregroundColorName": {"$ref": "#/definitions/colorName"},
+				"foregroundColorRgb": {"$ref": "#/definitions/colorRgb"},
+				"lock": { "type": "boolean" },
+				"hide": { "type": "boolean" },
+				"wrap": { "type": "boolean" },
+				"shrinkToFit": { "type": "boolean" },
+				"indent": { "type": "integer" },
+				"rotate": {
+					"type": "integer",
+					"minimum": 0,
+					"maximum": 255
+				}
+			},
+			"additionalProperties": false
+		},
+		"display": {
+			"type": "object",
+			"$comment": "can be applied to book or sheet",
+			"properties": {
+				"hideGrid": {
+					"type": "boolean"
+				},
+				"zoom": {
+					"type": "integer",
+					"minimum": 25,
+					"maximum": 400
+				}		
+			}
+		},
+		"print": {
+			"type": "object",
+			"$comment": "can be applied to book or sheet",
+			"properties": {
+				"landscape": {
+					"type": "boolean"
+				},
+				"headerText": {
+					"type": "string",
+					"example": "Meine Auswertung"
+				},
+				"headerMargin": {
+					"type": "number",
+					"$comment": "default = 0"
+				},
+				"withGrid": {
+					"type": "boolean"
+				},
+				"fit": {
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 2,
+					"contains": {
+						"type": "integer",
+						"minimum": 0
+					}
+				}
+			}
+		},
+		"dataType": {
+			"type": "string",
+			"enum": ["text", "number", "date", "timestamp"]
+		},
+		"numberFormat": {
+			"title": "invidiual format options for numbers, dates, currencies...",
+			"description": "check https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml",
+			"oneOf": [
+				{
+					"type": "string",
+					"enum": ["general", "number", "number_d2"],
+					"$comment": "@todo: parametriesieren, url: https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml"
+				},
+				{
+					"type": "integer",
+					"minValue": 0,
+					"maxValue": 49
+				}
+			]					
+		},
+		"numberFormatCustom": {
+			"title": "custom format options for numbers, dates, currencies...",
+			"description": "check https://www.libxl.com/custom-format.html",
+			"type": "string"
+		},
+		"dateFormat": {},
+		"border": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 13
+		},
+		"colorRgb": {
+			"type": "array",
+			"minItems": 3,
+			"maxItems": 3,
+			"contains": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 255
+			}
+		},
+		"colorName": {
+			"type": "string",
+			"enum": ["none", "black", "white", "red", "brightgreen", "blue", "yellow", "pink", "turquoise", "darkred", "green", "darkblue", "darkyellow", "violet", "teal", "gray25", "gray50", "periwinkle cf", "plum cf", "ivory cf", "lightturquoise cf", "darkpurple cf", "coral cf", "oceanblue cf", "iceblue cf", "darkblue cl", "pink cl", "yellow cl", "turquoise cl", "violet cl", "darkred cl", "teal cl", "blue cl", "skyblue", "lightturquoise", "lightgreen", "lightyellow", "paleblue", "rose", "lavender", "tan", "lightblue", "aqua", "lime", "gold", "lightorange", "orange", "bluegray", "gray40", "darkteal", "seagreen", "darkgreen", "olivegreen", "brown", "plum", "indigo", "gray80", "default foreground", "default background", "tooltip", "auto"]
+		},
+		"colorRef": {
+			"type": "string"
+		},
+		"picture": {
+			"type": "object",
+			"title": "picture in cell",
+			"properties": {
+				"ref": {
+					"title": "picture reference",
+					"description": "named picture from catalog",
+					"type": "string"
+				},
+				"path": {
+					"type": "string",
+					"format": "uri-reference",
+					"title": "path to image file",
+					"description": "system path, shortcuts are supported (e.g. 'desktop/logo.jpeg')"
+				},
+				"base64": {
+					"type": "string",
+					"contentEncoding": "base64",
+					"contentMediaType": "image/png"
+				},
+				"width": {
+					"type": "integer",
+					"title": "image width",
+					"description": "pixels, can be -1 or non-defined for auto"
+				}, 
+				"height": {
+					"type": "integer",
+					"title": "image height",
+					"description": "pixels, can be -1 or non-defined for auto"
+				},
+				"scale": {
+					"title": "scale factor of picture",
+					"description": "you can either use scale or width and height. Default ist 1.0",
+					"type": "number",
+					"exclusiveMinimum": 0,
+					"maximum": 1
+				},
+				"x": {
+					"type": "integer",
+					"title": "relative offset from left in pixels"
+				},
+				"y": {
+					"type": "integer",
+					"title": "relative offset from top in pixels"
+				},
+				"position": {
+					"type": "string",
+					"titel": "positioning of the image",
+					"enum": ["resize","move","fix"],
+					"description": "resize: move&resize, move: only move, fix: position is absolute"
+				}
+			}
+		},
+		"split": {
+			"oneOf": [
+				{
+					"type": "boolean",
+					"description": "true for default split at 0|1"
+				},
+				{
+					"type": "array",
+					"maxItems": 2,
+					"description": "empty for default, col/row",
+					"items": {
+						"type": "integer"
+					}
+				}
+			]
+		},
+		"value": {
+			"type": [ "string",  "number", "boolean", "null" ]
+		}
+	}
+}
