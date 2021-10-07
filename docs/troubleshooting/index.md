@@ -6,3 +6,6 @@ has_children: true
 
 ## Troubleshooting
 
+- Performance
+- Schema Errors
+- Images
