@@ -1,0 +1,24 @@
+{	
+	"filename": 
+	"sheets": [
+		{
+			"rows": [
+				{
+					"values": [
+						"Firstname",
+						"Lastname",
+						"City",
+						"Country",
+						"Email"
+					],
+					"format": {
+						"bold": true
+					}
+				},
+				{
+					"path": "desktop/examples/headers/simple.xlsx"
+				}
+			]
+		}
+	]
+}
