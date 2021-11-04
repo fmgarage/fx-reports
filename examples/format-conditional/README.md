@@ -1,34 +1,10 @@
 ## Example: format-conditional
 
-```json
-{
-	"filename": "format-conditional.xlsx",
-	"display": {
-		"hideGrid": true,
-		"zoom": 150
-	},
-	"columnWidth": -1,
-	"rows": [
-		{
-			"type": "header",
-			"values": [ "equalTo 10", "greaterThan 10", "greaterThanOrEqualTo 10",  "lessThan 10", "lessThanOrEqualTo 10", "beginsWith \"G\"/endsWith \")\"", "contains \"p\"", "containsAny [\"0\",\"1\"]", "containsAll [\"0\",\"1\"]" ],
-			"format": {
-				"bold": true,
-				"backgroundColorRef": "Lightblue",
-				"border": 7
+This example shows how to use conditional formatting.
 
-			}
-		},
-		{
-			"path": "desktop/examples/format-conditional/data-file.xlsx",
-			"fields": [ "Number", "Number", "Number", "Number", "Number", "NameSet", "CountryFull", "StreetAddress", "StreetAddress" ],
-			"formatRef": "Table"
-		}
-	],
-	"columns": [
-		{
-			"type": "data",
-			"dataType": "number",
+The conditions are ... in a `if...then` clause:
+
+```json
 			"case": {
 				"if": {
 					"value": { "equalTo": 10 }
@@ -37,144 +13,114 @@
 					"formatRef": "Table-red"
 				}
 			}
-		},
-		{
-			"type": "data",
-			"dataType": "number",
-			"case": {
-				"if": {
-					"value": { "greaterThan": 10 }
-				},
-				"then": {
-					"formatRef": "Table-red"
-				}
-			}
-		},
-		{
-			"type": "data",
-			"dataType": "number",
-			"case": {
-				"if": {
-					"value": { "greaterThanOrEqualTo": 10 }
-				},
-				"then": {
-					"formatRef": "Table-red"
-				}
-			}
-		},
-		{
-			"type": "data",
-			"dataType": "number",
-			"case": {
-				"if": {
-					"value": { "lessThan": 10 }
-				},
-				"then": {
-					"formatRef": "Table-red"
-				}
-			}
-		},
-		{
-			"type": "data",
-			"dataType": "number",
-			"case": {
-				"if": {
-					"value": { "lessThanOrEqualTo": 10 }
-				},
-				"then": {
-					"formatRef": "Table-red"
-				}
-			}
-		},
-		{
-			"type": "data",
-			"case": [
-				{
-					"if": {
-						"value": { "beginsWith": "G" }
-					},
-					"then": {
-						"formatRef": "Table-red"
-					}
-				},
-				{
-					"if": {
-						"value": { "endsWith": ")" }
-					},
-					"then": {
-						"formatRef": "Table-blue"					}
-				}
-			]
-		},
-		{
-			"type": "data",
-			"case": {
-				"if": {
-					"value": { "contains": "p" }
-				},
-				"then": {
-					"formatRef": "Table-red"
-				}
-			}
-		},
-		{
-			"type": "data",
-			"case": {
-				"if": {
-					"value": { "containsAny": ["0","1"] }
-				},
-				"then": {
-					"formatRef": "Table-red"
-				}
-			}
-		},
-		{
-			"type": "data",
-			"case": {
-				"if": {
-					"value": { "containsAll": ["0","1"] }
-				},
-				"then": {
-					"formatRef": "Table-red"
-				}
-			}
-		}
-	],
-	"formats": {
-		"Table": {
-			"border": 7
-		},
-		"Table-blue": {
-			"formatRef": "Table",
-			"fontColorRef": "Blue"
-		},
-		"Table-red": {
-			"formatRef": "Table",
-			"fontColorRef": "Red"
-		}
-	},
-	"colors": {
-		"Lightblue": [160,210,255],
-		"Blue": [0,80,170],
-		"Red": [255,0,0]
-	}
-}
 ```
-
-
 
 ### Properties
 
-#### filename
+#### equalTo
 
-Specify output file name. Otherwise *YYMMDD_hhmmss.xslx* will be used as default. 
+- value types: string, number
+
+Compare values. Case-insensitive when comparing strings.
+
+```json
+"value": { "equalTo": 10 }
+```
+
+#### greaterThan
+
+- value types: number
+
+Check if number is greater.
+
+```json
+"value": { "greaterThan": 10 }
+```
 
 
+#### greaterThanOrEqualTo
 
-#### equals
+- value types: number
 
-case-insensitive
+Check if number is greater or equal.
 
+```json
+"value": { "greaterThanOrEqualTo": 10 }
+```
+
+
+#### lessThan
+
+- value types: number
+
+Check if number is lower.
+
+```json
+"value": { "lessThan": 10 }
+```
+
+
+#### lessThanOrEqualTo
+
+- value types: number
+
+Check if number is lower or equal.
+
+```json
+"value": { "lessThanOrEqualTo": 10 }
+```
+
+
+#### beginsWith
+
+- value types: string
+
+Check if string has substring at the start.
+
+```json
+"value": { "beginsWith": "G" }
+```
+
+
+#### endsWith
+
+- value types: string
+
+Check if string has substring at the end.
+
+```json
+"value": { "endsWith": ")" }
+```
 
 
 #### contains
+
+- value types: string
+
+Check if string has substring anywhere.
+
+```json
+"value": { "contains": "p" }
+```
+
+
+#### containsAny
+
+- value types: array of string
+
+Check if any of multiple substrings exists in string.
+
+```json
+"value": { "containsAny": ["0","1"] }
+```
+
+
+#### containsAll
+
+- value types: array of string
+
+Check if all multiple substrings exist in string.
+
+```json
+"value": { "containsAll": ["0","1"] }
+```

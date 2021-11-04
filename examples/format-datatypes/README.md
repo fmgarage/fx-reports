@@ -2,83 +2,10 @@
 
 This is a collection of different formatting options.
 
+**Define styles:**
+
 ```json
 {
-	"filename": "format-datatypes.xlsx",
-	"display": {
-		"hideGrid": true,
-		"zoom": 150
-	},
-	"columnWidth": -1,
-	"rows": [
-		{
-			"values": [ "Number", "Text", "Date", "Date2", "Currency"],
-			"type": "header",
-			"height": 26,
-			"format": {
-				"fontRef": "Standard-bold",
-				"pattern": 1,
-				"foregroundColorRef": "lightblue",
-				"alignV": 1,
-				"border": 7
-
-			}
-		},
-		{
-			"path": "desktop/examples/format-datatypes/data-file.xlsx",
-			"fields": [ "Number", "NameSet", "Birthday", "CCExpires", "MoneyGramMTCN" ],
-			"height": 26,
-			"type": "data",
-			"formatRef": "table"
-		}
-	],
-	"columns": [
-		{
-			"type": "data",
-			"dataType": "number",
-			"formatRef": "table",
-			"format":{
-				"fontref": "Courier",
-				"numberFormat": 1
-			}
-		},
-		{
-			"pos": 1,
-			"type": "data",
-			"formatRef": "table"
-		},
-		{
-			"pos": 2,
-			"type": "data",
-			"dataType": "date",
-			"formatRef": "table",
-			"format":{
-				"fontref": "Courier",
-				"numberFormat": 14
-			}
-		},
-		{
-			"pos": 3,
-			"type": "data",
-			"width": 20,
-			"dataType": "date",
-			"formatRef": "table",
-			"format":{
-				"fontref": "Courier",
-				"numberFormat": 15
-			}
-		},
-		{
-			"pos": 4,
-			"type": "data",
-			"dataType": "number",
-			"formatRef": "table",
-			"format":{
-				"fontref": "Courier",
-				"numberFormat": 44
-			}
-		}
-	],
 	"fonts": {
 		"Courier": {
 			"fontName": "Courier",
@@ -90,7 +17,7 @@ This is a collection of different formatting options.
 		},
 		"Standard-bold": {
 			"fontRef": "Standard",
-			"bold": true			
+			"bold": true
 		}
 	},
 	"formats": {
@@ -106,4 +33,60 @@ This is a collection of different formatting options.
 	}
 }
 ```
+
+### fonts
+
+Define Fonts that can be used in the Template. You can cross-reference to other definitions and by that extend styles. See how the `Standard` font is used in the definition of `Standard-bold` with `fontRef`.
+
+### formats
+
+Define cell format options. Again, it is possible to use definitions from the other segments.
+
+### colors
+
+Here you can define colors.
+
+
+**Use styles**
+
+```json
+	"rows": [
+		{
+			"values": [ "Number", "Text", "Date", "Date2", "Currency"],
+			"type": "header",
+			"height": 26,
+			"format": {
+				"fontRef": "Standard-bold",
+				"pattern": 1,
+				"foregroundColorRef": "lightblue",
+				"alignV": 1,
+				"border": 7
+			}
+		}
+	],
+	"columns": [
+		{
+			"type": "data",
+			"dataType": "number",
+			"formatRef": "table",
+			"format":{
+				"fontRef": "Courier",
+				"numberFormat": 1
+			}
+		}
+	]
+```
+
+### format
+
+Define a set of format options for the element.
+
+### formatRef
+
+Define a format by referencing a preset set of options.
+
+### numberFormat
+
+Set a number format like currencies or datetimes. We will provide a compilation of the most common formats in the docs.
+All formats are completely documented on [this page](https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml).
 
