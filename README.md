@@ -4,7 +4,13 @@ Generate fully featured Excel spreadsheets from FileMaker.
 
 <img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
 
-#### Inbox
+#### Downloads
+
+- [**FX_Reports.fmp12**](https://fmgarage.com/download/fx-reports/FX_Reports.fmp12.zip) – 
+- [**FX_ReportsExample.fmp12**](https://fmgarage.com/download/fx-reports/FX_ReportsExample.fmp12.zip) – example implementation in *Contacts* Starter Solution 
+- [**FX_Reports Add-On**](https://fmgarage.com/download/fx-reports/FX_ReportsAddOn.zip) – FileMaker Add-on for easy implementation
+
+
 
 - Downloads
 - Link zum Editor
