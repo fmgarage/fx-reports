@@ -2,8 +2,13 @@
 
 Generate fully featured Excel spreadsheets from FileMaker.
 
+<img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
 
+#### Inbox
 
+- Downloads
+- Link zum Editor
+- Logo
 
 #### What does 'FX' stand for? 
 
