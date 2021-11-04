@@ -12,10 +12,6 @@ Generate fully featured Excel spreadsheets from FileMaker.
 
 
 
-- Downloads
-- Link zum Editor
-- Logo
-
 #### What does 'FX' stand for? 
 
 All our **FileMaker**-based projects and products are prefixed with an **F**, the **X** stands for **extension** or **extract**. FX files are modules that you can simply add to your own solution and they mostly contain classes and functionality taken from our **F1 Framework**.
