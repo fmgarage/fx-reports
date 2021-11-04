@@ -1,0 +1,14 @@
+﻿{
+	"Title" : "FX_Reports",
+	"Description" : "Generate Excel Files",
+	"Category" : "FMGARAGE",
+	"Features" :
+		[
+			"Create Excel files based on JSON",
+			"Modify and format existing files"
+		],
+	"Optimized" :
+		[
+			"Desktop", "Tablet", "Mobile", "macOS", "Windows", "Linux", "Client", "Server"
+		]
+}

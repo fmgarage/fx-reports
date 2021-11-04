@@ -1,0 +1,11 @@
+﻿{
+	"GUID" : "B3C44794-0B61-418E-9C54-6688509CBB52",
+	"Clients" :
+		[
+			"Pro"
+		],
+	"Attribution" : "FMGARAGE",
+	"URL" : "https://github.com/fmgarage/fx-reports",
+	"Icon_Color" : "#7F7F7F",
+	"Version" : "1.0"
+}

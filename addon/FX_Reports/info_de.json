@@ -1,0 +1,14 @@
+﻿{
+	"Title" : "FX_Reports",
+	"Description" : "Excel generieren",
+	"Category" : "FMGARAGE",
+	"Features" :
+		[
+			"Excel-Dateien per JSON-Definition generieren",
+			"Ändern und formatieren von bestehenden Dateien"
+		],
+	"Optimized" :
+		[
+			"Desktop", "Tablet", "Mobile", "macOS", "Windows", "Linux", "Client", "Server"
+		]
+}

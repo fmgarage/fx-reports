@@ -1,0 +1,3136 @@
+﻿
+<DynamicTemplateString>
+	<StringID>com.fmi.basedirectory.8DE93BDBA8230B9D4405072C2D1CDEA5</StringID>
+	<SourceText>F0_Boilerplate/</SourceText>
+	<TargetText>F0_Boilerplate/</TargetText>
+	<Comment>com.fmi.basedirectory.F0_Boilerplate/</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.basetable.C9063CEF8CE5C9887E9BA715ECEAB2CF</StringID>
+	<SourceText>FxReports</SourceText>
+	<TargetText>FxReports</TargetText>
+	<Comment>com.fmi.basetable.FxReports</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.000D6B215C9E86B5C12EA452B45A289E</StringID>
+	<SourceText>Cannot save a local copy of a remote file</SourceText>
+	<TargetText>Cannot save a local copy of a remote file</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot save a local copy of a remote file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.018274F91945F482209EC1CBF474555E</StringID>
+	<SourceText>Field type must be normal or calculated</SourceText>
+	<TargetText>Field type must be normal or calculated</TargetText>
+	<Comment>com.fmi.calculation.text.Field type must be normal or calculated</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.01CD2FD393C68E108A01E9A26FAB5A14</StringID>
+	<SourceText><TAB/>SError.catch_v7 ( _code )<CR/><TAB/>@about checks ScriptResult for exception object, sets local variables, adds current script to stack<CR/><TAB/>@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt;<CR/><TAB/>@copyright ©2009-2021 FMGARAGE<CR/><TAB/>@license https://opensource.org/licenses/mit MIT<CR/><TAB/>@package f1.system.error<CR/><TAB/>@version 1.2.0-100 – 05.10.2007 - Nils Waldherr<CR/>             2.1.0-100 - 07.05.2010 - NW: log-level neu<CR/><TAB/>         2.1.1-100 - 11.10.2010 - NW: hiding passwords<CR/><TAB/>         2.5.0-100 - 01.02.2011 - NW: re-implementing class concept, removed parameter _typ<CR/><TAB/>         3.0.0-101 - 22.03.2012 - NW: renamed, parameters changed, dropped support for _exception, <CR/><TAB/>         3.1.0-102 - 04.07.2012 - NW: removed case &quot;$SError.alreay set&quot;<CR/><TAB/>         3.2.0-103 - 08.08.2012 - NW: hiding all parameters beginning with &apos;_&apos;<CR/><TAB/>         3.3.0-104 - 31.10.2012 - NW: version mode<CR/><TAB/>         4.1.0-105 - 05.05.2014 - NW: moved to local<CR/><TAB/>         5.0.0-106 - 25.05.2014 - NW: handles xml and arrays<CR/><TAB/>         5.0.1-108 - 26.05.2014 - NW: fix<CR/><TAB/>         5.1.0-109 - 08.09.2015 - NW: revision, stacklevel<CR/><TAB/>         5.2.0-110 - 31.03.2017 - NW: id, removed &lt;exception&gt;<CR/><TAB/>         6.0.0-111 - 06.06.2021 – NW: rewrite with json, moved to SError<CR/><TAB/>         6.0.1-112 - 12.10.2021 – NW: fix $SError<CR/><TAB/>         7.0.0-114 - 04.11.2021 – NW: remove throw() dependency, --generate, --get-env, --get-message, ...<CR/><TAB/>         <CR/><TAB/><CR/><TAB/>@param string _code = &quot;&quot; -- use predefined codes like &quot;UserCancelled&quot; or custom codes (&quot;SomethingWentWrong&quot;)<CR/><TAB/>@param (string) $test_script_result -- inject script result for testing<CR/><TAB/>@param (string) $test_script_parameter -- inject script parameter for testing<CR/><TAB/>@param (int) $test_fmerror_code<CR/><CR/><TAB/>@return BOOL<CR/><TAB/>        (string) $SFmScript.result -- {&quot;SError&quot;: ... }<CR/><TAB/>        (string) $SError -- {&quot;SError&quot;: ... }<CR/><TAB/>        (string) $SError.string <CR/><TAB/><CR/><CR/><TAB/>@test SError.catch_v7( _code )<CR/><TAB/><CR/><TAB/>@todo add _class ?<CR/><CR/></SourceText>
+	<TargetText><TAB/>SError.catch_v7 ( _code )<CR/><TAB/>@about checks ScriptResult for exception object, sets local variables, adds current script to stack<CR/><TAB/>@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt;<CR/><TAB/>@copyright ©2009-2021 FMGARAGE<CR/><TAB/>@license https://opensource.org/licenses/mit MIT<CR/><TAB/>@package f1.system.error<CR/><TAB/>@version 1.2.0-100 – 05.10.2007 - Nils Waldherr<CR/>             2.1.0-100 - 07.05.2010 - NW: log-level neu<CR/><TAB/>         2.1.1-100 - 11.10.2010 - NW: hiding passwords<CR/><TAB/>         2.5.0-100 - 01.02.2011 - NW: re-implementing class concept, removed parameter _typ<CR/><TAB/>         3.0.0-101 - 22.03.2012 - NW: renamed, parameters changed, dropped support for _exception, <CR/><TAB/>         3.1.0-102 - 04.07.2012 - NW: removed case &quot;$SError.alreay set&quot;<CR/><TAB/>         3.2.0-103 - 08.08.2012 - NW: hiding all parameters beginning with &apos;_&apos;<CR/><TAB/>         3.3.0-104 - 31.10.2012 - NW: version mode<CR/><TAB/>         4.1.0-105 - 05.05.2014 - NW: moved to local<CR/><TAB/>         5.0.0-106 - 25.05.2014 - NW: handles xml and arrays<CR/><TAB/>         5.0.1-108 - 26.05.2014 - NW: fix<CR/><TAB/>         5.1.0-109 - 08.09.2015 - NW: revision, stacklevel<CR/><TAB/>         5.2.0-110 - 31.03.2017 - NW: id, removed &lt;exception&gt;<CR/><TAB/>         6.0.0-111 - 06.06.2021 – NW: rewrite with json, moved to SError<CR/><TAB/>         6.0.1-112 - 12.10.2021 – NW: fix $SError<CR/><TAB/>         7.0.0-114 - 04.11.2021 – NW: remove throw() dependency, --generate, --get-env, --get-message, ...<CR/><TAB/>         <CR/><TAB/><CR/><TAB/>@param string _code = &quot;&quot; -- use predefined codes like &quot;UserCancelled&quot; or custom codes (&quot;SomethingWentWrong&quot;)<CR/><TAB/>@param (string) $test_script_result -- inject script result for testing<CR/><TAB/>@param (string) $test_script_parameter -- inject script parameter for testing<CR/><TAB/>@param (int) $test_fmerror_code<CR/><CR/><TAB/>@return BOOL<CR/><TAB/>        (string) $SFmScript.result -- {&quot;SError&quot;: ... }<CR/><TAB/>        (string) $SError -- {&quot;SError&quot;: ... }<CR/><TAB/>        (string) $SError.string <CR/><TAB/><CR/><CR/><TAB/>@test SError.catch_v7( _code )<CR/><TAB/><CR/><TAB/>@todo add _class ?<CR/><CR/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_SError.catch_v7 ( _code )_CR/__TAB/_@about checks ScriptResult for exception object, sets local variables, adds current script to stack_CR/__TAB/_@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt;_CR/__TAB/_@copyright ©2009-2021 FMGARAGE_CR/__TAB/_@license https://opensource.org/licenses/mit MIT_CR/__TAB/_@package f1.system.error_CR/__TAB/_@version 1.2.0-100 – 05.10.2007 - Nils Waldherr_CR/_             2.1.0-100 - 07.05.2010 - NW: log-level neu_CR/__TAB/_         2.1.1-100 - 11.10.2010 - NW: hiding passwords_CR/__TAB/_         2.5.0-100 - 01.02.2011 - NW: re-implementing class concept, removed parameter _typ_CR/__TAB/_         3.0.0-101 - 22.03.2012 - NW: renamed, parameters changed, dropped support for _exception, _CR/__TAB/_         3.1.0-102 - 04.07.2012 - NW: removed case &quot;$SError.alreay set&quot;_CR/__TAB/_         3.2.0-103 - 08.08.2012 - NW: hiding all parameters beginning with &apos;_&apos;_CR/__TAB/_         3.3.0-104 - 31.10.2012 - NW: version mode_CR/__TAB/_         4.1.0-105 - 05.05.2014 - NW: moved to local_CR/__TAB/_         5.0.0-106 - 25.05.2014 - NW: handles xml and arrays_CR/__TAB/_         5.0.1-108 - 26.05.2014 - NW: fix_CR/__TAB/_         5.1.0-109 - 08.09.2015 - NW: revision, stacklevel_CR/__TAB/_         5.2.0-110 - 31.03.2017 - NW: id, removed &lt;exception&gt;_CR/__TAB/_         6.0.0-111 - 06.06.2021 – NW: rewrite with json, moved to SError_CR/__TAB/_         6.0.1-112 - 12.10.2021 – NW: fix $SError_CR/__TAB/_         7.0.0-114 - 04.11.2021 – NW: remove throw() dependency, --generate, --get-env, --get-message, ..._CR/__TAB/_         _CR/__TAB/__CR/__TAB/_@param string _code = &quot;&quot; -- use predefined codes like &quot;UserCancelled&quot; or custom codes (&quot;SomethingWentWrong&quot;)_CR/__TAB/_@param (string) $test_script_result -- inject script result for testing_CR/__TAB/_@param (string) $test_script_parameter -- inject script parameter for testing_CR/__TAB/_@param (int) $test_fmerror_code_CR/__CR/__TAB/_@return BOOL_CR/__TAB/_        (string) $SFmScript.result -- {&quot;SError&quot;: ... }_CR/__TAB/_        (string) $SError -- {&quot;SError&quot;: ... }_CR/__TAB/_        (string) $SError.string _CR/__TAB/__CR/__CR/__TAB/_@test SError.catch_v7( _code )_CR/__TAB/__CR/__TAB/_@todo add _class ?_CR/__CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.032B6A5473D803793853066BF804B98B</StringID>
+	<SourceText>Operation failed, request retry (for example, a user query)</SourceText>
+	<TargetText>Operation failed, request retry (for example, a user query)</TargetText>
+	<Comment>com.fmi.calculation.text.Operation failed, request retry (for example, a user query)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.03558350F0919B54A2C28F5B2457D9BE</StringID>
+	<SourceText>File cannot be opened as read-only in its current state</SourceText>
+	<TargetText>File cannot be opened as read-only in its current state</TargetText>
+	<Comment>com.fmi.calculation.text.File cannot be opened as read-only in its current state</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.03668F16000BA14CDC506DC079083B0F</StringID>
+	<SourceText> make exception global<CR/></SourceText>
+	<TargetText> make exception global<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. make exception global_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.03D8A2825077CFBC83B20EF9AF25A6A4</StringID>
+	<SourceText>Window is missing</SourceText>
+	<TargetText>Window is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Window is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0400DC4683E2308A51A1C71FD79E1A24</StringID>
+	<SourceText>Fehler¶Fehler¶Warnung¶Info¶Info</SourceText>
+	<TargetText>Fehler¶Fehler¶Warnung¶Info¶Info</TargetText>
+	<Comment>com.fmi.calculation.text.Fehler¶Fehler¶Warnung¶Info¶Info</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0479DBF259F506F42AACD22672C1D57B</StringID>
+	<SourceText>There is not enough XML/XSL information to proceed with the import or export</SourceText>
+	<TargetText>There is not enough XML/XSL information to proceed with the import or export</TargetText>
+	<Comment>com.fmi.calculation.text.There is not enough XML/XSL information to proceed with the import or export</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.04DC97DEC006306910FB1DA7098190EA</StringID>
+	<SourceText>SError.stack[</SourceText>
+	<TargetText>SError.stack[</TargetText>
+	<Comment>com.fmi.calculation.text.SError.stack[</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.05174D3C117ED89776226125BBD687C0</StringID>
+	<SourceText>server</SourceText>
+	<TargetText>server</TargetText>
+	<Comment>com.fmi.calculation.text.server</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.05348F3B81B48DFB1FA544D9B1DECE5E</StringID>
+	<SourceText>Calculation cannot be stored</SourceText>
+	<TargetText>Calculation cannot be stored</TargetText>
+	<Comment>com.fmi.calculation.text.Calculation cannot be stored</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0690E6B51246D6E55069EEFC61B3F1FC</StringID>
+	<SourceText>Print connection lost</SourceText>
+	<TargetText>Print connection lost</TargetText>
+	<Comment>com.fmi.calculation.text.Print connection lost</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.070F4A9B820BED345E5D5A08546A36E3</StringID>
+	<SourceText>An Error has occurred</SourceText>
+	<TargetText>An Error has occurred</TargetText>
+	<Comment>com.fmi.calculation.text.An Error has occurred</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.075B7D277FE39D4CB26A4ED884A272FC</StringID>
+	<SourceText>Dialog.SetMode</SourceText>
+	<TargetText>Dialog.SetMode</TargetText>
+	<Comment>com.fmi.calculation.text.Dialog.SetMode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.07FD75C35AEB713C3F6922A0FB81FD01</StringID>
+	<SourceText>Server</SourceText>
+	<TargetText>Server</TargetText>
+	<Comment>com.fmi.calculation.text.Server</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.085FA8CE9F907002FAADE955935BB54B</StringID>
+	<SourceText> auto<CR/></SourceText>
+	<TargetText> auto<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. auto_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.08CC77FA5389B31B825B481B5A7A6F23</StringID>
+	<SourceText>Record is in use by another user</SourceText>
+	<TargetText>Record is in use by another user</TargetText>
+	<Comment>com.fmi.calculation.text.Record is in use by another user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.08F736ABB4265E1CFD1CE4414A235C87</StringID>
+	<SourceText>Find criteria are empty</SourceText>
+	<TargetText>Find criteria are empty</TargetText>
+	<Comment>com.fmi.calculation.text.Find criteria are empty</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0B2A2788751402C11BCE36FEF14F0190</StringID>
+	<SourceText>Language pack files are missing (such as Starter Solutions)</SourceText>
+	<TargetText>Language pack files are missing (such as Starter Solutions)</TargetText>
+	<Comment>com.fmi.calculation.text.Language pack files are missing (such as Starter Solutions)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0B53B47E95F5DBF20461A4CBD2245C7E</StringID>
+	<SourceText>File is missing</SourceText>
+	<TargetText>File is missing</TargetText>
+	<Comment>com.fmi.calculation.text.File is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0C21B622E589A65FCC245102BAA58EB4</StringID>
+	<SourceText> BaseElements<CR/></SourceText>
+	<TargetText> BaseElements<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. BaseElements_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0C491AFBCB299B23819A1585B700861C</StringID>
+	<SourceText><TAB/><TAB/><TAB/><TAB/><TAB/>r = MBS( &quot;Dialog.SetWindowTitle&quot;; title );<CR/></SourceText>
+	<TargetText><TAB/><TAB/><TAB/><TAB/><TAB/>r = MBS( &quot;Dialog.SetWindowTitle&quot;; title );<CR/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/__TAB/__TAB/__TAB/__TAB/_r = MBS( &quot;Dialog.SetWindowTitle&quot;; title );_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0CA90DF1F04AF2EEF7A5519A49629A66</StringID>
+	<SourceText>File path specified is not a valid file path</SourceText>
+	<TargetText>File path specified is not a valid file path</TargetText>
+	<Comment>com.fmi.calculation.text.File path specified is not a valid file path</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0DA92BB5E59B5F133C4A8EEA6DCFF433</StringID>
+	<SourceText>Dialog.SetAlternateButton</SourceText>
+	<TargetText>Dialog.SetAlternateButton</TargetText>
+	<Comment>com.fmi.calculation.text.Dialog.SetAlternateButton</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0E2B39EC0CC15C298361E44C7355BA18</StringID>
+	<SourceText>public.utf8-plain-text</SourceText>
+	<TargetText>public.utf8-plain-text</TargetText>
+	<Comment>com.fmi.calculation.text.public.utf8-plain-text</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0E340298542FE0CBD1AF5B9434D1F049</StringID>
+	<SourceText>Parameter: </SourceText>
+	<TargetText>Parameter: </TargetText>
+	<Comment>com.fmi.calculation.text.Parameter:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0E366CC7433F58F3531AF4AFE26C4297</StringID>
+	<SourceText>Plug-in function has already been registered</SourceText>
+	<TargetText>Plug-in function has already been registered</TargetText>
+	<Comment>com.fmi.calculation.text.Plug-in function has already been registered</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0E5D6E1D0344DFAF9167A675DE925FF4</StringID>
+	<SourceText> filter params with &apos;_&apos;<CR/></SourceText>
+	<TargetText> filter params with &apos;_&apos;<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. filter params with &apos;_&apos;_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0F521767BB66A0B989E2FAB92282534A</StringID>
+	<SourceText>Command cannot be used in a shared file</SourceText>
+	<TargetText>Command cannot be used in a shared file</TargetText>
+	<Comment>com.fmi.calculation.text.Command cannot be used in a shared file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.0F5869B693F47EC73F6BB208BA1B053F</StringID>
+	<SourceText>Record Synchronization error on network</SourceText>
+	<TargetText>Record Synchronization error on network</TargetText>
+	<Comment>com.fmi.calculation.text.Record Synchronization error on network</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.105CE00CE19C14431BFA468D21CFC269</StringID>
+	<SourceText> set $SError<CR/></SourceText>
+	<TargetText> set $SError<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. set $SError_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.115503D8961B63860C70B2A062BFB34D</StringID>
+	<SourceText>SError.class</SourceText>
+	<TargetText>SError.class</TargetText>
+	<Comment>com.fmi.calculation.text.SError.class</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1172C9D37A8861C221FF12308A1EC0B0</StringID>
+	<SourceText> params are json object<CR/></SourceText>
+	<TargetText> params are json object<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. params are json object_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.122049C270570661D557F523BA802A0F</StringID>
+	<SourceText>Guest account cannot be duplicated</SourceText>
+	<TargetText>Guest account cannot be duplicated</TargetText>
+	<Comment>com.fmi.calculation.text.Guest account cannot be duplicated</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.122B203B5ED57BE945C69221D3294724</StringID>
+	<SourceText>SError.window</SourceText>
+	<TargetText>SError.window</TargetText>
+	<Comment>com.fmi.calculation.text.SError.window</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.12E021C462DEDD6939C9AF236155A030</StringID>
+	<SourceText>Too much data to export to this format; it will be truncated</SourceText>
+	<TargetText>Too much data to export to this format; it will be truncated</TargetText>
+	<Comment>com.fmi.calculation.text.Too much data to export to this format; it will be truncated</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.14E83201BEB905B90C96C20C4AC2CE8E</StringID>
+	<SourceText>Kopieren</SourceText>
+	<TargetText>Kopieren</TargetText>
+	<Comment>com.fmi.calculation.text.Kopieren</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.151084A57CA83B4D021A07A1082A59E8</StringID>
+	<SourceText>URL format is incorrect</SourceText>
+	<TargetText>URL format is incorrect</TargetText>
+	<Comment>com.fmi.calculation.text.URL format is incorrect</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.153B5CAF6263ACEC2E3764F27E33E2F1</StringID>
+	<SourceText>Account: </SourceText>
+	<TargetText>Account: </TargetText>
+	<Comment>com.fmi.calculation.text.Account:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.166C20D5D1F7C2371FFBFEF933E708E0</StringID>
+	<SourceText>User dictionary is read-only</SourceText>
+	<TargetText>User dictionary is read-only</TargetText>
+	<Comment>com.fmi.calculation.text.User dictionary is read-only</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.194D5A374B85591834EA7453F1173D24</StringID>
+	<SourceText>Record is missing</SourceText>
+	<TargetText>Record is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Record is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1A59FA06C6BF6276E6A6118F33E19C15</StringID>
+	<SourceText><TAB/>commands<CR/><TAB/><TAB/>--------------------------------------------------------------------------------<CR/><TAB/></SourceText>
+	<TargetText><TAB/>commands<CR/><TAB/><TAB/>--------------------------------------------------------------------------------<CR/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_commands_CR/__TAB/__TAB/_--------------------------------------------------------------------------------_CR/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1AA75B0CF847AE96DE330CBAFD0E78A6</StringID>
+	<SourceText>Command is invalid (for example, a Set Field script step does not have a calculation specified)</SourceText>
+	<TargetText>Command is invalid (for example, a Set Field script step does not have a calculation specified)</TargetText>
+	<Comment>com.fmi.calculation.text.Command is invalid (for example, a Set Field script step does not have a calculation specified)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1B759226EB6991D1214E639EA673D087</StringID>
+	<SourceText>?</SourceText>
+	<TargetText>?</TargetText>
+	<Comment>com.fmi.calculation.text.?</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1B86D86AE959B7A5B270867D7215AC5E</StringID>
+	<SourceText>No validation was specified but data cannot fit into the field</SourceText>
+	<TargetText>No validation was specified but data cannot fit into the field</TargetText>
+	<Comment>com.fmi.calculation.text.No validation was specified but data cannot fit into the field</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1BD1BA747C59433420E48D8D0183B35B</StringID>
+	<SourceText>Failed communication link (ODBC)</SourceText>
+	<TargetText>Failed communication link (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Failed communication link (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1D0518F1400D31FDABACA8EAE869951D</StringID>
+	<SourceText>This file type cannot be displayed as a picture</SourceText>
+	<TargetText>This file type cannot be displayed as a picture</TargetText>
+	<Comment>com.fmi.calculation.text.This file type cannot be displayed as a picture</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.1F228D9F03A3F13DA8BD31EA7EB43055</StringID>
+	<SourceText>File is damaged or not a FileMaker file</SourceText>
+	<TargetText>File is damaged or not a FileMaker file</TargetText>
+	<Comment>com.fmi.calculation.text.File is damaged or not a FileMaker file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.208A974534C56E8FDDAA95F654FD5C81</StringID>
+	<SourceText>File cannot be opened with this version of FileMaker Pro</SourceText>
+	<TargetText>File cannot be opened with this version of FileMaker Pro</TargetText>
+	<Comment>com.fmi.calculation.text.File cannot be opened with this version of FileMaker Pro</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.217E7A1FAF1B70016EBE5AFF50E7AED4</StringID>
+	<SourceText><TAB/>to string<CR/><TAB/><TAB/><TAB/>------------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/>@about generate text form of exception object<CR/><TAB/><TAB/><TAB/>@since 12.10.2021 – NW: change object to {&quot;SError&quot;: ... }<CR/><TAB/><TAB/><TAB/>@since 28.10.2021 – NW: moved from throw() to catch()<CR/><TAB/><TAB/><CR/><TAB/><TAB/><TAB/>@todo custom<CR/><TAB/><TAB/></SourceText>
+	<TargetText><TAB/>to string<CR/><TAB/><TAB/><TAB/>------------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/>@about generate text form of exception object<CR/><TAB/><TAB/><TAB/>@since 12.10.2021 – NW: change object to {&quot;SError&quot;: ... }<CR/><TAB/><TAB/><TAB/>@since 28.10.2021 – NW: moved from throw() to catch()<CR/><TAB/><TAB/><CR/><TAB/><TAB/><TAB/>@todo custom<CR/><TAB/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_to string_CR/__TAB/__TAB/__TAB/_------------------------------------------------------------------------------_CR/__TAB/__TAB/__TAB/_@about generate text form of exception object_CR/__TAB/__TAB/__TAB/_@since 12.10.2021 – NW: change object to {&quot;SError&quot;: ... }_CR/__TAB/__TAB/__TAB/_@since 28.10.2021 – NW: moved from throw() to catch()_CR/__TAB/__TAB/__CR/__TAB/__TAB/__TAB/_@todo custom_CR/__TAB/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.21A19DBFC3CACD0CE80693C6C8701785</StringID>
+	<SourceText>Related value is empty or unavailable</SourceText>
+	<TargetText>Related value is empty or unavailable</TargetText>
+	<Comment>com.fmi.calculation.text.Related value is empty or unavailable</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.21D7DEA37E9ED5A5ADB2D0A89D86903B</StringID>
+	<SourceText>Se ha producido un error!</SourceText>
+	<TargetText>Se ha producido un error!</TargetText>
+	<Comment>com.fmi.calculation.text.Se ha producido un error!</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2201828440848ADBEF40361171D891E4</StringID>
+	<SourceText>Failed to allocate statement (ODBC)</SourceText>
+	<TargetText>Failed to allocate statement (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Failed to allocate statement (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.236DA9E40A45E8267AB1E4569D17C2C7</StringID>
+	<SourceText>Password has expired</SourceText>
+	<TargetText>Password has expired</TargetText>
+	<Comment>com.fmi.calculation.text.Password has expired</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.23A16715A3398D81C62DBC022B85A4BC</StringID>
+	<SourceText>Dialog.SetMessage</SourceText>
+	<TargetText>Dialog.SetMessage</TargetText>
+	<Comment>com.fmi.calculation.text.Dialog.SetMessage</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.243742C27412893E28F23E30D786DEF1</StringID>
+	<SourceText>Authentication failed</SourceText>
+	<TargetText>Authentication failed</TargetText>
+	<Comment>com.fmi.calculation.text.Authentication failed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2488FB96581D7DE7D9D276009C1C65C2</StringID>
+	<SourceText>Field repetition is invalid</SourceText>
+	<TargetText>Field repetition is invalid</TargetText>
+	<Comment>com.fmi.calculation.text.Field repetition is invalid</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2522B06F16F091A85FE268A0C0A12BC6</StringID>
+	<SourceText>Empty result</SourceText>
+	<TargetText>Empty result</TargetText>
+	<Comment>com.fmi.calculation.text.Empty result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.26D594924C50F69E0CB3C16589FF56B0</StringID>
+	<SourceText> fmerrror<CR/></SourceText>
+	<TargetText> fmerrror<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. fmerrror_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2714514F3BF898D9F221BD193E4E781B</StringID>
+	<SourceText>File you are importing from contains no data</SourceText>
+	<TargetText>File you are importing from contains no data</TargetText>
+	<Comment>com.fmi.calculation.text.File you are importing from contains no data</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.273A9EE98E838A5C55B7C444F1A233CB</StringID>
+	<SourceText>Internal failure in INSERT operation into a field</SourceText>
+	<TargetText>Internal failure in INSERT operation into a field</TargetText>
+	<Comment>com.fmi.calculation.text.Internal failure in INSERT operation into a field</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.292748DD64A62FF2C7FE6DEFE96B2A06</StringID>
+	<SourceText>Memory error</SourceText>
+	<TargetText>Memory error</TargetText>
+	<Comment>com.fmi.calculation.text.Memory error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2B553629537EAFDA805FDE82379E9E98</StringID>
+	<SourceText>¶account¶accountPrivileges¶layout¶layoutPrivileges¶scriptPrivileges</SourceText>
+	<TargetText>¶account¶accountPrivileges¶layout¶layoutPrivileges¶scriptPrivileges</TargetText>
+	<Comment>com.fmi.calculation.text.¶account¶accountPrivileges¶layout¶layoutPrivileges¶scriptPrivileges</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2B57EA40995F15D7702CB1328CC027F8</StringID>
+	<SourceText>Temporary file cannot be opened as FileMaker Pro file</SourceText>
+	<TargetText>Temporary file cannot be opened as FileMaker Pro file</TargetText>
+	<Comment>com.fmi.calculation.text.Temporary file cannot be opened as FileMaker Pro file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2BA9C28A0A2070E9BDEC2BEBE49AA98D</StringID>
+	<SourceText>File or object is in use</SourceText>
+	<TargetText>File or object is in use</TargetText>
+	<Comment>com.fmi.calculation.text.File or object is in use</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2CD6726D34B16B36D1ACDB6F26FBAAD2</StringID>
+	<SourceText> es<CR/></SourceText>
+	<TargetText> es<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. es_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2D528BE426DD0F0628D217604A7B24E8</StringID>
+	<SourceText>Password privileges do not allow the operation</SourceText>
+	<TargetText>Password privileges do not allow the operation</TargetText>
+	<Comment>com.fmi.calculation.text.Password privileges do not allow the operation</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2E87F4C9917174412A20FF3DF750D76B</StringID>
+	<SourceText>SError.layout</SourceText>
+	<TargetText>SError.layout</TargetText>
+	<Comment>com.fmi.calculation.text.SError.layout</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.2FCEB652F1D24359E571D6415B30ED99</StringID>
+	<SourceText>Name already exists</SourceText>
+	<TargetText>Name already exists</TargetText>
+	<Comment>com.fmi.calculation.text.Name already exists</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3094AD66AC3A91E3F5CF4589993CA2B6</StringID>
+	<SourceText>Unsupported XML grammar (*)</SourceText>
+	<TargetText>Unsupported XML grammar (*)</TargetText>
+	<Comment>com.fmi.calculation.text.Unsupported XML grammar (*)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.30B8BCF130676281E9D5A2BE7E1E70F4</StringID>
+	<SourceText>Script is missing</SourceText>
+	<TargetText>Script is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Script is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3118270EBA36324ED8F1E722A9BEA985</StringID>
+	<SourceText>VersionAutoupdate</SourceText>
+	<TargetText>VersionAutoupdate</TargetText>
+	<Comment>com.fmi.calculation.text.VersionAutoupdate</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.312D64DF4CB4C8CBC55EDDF9470B8FDF</StringID>
+	<SourceText>Cannot set file to single-user, guests are connected</SourceText>
+	<TargetText>Cannot set file to single-user, guests are connected</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot set file to single-user, guests are connected</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.327E6AD97DD4E80EFC01B85BF49F8751</StringID>
+	<SourceText>SError.accountPrivileges</SourceText>
+	<TargetText>SError.accountPrivileges</TargetText>
+	<Comment>com.fmi.calculation.text.SError.accountPrivileges</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.337E39020BFEA020788619DB359D1D2F</StringID>
+	<SourceText>Number of records specified exceeds number of records that can be omitted</SourceText>
+	<TargetText>Number of records specified exceeds number of records that can be omitted</TargetText>
+	<Comment>com.fmi.calculation.text.Number of records specified exceeds number of records that can be omitted</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.341A35D4CD0577C502F3E56BC57B9300</StringID>
+	<SourceText>Cannot write a file to the external storage</SourceText>
+	<TargetText>Cannot write a file to the external storage</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot write a file to the external storage</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.34B0B1E2E8C59E5AC093B4ECD71390A5</StringID>
+	<SourceText>device</SourceText>
+	<TargetText>device</TargetText>
+	<Comment>com.fmi.calculation.text.device</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3610685D2A993D351519551B37B12193</StringID>
+	<SourceText>French</SourceText>
+	<TargetText>French</TargetText>
+	<Comment>com.fmi.calculation.text.French</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3633CC632154D826FA8E7B443BADB413</StringID>
+	<SourceText> save a copy of your template text to the first container field in FxReports </SourceText>
+	<TargetText> save a copy of your template text to the first container field in FxReports </TargetText>
+	<Comment>com.fmi.calculation.text. save a copy of your template text to the first container field in FxReports</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.365D743588925BC42BBAEF1E15797059</StringID>
+	<SourceText>Record was already modified by another user</SourceText>
+	<TargetText>Record was already modified by another user</TargetText>
+	<Comment>com.fmi.calculation.text.Record was already modified by another user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.36AAA2A04673C49CA8A42EB929805AF6</StringID>
+	<SourceText>{\&quot;</SourceText>
+	<TargetText>{\&quot;</TargetText>
+	<Comment>com.fmi.calculation.text.{\&quot;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3720CA254FA9239ABC5AEF5039F11C76</StringID>
+	<SourceText>Can’t initialize the spelling engine</SourceText>
+	<TargetText>Can’t initialize the spelling engine</TargetText>
+	<Comment>com.fmi.calculation.text.Can’t initialize the spelling engine</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.379B2A8FFB9D7624A7A87EA126FBCE69</StringID>
+	<SourceText>Layout: </SourceText>
+	<TargetText>Layout: </TargetText>
+	<Comment>com.fmi.calculation.text.Layout:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.38C85CE2C68778D4A7A0B71ACF25DD1C</StringID>
+	<SourceText>Request not supported (for example, when creating a hard link on a file system that does not support hard links)</SourceText>
+	<TargetText>Request not supported (for example, when creating a hard link on a file system that does not support hard links)</TargetText>
+	<Comment>com.fmi.calculation.text.Request not supported (for example, when creating a hard link on a file system that does not support hard links)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.395C51D88DB257A8776B129E7C8271EC</StringID>
+	<SourceText> message<CR/></SourceText>
+	<TargetText> message<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. message_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3ACFD19500F4550CE56E16A4C4C0A1D4</StringID>
+	<SourceText>Print error has occurred</SourceText>
+	<TargetText>Print error has occurred</TargetText>
+	<Comment>com.fmi.calculation.text.Print error has occurred</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3AE6D64FACB513258434B137DA76C1BE</StringID>
+	<SourceText>Value in field exceeds maximum field size</SourceText>
+	<TargetText>Value in field exceeds maximum field size</TargetText>
+	<Comment>com.fmi.calculation.text.Value in field exceeds maximum field size</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3B425F7EF5CF794985C7C60BABD34470</StringID>
+	<SourceText> generic default en<CR/></SourceText>
+	<TargetText> generic default en<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. generic default en_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3B5084FC84EE105C6F3A3DF7828B5B82</StringID>
+	<SourceText>LayoutPrivileges: </SourceText>
+	<TargetText>LayoutPrivileges: </TargetText>
+	<Comment>com.fmi.calculation.text.LayoutPrivileges:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3C48C91DF129C7A71B35EB3FAB8B94EF</StringID>
+	<SourceText> change values of filtered_names<CR/></SourceText>
+	<TargetText> change values of filtered_names<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. change values of filtered_names_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3CA86533E759C1356811ACF94CC46C50</StringID>
+	<SourceText>SError.code</SourceText>
+	<TargetText>SError.code</TargetText>
+	<Comment>com.fmi.calculation.text.SError.code</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3E52F202DD2F53DEC43B533593F0D0C5</StringID>
+	<SourceText><TAB/>SError.display_v6( _plugin )<CR/><TAB/>@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt;<CR/><TAB/>@version 1.3.0-100 - 09.10.2007 - Nils Waldherr<CR/><TAB/>         2.0.0-100 - 05.08.2009 - NW<CR/>             2.1.1-100 - 15.09.2010 - NW: Kargas DialogPlugin<CR/>             2.1.2-100 - 22.09.2010 - NW: max height<CR/>             2.5.0-100 - 01.02.2011 - NW: re-implementing _class<CR/>             2.5.1-100 - 20.06.2011 - NW: bug on Windows<CR/>             3.0.0-100 - 24.03.2012 - NW: renamed, <CR/>             3.1.0-100 - 08.08.2012 - NW: no more implicit catch()<CR/>             3.2.0-100 - 31.10.2012 - NW: version mode<CR/>             3.2.1-101 - 27.11.2013 - NW: better output of class &amp; type<CR/>             3.2.2-102 - 28.12.2013 - NW: fixed position<CR/>             4.0.2-103 - 15.02.2014 - NW: using BaseElements plugin, moved to f1, ML<CR/>             4.1.0-104 - 16.04.2014 - NW: level as title<CR/>             4.1.1-105 - 02.05.2014 - NW: version sets function name<CR/>             4.2.2-108 - 11.05.2014 - NW: save to $$_Exception<CR/>             4.2.0-106 - 06.05.2014 - NW: localise vars<CR/>             4.2.1-107 - 09.05.2014 - NW: return code on empty message<CR/>             5.0.0-109 - 25.05.2014 - NW: array format<CR/>             5.0.2-111 - 26.05.2014 - NW: to string in global $$_Exception.to_string<CR/>             5.0.3-112 - 26.08.2014 - AB: text format for windows used in BE_SetClipboardText, prepare text for windows linesep., require BE 2.3<CR/>             5.0.4-113 - 20.04.2015 - AB: require BE 2.3<CR/>             5.1.0-114 - 20.12.2015 - NW: uses _Script.debug()<CR/>             5.1.1-116 - 17.01.2016 - NW: fix BE version precondition<CR/>             5.1.2-117 - 25.03.2017 - NW: revision<CR/>             5.1.3-118 - 08.09.2017 - NW: script_id<CR/>             5.1.4-119 - 24.09.2017 - NW: string from throw()<CR/>             5.1.5-120 - 28.03.2019 – NW: .string fix<CR/>             6.0.0-121 - 06.06.2021 – NW: rewrite, json, moved to SError<CR/>             6.0.1-122 - 20.08.2021 – UZ: renamed BE function with BE version 4.0.2<CR/>             6.0.2-123 - 25.08.2021 – NW: use MBS alternaively, _plugin<CR/>             6.0.3-125 - 12.10.2021 – NW: fix cast version, $SError<CR/>             6.1.0-126 - 04.11.2021 – NW: french, spanish<CR/>              <CR/><TAB/>@package f1.system.error<CR/><TAB/>@param string _plugin = &apos;auto&apos; -- mbs, be<CR/><TAB/>@returns null<CR/><TAB/><CR/><TAB/>@uses function SError.catch() 4.0<CR/><TAB/>@uses function SError.throw() 5.10<CR/><TAB/>@uses function _Script.debug() 2.0<CR/><TAB/>@uses plugin BaseElements 3.1<CR/></SourceText>
+	<TargetText><TAB/>SError.display_v6( _plugin )<CR/><TAB/>@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt;<CR/><TAB/>@version 1.3.0-100 - 09.10.2007 - Nils Waldherr<CR/><TAB/>         2.0.0-100 - 05.08.2009 - NW<CR/>             2.1.1-100 - 15.09.2010 - NW: Kargas DialogPlugin<CR/>             2.1.2-100 - 22.09.2010 - NW: max height<CR/>             2.5.0-100 - 01.02.2011 - NW: re-implementing _class<CR/>             2.5.1-100 - 20.06.2011 - NW: bug on Windows<CR/>             3.0.0-100 - 24.03.2012 - NW: renamed, <CR/>             3.1.0-100 - 08.08.2012 - NW: no more implicit catch()<CR/>             3.2.0-100 - 31.10.2012 - NW: version mode<CR/>             3.2.1-101 - 27.11.2013 - NW: better output of class &amp; type<CR/>             3.2.2-102 - 28.12.2013 - NW: fixed position<CR/>             4.0.2-103 - 15.02.2014 - NW: using BaseElements plugin, moved to f1, ML<CR/>             4.1.0-104 - 16.04.2014 - NW: level as title<CR/>             4.1.1-105 - 02.05.2014 - NW: version sets function name<CR/>             4.2.2-108 - 11.05.2014 - NW: save to $$_Exception<CR/>             4.2.0-106 - 06.05.2014 - NW: localise vars<CR/>             4.2.1-107 - 09.05.2014 - NW: return code on empty message<CR/>             5.0.0-109 - 25.05.2014 - NW: array format<CR/>             5.0.2-111 - 26.05.2014 - NW: to string in global $$_Exception.to_string<CR/>             5.0.3-112 - 26.08.2014 - AB: text format for windows used in BE_SetClipboardText, prepare text for windows linesep., require BE 2.3<CR/>             5.0.4-113 - 20.04.2015 - AB: require BE 2.3<CR/>             5.1.0-114 - 20.12.2015 - NW: uses _Script.debug()<CR/>             5.1.1-116 - 17.01.2016 - NW: fix BE version precondition<CR/>             5.1.2-117 - 25.03.2017 - NW: revision<CR/>             5.1.3-118 - 08.09.2017 - NW: script_id<CR/>             5.1.4-119 - 24.09.2017 - NW: string from throw()<CR/>             5.1.5-120 - 28.03.2019 – NW: .string fix<CR/>             6.0.0-121 - 06.06.2021 – NW: rewrite, json, moved to SError<CR/>             6.0.1-122 - 20.08.2021 – UZ: renamed BE function with BE version 4.0.2<CR/>             6.0.2-123 - 25.08.2021 – NW: use MBS alternaively, _plugin<CR/>             6.0.3-125 - 12.10.2021 – NW: fix cast version, $SError<CR/>             6.1.0-126 - 04.11.2021 – NW: french, spanish<CR/>              <CR/><TAB/>@package f1.system.error<CR/><TAB/>@param string _plugin = &apos;auto&apos; -- mbs, be<CR/><TAB/>@returns null<CR/><TAB/><CR/><TAB/>@uses function SError.catch() 4.0<CR/><TAB/>@uses function SError.throw() 5.10<CR/><TAB/>@uses function _Script.debug() 2.0<CR/><TAB/>@uses plugin BaseElements 3.1<CR/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_SError.display_v6( _plugin )_CR/__TAB/_@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt;_CR/__TAB/_@version 1.3.0-100 - 09.10.2007 - Nils Waldherr_CR/__TAB/_         2.0.0-100 - 05.08.2009 - NW_CR/_             2.1.1-100 - 15.09.2010 - NW: Kargas DialogPlugin_CR/_             2.1.2-100 - 22.09.2010 - NW: max height_CR/_             2.5.0-100 - 01.02.2011 - NW: re-implementing _class_CR/_             2.5.1-100 - 20.06.2011 - NW: bug on Windows_CR/_             3.0.0-100 - 24.03.2012 - NW: renamed, _CR/_             3.1.0-100 - 08.08.2012 - NW: no more implicit catch()_CR/_             3.2.0-100 - 31.10.2012 - NW: version mode_CR/_             3.2.1-101 - 27.11.2013 - NW: better output of class &amp; type_CR/_             3.2.2-102 - 28.12.2013 - NW: fixed position_CR/_             4.0.2-103 - 15.02.2014 - NW: using BaseElements plugin, moved to f1, ML_CR/_             4.1.0-104 - 16.04.2014 - NW: level as title_CR/_             4.1.1-105 - 02.05.2014 - NW: version sets function name_CR/_             4.2.2-108 - 11.05.2014 - NW: save to $$_Exception_CR/_             4.2.0-106 - 06.05.2014 - NW: localise vars_CR/_             4.2.1-107 - 09.05.2014 - NW: return code on empty message_CR/_             5.0.0-109 - 25.05.2014 - NW: array format_CR/_             5.0.2-111 - 26.05.2014 - NW: to string in global $$_Exception.to_string_CR/_             5.0.3-112 - 26.08.2014 - AB: text format for windows used in BE_SetClipboardText, prepare text for windows linesep., require BE 2.3_CR/_             5.0.4-113 - 20.04.2015 - AB: require BE 2.3_CR/_             5.1.0-114 - 20.12.2015 - NW: uses _Script.debug()_CR/_             5.1.1-116 - 17.01.2016 - NW: fix BE version precondition_CR/_             5.1.2-117 - 25.03.2017 - NW: revision_CR/_             5.1.3-118 - 08.09.2017 - NW: script_id_CR/_             5.1.4-119 - 24.09.2017 - NW: string from throw()_CR/_             5.1.5-120 - 28.03.2019 – NW: .string fix_CR/_             6.0.0-121 - 06.06.2021 – NW: rewrite, json, moved to SError_CR/_             6.0.1-122 - 20.08.2021 – UZ: renamed BE function with BE version 4.0.2_CR/_             6.0.2-123 - 25.08.2021 – NW: use MBS alternaively, _plugin_CR/_             6.0.3-125 - 12.10.2021 – NW: fix cast version, $SError_CR/_             6.1.0-126 - 04.11.2021 – NW: french, spanish_CR/_              _CR/__TAB/_@package f1.system.error_CR/__TAB/_@param string _plugin = &apos;auto&apos; -- mbs, be_CR/__TAB/_@returns null_CR/__TAB/__CR/__TAB/_@uses function SError.catch() 4.0_CR/__TAB/_@uses function SError.throw() 5.10_CR/__TAB/_@uses function _Script.debug() 2.0_CR/__TAB/_@uses plugin BaseElements 3.1_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3F5B2B74019C706B7CD1201EF789B9E6</StringID>
+	<SourceText>Protocol is not supported</SourceText>
+	<TargetText>Protocol is not supported</TargetText>
+	<Comment>com.fmi.calculation.text.Protocol is not supported</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.3F5FAF349F8E855E13208CACEA290B97</StringID>
+	<SourceText>SMTP server requires the connection to be encrypted</SourceText>
+	<TargetText>SMTP server requires the connection to be encrypted</TargetText>
+	<Comment>com.fmi.calculation.text.SMTP server requires the connection to be encrypted</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.408A2CE55494E047ADE002B3CC93C1E9</StringID>
+	<SourceText>Sort order is invalid</SourceText>
+	<TargetText>Sort order is invalid</TargetText>
+	<Comment>com.fmi.calculation.text.Sort order is invalid</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.41698B6F3B88400CAA9BF2C08F346362</StringID>
+	<SourceText>Time value does not meet validation entry options</SourceText>
+	<TargetText>Time value does not meet validation entry options</TargetText>
+	<Comment>com.fmi.calculation.text.Time value does not meet validation entry options</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.41A5C64D9921B006FE514BA3C8CD2B8E</StringID>
+	<SourceText>Graphic translator cannot be found</SourceText>
+	<TargetText>Graphic translator cannot be found</TargetText>
+	<Comment>com.fmi.calculation.text.Graphic translator cannot be found</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.41C91F327DDCCBEF5537BC3DB24B297D</StringID>
+	<SourceText>One or more containers failed to transfer</SourceText>
+	<TargetText>One or more containers failed to transfer</TargetText>
+	<Comment>com.fmi.calculation.text.One or more containers failed to transfer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.41E26B9D7E5626BDE3E68E264770396D</StringID>
+	<SourceText>Field is missing</SourceText>
+	<TargetText>Field is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Field is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.432D42E6C86C6338D199FC3A9074D7FD</StringID>
+	<SourceText>Value in field is not unique as required in validation entry options</SourceText>
+	<TargetText>Value in field is not unique as required in validation entry options</TargetText>
+	<Comment>com.fmi.calculation.text.Value in field is not unique as required in validation entry options</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.43FD0E5C12CF166256975B8B2D0117A0</StringID>
+	<SourceText> compose dialog<CR/></SourceText>
+	<TargetText> compose dialog<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. compose dialog_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.43FE9570B311E0DC8E71C7DD1E087B3C</StringID>
+	<SourceText>Unable to create file on disk</SourceText>
+	<TargetText>Unable to create file on disk</TargetText>
+	<Comment>com.fmi.calculation.text.Unable to create file on disk</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4424B8BAB0E3276B3DE2D3362C23FA18</StringID>
+	<SourceText>SError.stack</SourceText>
+	<TargetText>SError.stack</TargetText>
+	<Comment>com.fmi.calculation.text.SError.stack</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.44790D6E838A9B40C1369185E9BE77F7</StringID>
+	<SourceText>Failed check for SQL API (ODBC)</SourceText>
+	<TargetText>Failed check for SQL API (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Failed check for SQL API (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.465E1F4E24F01643AAEAA291F019E952</StringID>
+	<SourceText>script</SourceText>
+	<TargetText>script</TargetText>
+	<Comment>com.fmi.calculation.text.script</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.47350FE76EBFC450DB4C9998589FE87D</StringID>
+	<SourceText> default<CR/></SourceText>
+	<TargetText> default<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. default_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.477B6907BE5582ABAD3D98E6FE9BA18D</StringID>
+	<SourceText><TAB/>get environment<CR/><TAB/><TAB/><TAB/>------------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/>@about will be added for every step in the call stack<CR/><TAB/><TAB/><TAB/><TAB/>   also used by catch() to append to the stack<CR/><TAB/><TAB/><TAB/>@param (string) $test_script_parameter<CR/><TAB/><TAB/><TAB/>@since 28.10.2021 – NW: moved from throw() to catch()<CR/><TAB/><TAB/></SourceText>
+	<TargetText><TAB/>get environment<CR/><TAB/><TAB/><TAB/>------------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/>@about will be added for every step in the call stack<CR/><TAB/><TAB/><TAB/><TAB/>   also used by catch() to append to the stack<CR/><TAB/><TAB/><TAB/>@param (string) $test_script_parameter<CR/><TAB/><TAB/><TAB/>@since 28.10.2021 – NW: moved from throw() to catch()<CR/><TAB/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_get environment_CR/__TAB/__TAB/__TAB/_------------------------------------------------------------------------------_CR/__TAB/__TAB/__TAB/_@about will be added for every step in the call stack_CR/__TAB/__TAB/__TAB/__TAB/_   also used by catch() to append to the stack_CR/__TAB/__TAB/__TAB/_@param (string) $test_script_parameter_CR/__TAB/__TAB/__TAB/_@since 28.10.2021 – NW: moved from throw() to catch()_CR/__TAB/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.47BB8547E54A5EA7FAEA42459451477E</StringID>
+	<SourceText>Layout object is missing</SourceText>
+	<TargetText>Layout object is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Layout object is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4838841218B8347D4B4BCC835AE46676</StringID>
+	<SourceText> optional filename, if not set in json </SourceText>
+	<TargetText> optional filename, if not set in json </TargetText>
+	<Comment>com.fmi.calculation.text. optional filename, if not set in json</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4892C4E9822953E2A389C2C09358C7FE</StringID>
+	<SourceText> append current script to stack array<CR/></SourceText>
+	<TargetText> append current script to stack array<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. append current script to stack array_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.48A4CE8F59CA32197B2EBC44B7F4A12B</StringID>
+	<SourceText>Email message(s) could not be sent successfully</SourceText>
+	<TargetText>Email message(s) could not be sent successfully</TargetText>
+	<Comment>com.fmi.calculation.text.Email message(s) could not be sent successfully</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4980C9A48C7E6EEF7CC37CBEA13B5F80</StringID>
+	<SourceText> set local var for debugging in data viewer<CR/></SourceText>
+	<TargetText> set local var for debugging in data viewer<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. set local var for debugging in data viewer_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.49826FFA7DB2600E61EE99C2C194FAA6</StringID>
+	<SourceText>A table cannot be imported into itself</SourceText>
+	<TargetText>A table cannot be imported into itself</TargetText>
+	<Comment>com.fmi.calculation.text.A table cannot be imported into itself</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.49F813EA97EE0ED88C3331C8F3B51EFA</StringID>
+	<SourceText>File is read-only</SourceText>
+	<TargetText>File is read-only</TargetText>
+	<Comment>com.fmi.calculation.text.File is read-only</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4B5387105D8F2F97F779253A81FC9F9C</StringID>
+	<SourceText>Administrator privileges cannot be duplicated</SourceText>
+	<TargetText>Administrator privileges cannot be duplicated</TargetText>
+	<Comment>com.fmi.calculation.text.Administrator privileges cannot be duplicated</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4B74C4D5962B94AAD486B802E698C43C</StringID>
+	<SourceText> end commands<CR/></SourceText>
+	<TargetText> end commands<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. end commands_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4B969D8CF22F603FD43FE04B83EACC8A</StringID>
+	<SourceText>ERROR: BaseElements 3.1 or MBS Plugin 7.2 required</SourceText>
+	<TargetText>ERROR: BaseElements 3.1 or MBS Plugin 7.2 required</TargetText>
+	<Comment>com.fmi.calculation.text.ERROR: BaseElements 3.1 or MBS Plugin 7.2 required</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4BB215AD5EBE75CF85CEBE15445D5882</StringID>
+	<SourceText>New password must be different from existing one</SourceText>
+	<TargetText>New password must be different from existing one</TargetText>
+	<Comment>com.fmi.calculation.text.New password must be different from existing one</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4D371872B862D554F80B5816D6979CEE</StringID>
+	<SourceText>Name (such as field name or layout name) is missing</SourceText>
+	<TargetText>Name (such as field name or layout name) is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Name (such as field name or layout name) is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4D68A67ACA629A70A6EDCFB9EA634B18</StringID>
+	<SourceText> get message for error code<CR/></SourceText>
+	<TargetText> get message for error code<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. get message for error code_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4DD2694DB30FD9A6EBB20D43BB7D2151</StringID>
+	<SourceText>be</SourceText>
+	<TargetText>be</TargetText>
+	<Comment>com.fmi.calculation.text.be</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4F37833C78C3D8E97B42199D10935621</StringID>
+	<SourceText>No active field selected; command can only be used if there is an active field</SourceText>
+	<TargetText>No active field selected; command can only be used if there is an active field</TargetText>
+	<Comment>com.fmi.calculation.text.No active field selected; command can only be used if there is an active field</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4FB50E4FE4A798658F74DFDAA265BEDD</StringID>
+	<SourceText>ERROR</SourceText>
+	<TargetText>ERROR</TargetText>
+	<Comment>com.fmi.calculation.text.ERROR</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4FD983536E4E603A15B416BC85BA956E</StringID>
+	<SourceText>Files are damaged or missing and must be reinstalled</SourceText>
+	<TargetText>Files are damaged or missing and must be reinstalled</TargetText>
+	<Comment>com.fmi.calculation.text.Files are damaged or missing and must be reinstalled</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.4FF6F5CEACC961E94245AA9293C1C7B9</StringID>
+	<SourceText>Password does not contain enough characters</SourceText>
+	<TargetText>Password does not contain enough characters</TargetText>
+	<Comment>com.fmi.calculation.text.Password does not contain enough characters</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.507F4FE835C3B14254C4F19E83E7A71D</StringID>
+	<SourceText>--generate</SourceText>
+	<TargetText>--generate</TargetText>
+	<Comment>com.fmi.calculation.text.--generate</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.50C57DB5E93D9CA07363BCD9BE64C165</StringID>
+	<SourceText>An unexpected error occurred (*)</SourceText>
+	<TargetText>An unexpected error occurred (*)</TargetText>
+	<Comment>com.fmi.calculation.text.An unexpected error occurred (*)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5160216F7C6E37CF2BDE43E64CE11CE8</StringID>
+	<SourceText> Windows<CR/></SourceText>
+	<TargetText> Windows<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. Windows_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.51660303884E0E38B25216443C12DA40</StringID>
+	<SourceText>ContactsBasic</SourceText>
+	<TargetText>ContactsBasic</TargetText>
+	<Comment>com.fmi.calculation.text.ContactsBasic</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5229B1788C39A6F1B40B2B002E88BB03</StringID>
+	<SourceText>Relationship is missing</SourceText>
+	<TargetText>Relationship is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Relationship is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.529A1FC66FAAEB80AEE007A97A0B47C2</StringID>
+	<SourceText>Ein Fehler ist aufgetreten!</SourceText>
+	<TargetText>Ein Fehler ist aufgetreten!</TargetText>
+	<Comment>com.fmi.calculation.text.Ein Fehler ist aufgetreten!</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.53935E67DE215ACA12B217EECF8C2796</StringID>
+	<SourceText>Unable to convert file</SourceText>
+	<TargetText>Unable to convert file</TargetText>
+	<Comment>com.fmi.calculation.text.Unable to convert file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.53A86EC7ED30E9C2AA159F721AC4B84E</StringID>
+	<SourceText> generic es<CR/></SourceText>
+	<TargetText> generic es<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. generic es_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.54E6DB1B5CD132C83EA9F9B5809E2CE6</StringID>
+	<SourceText>Too many parameters in the function</SourceText>
+	<TargetText>Too many parameters in the function</TargetText>
+	<Comment>com.fmi.calculation.text.Too many parameters in the function</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.57FFBDAAEC00C5070CCA73495AAF7940</StringID>
+	<SourceText>SError.timestamp</SourceText>
+	<TargetText>SError.timestamp</TargetText>
+	<Comment>com.fmi.calculation.text.SError.timestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.58614EECD16683D866E9513A8658735E</StringID>
+	<SourceText>Can&apos;t divide by zero</SourceText>
+	<TargetText>Can&apos;t divide by zero</TargetText>
+	<Comment>com.fmi.calculation.text.Can&apos;t divide by zero</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.58A9F93423E2372F69510EFD6A2879E6</StringID>
+	<SourceText> default: en, es<CR/></SourceText>
+	<TargetText> default: en, es<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. default: en, es_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.58FF281C3DE83CB7B9D9687A1A1BF739</StringID>
+	<SourceText>Device: </SourceText>
+	<TargetText>Device: </TargetText>
+	<Comment>com.fmi.calculation.text.Device:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.59761003C032F7182FAB9D49478F39B1</StringID>
+	<SourceText>Timestamp: </SourceText>
+	<TargetText>Timestamp: </TargetText>
+	<Comment>com.fmi.calculation.text.Timestamp:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.598FCCC178DC8B64442E27062C750043</StringID>
+	<SourceText>Disk/volume is full</SourceText>
+	<TargetText>Disk/volume is full</TargetText>
+	<Comment>com.fmi.calculation.text.Disk/volume is full</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5D9D1B636278A67685D6EAB6D3371689</StringID>
+	<SourceText>SError.layoutPrivileges</SourceText>
+	<TargetText>SError.layoutPrivileges</TargetText>
+	<Comment>com.fmi.calculation.text.SError.layoutPrivileges</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5E0A040AEC69472E02A22AE9D1093C9E</StringID>
+	<SourceText>Layout is missing</SourceText>
+	<TargetText>Layout is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Layout is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5E8BBFD17B01126B70EBCBC6DA8D3A2E</StringID>
+	<SourceText>Database schema is in use by another user</SourceText>
+	<TargetText>Database schema is in use by another user</TargetText>
+	<Comment>com.fmi.calculation.text.Database schema is in use by another user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5F8A055DE2A17D9AC5DB6D8BEEFD44D3</StringID>
+	<SourceText>Extended error (ODBC)</SourceText>
+	<TargetText>Extended error (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Extended error (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.5F90996CFFD414A061B5EA9298AC36F9</StringID>
+	<SourceText>Custom Web Publishing technology is disabled</SourceText>
+	<TargetText>Custom Web Publishing technology is disabled</TargetText>
+	<Comment>com.fmi.calculation.text.Custom Web Publishing technology is disabled</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.60107CE8FE7C631FE31FDEDF82A05978</StringID>
+	<SourceText>List usage is not allowed in this function</SourceText>
+	<TargetText>List usage is not allowed in this function</TargetText>
+	<Comment>com.fmi.calculation.text.List usage is not allowed in this function</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.60F1553A2019880272B9C160F31ED8E4</StringID>
+	<SourceText> from param<CR/></SourceText>
+	<TargetText> from param<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. from param_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.60FBEB9AE5E05EF8D5B9463A24FDCA16</StringID>
+	<SourceText>ERROR: parameter _code = &apos;</SourceText>
+	<TargetText>ERROR: parameter _code = &apos;</TargetText>
+	<Comment>com.fmi.calculation.text.ERROR: parameter _code = &apos;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.61A366B355EACA005EEC6F90337299BA</StringID>
+	<SourceText> de<CR/></SourceText>
+	<TargetText> de<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. de_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6224F9637FB1162E33CF497FD2AD8CBC</StringID>
+	<SourceText>Unable to update QuickTime reference because the database file is read-only</SourceText>
+	<TargetText>Unable to update QuickTime reference because the database file is read-only</TargetText>
+	<Comment>com.fmi.calculation.text.Unable to update QuickTime reference because the database file is read-only</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.62CC1315350D64906586AB886BBF1C7D</StringID>
+	<SourceText>SMTP authentication failed</SourceText>
+	<TargetText>SMTP authentication failed</TargetText>
+	<Comment>com.fmi.calculation.text.SMTP authentication failed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.62D47080CAAC67F1AA8CF489F6CB6995</StringID>
+	<SourceText>Menu set is missing</SourceText>
+	<TargetText>Menu set is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Menu set is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6728E47EF4548BC8CF0A4AC8947D6858</StringID>
+	<SourceText>Dialog.SetInformativeText</SourceText>
+	<TargetText>Dialog.SetInformativeText</TargetText>
+	<Comment>com.fmi.calculation.text.Dialog.SetInformativeText</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.686C616AA63D48E027C0FDD3DE9B54D9</StringID>
+	<SourceText>*****</SourceText>
+	<TargetText>*****</TargetText>
+	<Comment>com.fmi.calculation.text.*****</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.68A2DFE7D909AB9CC2D005E3E1509F7E</StringID>
+	<SourceText>Table is in use by another user</SourceText>
+	<TargetText>Table is in use by another user</TargetText>
+	<Comment>com.fmi.calculation.text.Table is in use by another user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6A2BE04E6DB800D20E8AC9B884D1AF3C</StringID>
+	<SourceText> from FileMaker<CR/></SourceText>
+	<TargetText> from FileMaker<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. from FileMaker_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6AFF14D6D347F6E3E0703AAB3677022A</StringID>
+	<SourceText>SError.scriptPrivileges</SourceText>
+	<TargetText>SError.scriptPrivileges</TargetText>
+	<Comment>com.fmi.calculation.text.SError.scriptPrivileges</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6CDB980AEC4872F52848923D21ECA1C2</StringID>
+	<SourceText> get script parameter<CR/></SourceText>
+	<TargetText> get script parameter<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. get script parameter_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6CEB82A7F1066417EFA5D827B333044E</StringID>
+	<SourceText>Spanish</SourceText>
+	<TargetText>Spanish</TargetText>
+	<Comment>com.fmi.calculation.text.Spanish</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6DBCED9F8742E9D495402B6E7382C9BB</StringID>
+	<SourceText>Value list is missing</SourceText>
+	<TargetText>Value list is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Value list is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6E2748809787F07C42DB8D61DCF478EB</StringID>
+	<SourceText>¶Call Stack:</SourceText>
+	<TargetText>¶Call Stack:</TargetText>
+	<Comment>com.fmi.calculation.text.¶Call Stack:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6E8E238EAF49805EB8131DAB557AC0CA</StringID>
+	<SourceText>Parameter missing (*)</SourceText>
+	<TargetText>Parameter missing (*)</TargetText>
+	<Comment>com.fmi.calculation.text.Parameter missing (*)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6E93878A264E4BF822E3D99AB4BA2BDD</StringID>
+	<SourceText>Une erreur s&apos;est produite!</SourceText>
+	<TargetText>Une erreur s&apos;est produite!</TargetText>
+	<Comment>com.fmi.calculation.text.Une erreur s&apos;est produite!</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6E9C5DB98BC5FB10628C3EE4E666DFFC</StringID>
+	<SourceText>Theme is locked and in use by another user</SourceText>
+	<TargetText>Theme is locked and in use by another user</TargetText>
+	<Comment>com.fmi.calculation.text.Theme is locked and in use by another user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.6F876D02FD10C43250F2D7DCA5D16AD8</StringID>
+	<SourceText>¶#</SourceText>
+	<TargetText>¶#</TargetText>
+	<Comment>com.fmi.calculation.text.¶#</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.70648DBDCA99C3D3D8D8DEEF9B0E9294</StringID>
+	<SourceText> else from param<CR/></SourceText>
+	<TargetText> else from param<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. else from param_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.706679220D20B50E8F53418B319B1F94</StringID>
+	<SourceText>Exceeded host’s capacity</SourceText>
+	<TargetText>Exceeded host’s capacity</TargetText>
+	<Comment>com.fmi.calculation.text.Exceeded host’s capacity</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.706973E67B310716E85DCAA9350047D0</StringID>
+	<SourceText>Exceeding maximum record limit for trial version of FileMaker Pro</SourceText>
+	<TargetText>Exceeding maximum record limit for trial version of FileMaker Pro</TargetText>
+	<Comment>com.fmi.calculation.text.Exceeding maximum record limit for trial version of FileMaker Pro</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.708B20991FA9A92E0D358E4D0C8D3B65</StringID>
+	<SourceText>SError.table</SourceText>
+	<TargetText>SError.table</TargetText>
+	<Comment>com.fmi.calculation.text.SError.table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.71BB16DA3ABC5323DBA86FD623ECEBC3</StringID>
+	<SourceText>Parameter is invalid</SourceText>
+	<TargetText>Parameter is invalid</TargetText>
+	<Comment>com.fmi.calculation.text.Parameter is invalid</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.72A1FB454CBE3FB7FC237FB776B80099</StringID>
+	<SourceText>There are more records in the import file than in the target table; not all records were imported</SourceText>
+	<TargetText>There are more records in the import file than in the target table; not all records were imported</TargetText>
+	<Comment>com.fmi.calculation.text.There are more records in the import file than in the target table; not all records were imported</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.72B301EF973AADC5C94A9BB5013C08FE</StringID>
+	<SourceText>(choose your path)/export.xlsx</SourceText>
+	<TargetText>(choose your path)/export.xlsx</TargetText>
+	<Comment>com.fmi.calculation.text.(choose your path)/export.xlsx</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.72F49C43E40C7910A35EDE473999B71D</StringID>
+	<SourceText> add to stack<CR/></SourceText>
+	<TargetText> add to stack<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. add to stack_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7312377B7E5C6F52E0A10A2EA5028B02</StringID>
+	<SourceText>Out of range</SourceText>
+	<TargetText>Out of range</TargetText>
+	<Comment>com.fmi.calculation.text.Out of range</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.73A4F1C09484920B8CB077C837E0B84A</StringID>
+	<SourceText>Unable to open file because it does not belong to this solution</SourceText>
+	<TargetText>Unable to open file because it does not belong to this solution</TargetText>
+	<Comment>com.fmi.calculation.text.Unable to open file because it does not belong to this solution</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.73BF762B26D75BD09E8CEC39952E8FAE</StringID>
+	<SourceText>Action requires PHP privilege extension (*)</SourceText>
+	<TargetText>Action requires PHP privilege extension (*)</TargetText>
+	<Comment>com.fmi.calculation.text.Action requires PHP privilege extension (*)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.745A2497BE3EAD1367605E4F9399E8F1</StringID>
+	<SourceText>--filter-parameter</SourceText>
+	<TargetText>--filter-parameter</TargetText>
+	<Comment>com.fmi.calculation.text.--filter-parameter</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.751D4DEACC8F9BC75F63A2CDD555F34C</StringID>
+	<SourceText>Break field is invalid</SourceText>
+	<TargetText>Break field is invalid</TargetText>
+	<Comment>com.fmi.calculation.text.Break field is invalid</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.75903326BA9ADA2AFBB03608C210BA44</StringID>
+	<SourceText>Command is unknown</SourceText>
+	<TargetText>Command is unknown</TargetText>
+	<Comment>com.fmi.calculation.text.Command is unknown</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.75F4851024671647F2CA669EF47B0B97</StringID>
+	<SourceText>The theme you are importing already exists</SourceText>
+	<TargetText>The theme you are importing already exists</TargetText>
+	<Comment>com.fmi.calculation.text.The theme you are importing already exists</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.760A27165B6DE80181FAEFB9E63E3BFE</StringID>
+	<SourceText> parameters<CR/></SourceText>
+	<TargetText> parameters<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. parameters_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.766051D6C0FEAAECA7F643FE153E14B5</StringID>
+	<SourceText> set clipboard<CR/></SourceText>
+	<TargetText> set clipboard<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. set clipboard_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.769A8D3E0F97B8BC2BEF6E09EDA7FE1E</StringID>
+	<SourceText>Current file is not shared; command can be used only if the file is shared</SourceText>
+	<TargetText>Current file is not shared; command can be used only if the file is shared</TargetText>
+	<Comment>com.fmi.calculation.text.Current file is not shared; command can be used only if the file is shared</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7884F1E38461EF5171D50AFC65CF7DB6</StringID>
+	<SourceText>Copy</SourceText>
+	<TargetText>Copy</TargetText>
+	<Comment>com.fmi.calculation.text.Copy</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.792816F41EBF3DCB95EE3502AA115777</StringID>
+	<SourceText>File reference is missing</SourceText>
+	<TargetText>File reference is missing</TargetText>
+	<Comment>com.fmi.calculation.text.File reference is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.796323EB9163B482B60DEFC9FA3A5BC5</StringID>
+	<SourceText> set code<CR/></SourceText>
+	<TargetText> set code<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. set code_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7A3F8EB8655652EFF7C77B03607B2E56</StringID>
+	<SourceText> generic<CR/></SourceText>
+	<TargetText> generic<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. generic_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7A4CF54FF5FECCDE4D9BC28A251B49BC</StringID>
+	<SourceText>Can&apos;t import the file or need color monitor support to import file</SourceText>
+	<TargetText>Can&apos;t import the file or need color monitor support to import file</TargetText>
+	<Comment>com.fmi.calculation.text.Can&apos;t import the file or need color monitor support to import file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7AA524F9B4B2BF4BD91FD99FD051CE23</StringID>
+	<SourceText>Privilege set is missing</SourceText>
+	<TargetText>Privilege set is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Privilege set is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7AB623058270858AC85F0CFCC2824001</StringID>
+	<SourceText> (</SourceText>
+	<TargetText> (</TargetText>
+	<Comment>com.fmi.calculation.text. (</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7AF14570E70813B2ADF8041A158CD68D</StringID>
+	<SourceText> filtering for code<CR/></SourceText>
+	<TargetText> filtering for code<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. filtering for code_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7B208F64F5C5A22A85B03935844F077F</StringID>
+	<SourceText>Theme is missing</SourceText>
+	<TargetText>Theme is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Theme is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7B2F6CD16BFD92647101E17697620E13</StringID>
+	<SourceText>File is not a FileMaker Pro file or is severely damaged</SourceText>
+	<TargetText>File is not a FileMaker Pro file or is severely damaged</TargetText>
+	<Comment>com.fmi.calculation.text.File is not a FileMaker Pro file or is severely damaged</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7B30A5DDEE338365680EFB9FB7E7BC8B</StringID>
+	<SourceText>User does not have sufficient privileges to change database schema, or file is not modifiable</SourceText>
+	<TargetText>User does not have sufficient privileges to change database schema, or file is not modifiable</TargetText>
+	<Comment>com.fmi.calculation.text.User does not have sufficient privileges to change database schema, or file is not modifiable</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7BDB9478CA79A3B06DF20C5062E4D133</StringID>
+	<SourceText>scriptId</SourceText>
+	<TargetText>scriptId</TargetText>
+	<Comment>com.fmi.calculation.text.scriptId</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7CE177D9E4B4389A97FE86D5DC9C5796</StringID>
+	<SourceText>Failed to free connection (ODBC)</SourceText>
+	<TargetText>Failed to free connection (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Failed to free connection (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7E92014C0EC036E087BB4761A80D7DC7</StringID>
+	<SourceText>Generic calculation error</SourceText>
+	<TargetText>Generic calculation error</TargetText>
+	<Comment>com.fmi.calculation.text.Generic calculation error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7EF01CE58ACB6D695850BBE8CA9001E4</StringID>
+	<SourceText><TAB/>--generate<CR/><TAB/><TAB/><TAB/>------------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/>@param (int) $test_fmerror_code -- inject FileMaker error<CR/><TAB/><TAB/><TAB/>@since 04.11.2021 – NW: moved from throw()<CR/><TAB/><TAB/><TAB/>@param (int) $test_fmerror_code -- inject FileMaker error<CR/><CR/><TAB/><TAB/></SourceText>
+	<TargetText><TAB/>--generate<CR/><TAB/><TAB/><TAB/>------------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/>@param (int) $test_fmerror_code -- inject FileMaker error<CR/><TAB/><TAB/><TAB/>@since 04.11.2021 – NW: moved from throw()<CR/><TAB/><TAB/><TAB/>@param (int) $test_fmerror_code -- inject FileMaker error<CR/><CR/><TAB/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_--generate_CR/__TAB/__TAB/__TAB/_------------------------------------------------------------------------------_CR/__TAB/__TAB/__TAB/_@param (int) $test_fmerror_code -- inject FileMaker error_CR/__TAB/__TAB/__TAB/_@since 04.11.2021 – NW: moved from throw()_CR/__TAB/__TAB/__TAB/_@param (int) $test_fmerror_code -- inject FileMaker error_CR/__CR/__TAB/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.7FAD82542025D35F8BD9AF43533F170F</StringID>
+	<SourceText>Too many login attempts</SourceText>
+	<TargetText>Too many login attempts</TargetText>
+	<Comment>com.fmi.calculation.text.Too many login attempts</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.801354B159B931FF6771083F2ED54D21</StringID>
+	<SourceText>No database name (*)</SourceText>
+	<TargetText>No database name (*)</TargetText>
+	<Comment>com.fmi.calculation.text.No database name (*)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.80781DFDF5A9645A0D96D8EE652FAD0B</StringID>
+	<SourceText>Layout cannot display the result</SourceText>
+	<TargetText>Layout cannot display the result</TargetText>
+	<Comment>com.fmi.calculation.text.Layout cannot display the result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.80AE1A01FC7A0519D5920BACE479D3B5</StringID>
+	<SourceText>The specified name can’t be used</SourceText>
+	<TargetText>The specified name can’t be used</TargetText>
+	<Comment>com.fmi.calculation.text.The specified name can’t be used</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.83B8476E366FF9F0AEF13A7240E7F643</StringID>
+	<SourceText>Combined header and footer exceed one page</SourceText>
+	<TargetText>Combined header and footer exceed one page</TargetText>
+	<Comment>com.fmi.calculation.text.Combined header and footer exceed one page</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.83CF763FBBE8FABD12D94DFEC892BD35</StringID>
+	<SourceText> set local var for return()<CR/></SourceText>
+	<TargetText> set local var for return()<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. set local var for return()_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.843EE753718D537E2FD94F685EEE11DE</StringID>
+	<SourceText>Index is missing</SourceText>
+	<TargetText>Index is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Index is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.84F1EB91C72EA10AD34FDC40370D53D7</StringID>
+	<SourceText> no exception present<CR/></SourceText>
+	<TargetText> no exception present<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. no exception present_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8527F2B140E4FB376B6294D6C0211F90</StringID>
+	<SourceText> default: en<CR/></SourceText>
+	<TargetText> default: en<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. default: en_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.85D0CA39C73C5FE4015C935C79451800</StringID>
+	<SourceText>Error with SSL</SourceText>
+	<TargetText>Error with SSL</TargetText>
+	<Comment>com.fmi.calculation.text.Error with SSL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.86BD8CF139B515C984E29E66D9B33ABB</StringID>
+	<SourceText>Unknown error</SourceText>
+	<TargetText>Unknown error</TargetText>
+	<Comment>com.fmi.calculation.text.Unknown error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.86E98EFAC67BCFB0305B643E099EDE11</StringID>
+	<SourceText>No records in file to print, or password doesn&apos;t allow print access</SourceText>
+	<TargetText>No records in file to print, or password doesn&apos;t allow print access</TargetText>
+	<Comment>com.fmi.calculation.text.No records in file to print, or password doesn&apos;t allow print access</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.873187066CB1C98B09338172D5E451F9</StringID>
+	<SourceText>ODBC client driver initialization failed; make sure the ODBC client drivers are properly installed</SourceText>
+	<TargetText>ODBC client driver initialization failed; make sure the ODBC client drivers are properly installed</TargetText>
+	<Comment>com.fmi.calculation.text.ODBC client driver initialization failed; make sure the ODBC client drivers are properly installed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.88FBC7D7A1381F6B08161D5511C2F646</StringID>
+	<SourceText>Value in field is not within the range specified in validation entry options</SourceText>
+	<TargetText>Value in field is not within the range specified in validation entry options</TargetText>
+	<Comment>com.fmi.calculation.text.Value in field is not within the range specified in validation entry options</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.89EF366328985E290AB1042CB9C370E4</StringID>
+	<SourceText> Error<CR/></SourceText>
+	<TargetText> Error<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. Error_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.89FF71321C44211FBD9DFA5557F81450</StringID>
+	<SourceText>Operator missing, function not found or \&quot;(\&quot; not expected</SourceText>
+	<TargetText>Operator missing, function not found or \&quot;(\&quot; not expected</TargetText>
+	<Comment>com.fmi.calculation.text.Operator missing, function not found or \&quot;(\&quot; not expected</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8A07589B742E38F3945760712DECBDDC</StringID>
+	<SourceText><TAB/>catch FileMaker error<CR/><TAB/><TAB/><TAB/><TAB/>--------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/></SourceText>
+	<TargetText><TAB/>catch FileMaker error<CR/><TAB/><TAB/><TAB/><TAB/>--------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_catch FileMaker error_CR/__TAB/__TAB/__TAB/__TAB/_--------------------------------------------------------------------------_CR/__TAB/__TAB/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8A0E4EF1817616D90AFEBEA344F3739B</StringID>
+	<SourceText>Insufficient privileges</SourceText>
+	<TargetText>Insufficient privileges</TargetText>
+	<Comment>com.fmi.calculation.text.Insufficient privileges</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8ACEDA46F6D737B7564DFAEC9689DD32</StringID>
+	<SourceText>User does not have access privileges to create new records; import will overwrite existing data</SourceText>
+	<TargetText>User does not have access privileges to create new records; import will overwrite existing data</TargetText>
+	<Comment>com.fmi.calculation.text.User does not have access privileges to create new records; import will overwrite existing data</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8B3B14F171A38DB58FCB5C25376EB483</StringID>
+	<SourceText> optional target location, if not set in json </SourceText>
+	<TargetText> optional target location, if not set in json </TargetText>
+	<Comment>com.fmi.calculation.text. optional target location, if not set in json</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8CA3EA98933840D676E38042D43E88EB</StringID>
+	<SourceText>Field requires a valid value</SourceText>
+	<TargetText>Field requires a valid value</TargetText>
+	<Comment>com.fmi.calculation.text.Field requires a valid value</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8D00CCD56A3D1300558323D467F887E4</StringID>
+	<SourceText>Disk/volume is locked</SourceText>
+	<TargetText>Disk/volume is locked</TargetText>
+	<Comment>com.fmi.calculation.text.Disk/volume is locked</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8D261E857A785DA78F635A0B54228D0C</StringID>
+	<SourceText>none</SourceText>
+	<TargetText>none</TargetText>
+	<Comment>com.fmi.calculation.text.none</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8D9EC4A52A7559CF54C8859FDD406B2F</StringID>
+	<SourceText><TAB/>preconditions<CR/><TAB/>    ----------------------------------------------------------------------------------<CR/><TAB/></SourceText>
+	<TargetText><TAB/>preconditions<CR/><TAB/>    ----------------------------------------------------------------------------------<CR/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_preconditions_CR/__TAB/_    ----------------------------------------------------------------------------------_CR/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8E054CA063A6904EE8C763F03294809C</StringID>
+	<SourceText> append to stack<CR/></SourceText>
+	<TargetText> append to stack<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. append to stack_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8F1540B2BF298CB8D7114858BE46CB91</StringID>
+	<SourceText>mbs</SourceText>
+	<TargetText>mbs</TargetText>
+	<Comment>com.fmi.calculation.text.mbs</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.8F8610FE0F8D75A5EDB138DC46286C7F</StringID>
+	<SourceText>Attempt to convert foreign character set to UTF-16 failed</SourceText>
+	<TargetText>Attempt to convert foreign character set to UTF-16 failed</TargetText>
+	<Comment>com.fmi.calculation.text.Attempt to convert foreign character set to UTF-16 failed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.903C36BAA3A11D41162B24253A666B07</StringID>
+	<SourceText>File is locked or in use</SourceText>
+	<TargetText>File is locked or in use</TargetText>
+	<Comment>com.fmi.calculation.text.File is locked or in use</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.90469B6734A970E63EE28BB93E407880</StringID>
+	<SourceText>Cannot load the plug-in or the plug-in is not a valid plug-in</SourceText>
+	<TargetText>Cannot load the plug-in or the plug-in is not a valid plug-in</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot load the plug-in or the plug-in is not a valid plug-in</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.91B1B23FC4F04EBB9C595FA2FC9F4215</StringID>
+	<SourceText><TAB/><TAB/><TAB/><TAB/><TAB/>$SError.json = jsongetelement( result; &quot;SError&quot; );<CR/></SourceText>
+	<TargetText><TAB/><TAB/><TAB/><TAB/><TAB/>$SError.json = jsongetelement( result; &quot;SError&quot; );<CR/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/__TAB/__TAB/__TAB/__TAB/_$SError.json = jsongetelement( result; &quot;SError&quot; );_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9217934928379CBD0DF4FA26BBE8CAA0</StringID>
+	<SourceText>There was an error with SSL</SourceText>
+	<TargetText>There was an error with SSL</TargetText>
+	<Comment>com.fmi.calculation.text.There was an error with SSL</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9286618FE0B2C104A3FBBEC4C6CD20A4</StringID>
+	<SourceText> </SourceText>
+	<TargetText> </TargetText>
+	<Comment>com.fmi.calculation.text.</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.928752A8CF8EA3EE115D5A3B2E31989D</StringID>
+	<SourceText>Erreur</SourceText>
+	<TargetText>Erreur</TargetText>
+	<Comment>com.fmi.calculation.text.Erreur</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9369210A46EB62861634555D1E92CAA2</StringID>
+	<SourceText><TAB/>result is exception object<CR/><TAB/><TAB/><TAB/><TAB/>--------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/></SourceText>
+	<TargetText><TAB/>result is exception object<CR/><TAB/><TAB/><TAB/><TAB/>--------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_result is exception object_CR/__TAB/__TAB/__TAB/__TAB/_--------------------------------------------------------------------------_CR/__TAB/__TAB/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.94223B7AC887277C547D451AAB84D394</StringID>
+	<SourceText>A primary key is required from the data source table</SourceText>
+	<TargetText>A primary key is required from the data source table</TargetText>
+	<Comment>com.fmi.calculation.text.A primary key is required from the data source table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.94721AAE678BF3FAD0C7582D2E6F567B</StringID>
+	<SourceText>json</SourceText>
+	<TargetText>json</TargetText>
+	<Comment>com.fmi.calculation.text.json</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.95E59619C19E79F1FCCE21177F26276E</StringID>
+	<SourceText>Selected field is not a match field for a lookup</SourceText>
+	<TargetText>Selected field is not a match field for a lookup</TargetText>
+	<Comment>com.fmi.calculation.text.Selected field is not a match field for a lookup</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9645853AB3EECE344CEDCC8FA3D596E9</StringID>
+	<SourceText>This file type cannot be displayed as a picture; it will be inserted and displayed as a file</SourceText>
+	<TargetText>This file type cannot be displayed as a picture; it will be inserted and displayed as a file</TargetText>
+	<Comment>com.fmi.calculation.text.This file type cannot be displayed as a picture; it will be inserted and displayed as a file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.96A8AD6328EB70703D77684756ABAC2A</StringID>
+	<SourceText>OK</SourceText>
+	<TargetText>OK</TargetText>
+	<Comment>com.fmi.calculation.text.OK</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9717685F17C7256127E80CBE07743683</StringID>
+	<SourceText>Copier</SourceText>
+	<TargetText>Copier</TargetText>
+	<Comment>com.fmi.calculation.text.Copier</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.974711F9B8B0A922D6EDE4CA9ED96E61</StringID>
+	<SourceText> generic fr<CR/></SourceText>
+	<TargetText> generic fr<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. generic fr_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.988F369E433268537D644333FF98CCBC</StringID>
+	<SourceText>Number value does not meet validation entry options</SourceText>
+	<TargetText>Number value does not meet validation entry options</TargetText>
+	<Comment>com.fmi.calculation.text.Number value does not meet validation entry options</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9A23D715CB10E482E41A8BBB9DAD809F</StringID>
+	<SourceText>Export order is invalid</SourceText>
+	<TargetText>Export order is invalid</TargetText>
+	<Comment>com.fmi.calculation.text.Export order is invalid</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9AE669C1D4C6AA73F65CB2AB436CBCDC</StringID>
+	<SourceText>SError.type</SourceText>
+	<TargetText>SError.type</TargetText>
+	<Comment>com.fmi.calculation.text.SError.type</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9B388F920400F9C43C95220D23FAAAC1</StringID>
+	<SourceText>A SQL query using DELETE, INSERT, or UPDATE is not allowed for ODBC import</SourceText>
+	<TargetText>A SQL query using DELETE, INSERT, or UPDATE is not allowed for ODBC import</TargetText>
+	<Comment>com.fmi.calculation.text.A SQL query using DELETE, INSERT, or UPDATE is not allowed for ODBC import</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9B94B274877FF94D493C6239A6DA815F</StringID>
+	<SourceText> FileMaker automatically<CR/></SourceText>
+	<TargetText> FileMaker automatically<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. FileMaker automatically_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9C56B181438812D295482717AF055CFB</StringID>
+	<SourceText>File is single user or host cannot be found</SourceText>
+	<TargetText>File is single user or host cannot be found</TargetText>
+	<Comment>com.fmi.calculation.text.File is single user or host cannot be found</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9CA7DD6A5BDF6A92971ECE123498B64C</StringID>
+	<SourceText>Specified field has inappropriate data type for this operation</SourceText>
+	<TargetText>Specified field has inappropriate data type for this operation</TargetText>
+	<Comment>com.fmi.calculation.text.Specified field has inappropriate data type for this operation</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9D75A187A4C652976ED3D02021466D64</StringID>
+	<SourceText>You do not have permission to add records to the target table</SourceText>
+	<TargetText>You do not have permission to add records to the target table</TargetText>
+	<Comment>com.fmi.calculation.text.You do not have permission to add records to the target table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9D77D69F6E3D2B1E9583CEA1E77C2827</StringID>
+	<SourceText>Value in field is not listed on the value list specified in validation entry option</SourceText>
+	<TargetText>Value in field is not listed on the value list specified in validation entry option</TargetText>
+	<Comment>com.fmi.calculation.text.Value in field is not listed on the value list specified in validation entry option</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9D896485CE186CEB127FEC4C4C092C70</StringID>
+	<SourceText>Data type must be number, date, time, or timestamp</SourceText>
+	<TargetText>Data type must be number, date, time, or timestamp</TargetText>
+	<Comment>com.fmi.calculation.text.Data type must be number, date, time, or timestamp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9DD44ECB65699F374B9A99FE52D49D60</StringID>
+	<SourceText>mbs¶be</SourceText>
+	<TargetText>mbs¶be</TargetText>
+	<Comment>com.fmi.calculation.text.mbs¶be</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9E6AB5C2F14F8EF1F5F896697FCFBA59</StringID>
+	<SourceText>Data source is missing</SourceText>
+	<TargetText>Data source is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Data source is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9E99BA95AD425ACCD424BAA34A4749D8</StringID>
+	<SourceText>Dialog.Reset</SourceText>
+	<TargetText>Dialog.Reset</TargetText>
+	<Comment>com.fmi.calculation.text.Dialog.Reset</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9EFB70EFC312E80436C7669E288B99A6</StringID>
+	<SourceText>Failed to allocate connection (ODBC)</SourceText>
+	<TargetText>Failed to allocate connection (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Failed to allocate connection (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.9F1DF5B3AE7F9FC5DA86F7D1335863B0</StringID>
+	<SourceText>Invalid user account and/or password; please try again</SourceText>
+	<TargetText>Invalid user account and/or password; please try again</TargetText>
+	<Comment>com.fmi.calculation.text.Invalid user account and/or password; please try again</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A00F15BCC874EF0CEC462583AC5459B8</StringID>
+	<SourceText>Error when exporting; intended format does not support repeating fields</SourceText>
+	<TargetText>Error when exporting; intended format does not support repeating fields</TargetText>
+	<Comment>com.fmi.calculation.text.Error when exporting; intended format does not support repeating fields</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A06459C341D2E1E1A97D6DFBC13D09E1</StringID>
+	<SourceText>Body doesn&apos;t fit on a page for current column setup</SourceText>
+	<TargetText>Body doesn&apos;t fit on a page for current column setup</TargetText>
+	<Comment>com.fmi.calculation.text.Body doesn&apos;t fit on a page for current column setup</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A0A84A754B306B405BB0C2C295566868</StringID>
+	<SourceText>Only Summary fields allowed as first argument in GETSUMMARY</SourceText>
+	<TargetText>Only Summary fields allowed as first argument in GETSUMMARY</TargetText>
+	<Comment>com.fmi.calculation.text.Only Summary fields allowed as first argument in GETSUMMARY</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A0C95D6EE27455DF39C6943635FAA681</StringID>
+	<SourceText>This parameter is an invalid Get function parameter</SourceText>
+	<TargetText>This parameter is an invalid Get function parameter</TargetText>
+	<Comment>com.fmi.calculation.text.This parameter is an invalid Get function parameter</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A1D7C1E91B54F0B7295CA0871AE18AB6</StringID>
+	<SourceText><TAB/>main<CR/><TAB/>    ----------------------------------------------------------------------------------<CR/><TAB/></SourceText>
+	<TargetText><TAB/>main<CR/><TAB/>    ----------------------------------------------------------------------------------<CR/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_main_CR/__TAB/_    ----------------------------------------------------------------------------------_CR/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A1E28593F908B2B6A7759638F23F5739</StringID>
+	<SourceText>Cannot evaluate the number</SourceText>
+	<TargetText>Cannot evaluate the number</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot evaluate the number</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A2030D0D08EB36C894A7CEC4A8CC667D</StringID>
+	<SourceText>Connection failed</SourceText>
+	<TargetText>Connection failed</TargetText>
+	<Comment>com.fmi.calculation.text.Connection failed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A2CCFEA3FF9298E59B387BA2A68F6FF2</StringID>
+	<SourceText>One of the parameters of the function being imported or pasted has the same name as a function already in the file</SourceText>
+	<TargetText>One of the parameters of the function being imported or pasted has the same name as a function already in the file</TargetText>
+	<Comment>com.fmi.calculation.text.One of the parameters of the function being imported or pasted has the same name as a function already in the file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A369686DDFFBB875F0F0A4B08BAE64C0</StringID>
+	<SourceText>Dialog.GetButtonPressed</SourceText>
+	<TargetText>Dialog.GetButtonPressed</TargetText>
+	<Comment>com.fmi.calculation.text.Dialog.GetButtonPressed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A3C808284BA2715DE2457FE972D4A013</StringID>
+	<SourceText>{\&quot;SError\&quot;:{</SourceText>
+	<TargetText>{\&quot;SError\&quot;:{</TargetText>
+	<Comment>com.fmi.calculation.text.{\&quot;SError\&quot;:{</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A4F4327936FDFC9DB44F317E1CDA4B70</StringID>
+	<SourceText> <TAB/><TAB/><TAB/><TAB/><TAB/><TAB/>params = ZeichenRechts( _code; Länge(_code-18));<CR/></SourceText>
+	<TargetText> <TAB/><TAB/><TAB/><TAB/><TAB/><TAB/>params = ZeichenRechts( _code; Länge(_code-18));<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. _TAB/__TAB/__TAB/__TAB/__TAB/__TAB/_params = ZeichenRechts( _code; Länge(_code-18));_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A62FE5186353ED80C64845F8D4EE1479</StringID>
+	<SourceText>This variable has already been defined in the Let function</SourceText>
+	<TargetText>This variable has already been defined in the Let function</TargetText>
+	<Comment>com.fmi.calculation.text.This variable has already been defined in the Let function</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A7EBAB63BB9600B9FED882545A03307C</StringID>
+	<SourceText>FileMaker</SourceText>
+	<TargetText>FileMaker</TargetText>
+	<Comment>com.fmi.calculation.text.FileMaker</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.A92622EED03DA8203CD5ECA8121B5DF9</StringID>
+	<SourceText> Mac<CR/></SourceText>
+	<TargetText> Mac<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. Mac_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ABAF7F90CA55C977743676A8B1545DDB</StringID>
+	<SourceText>: </SourceText>
+	<TargetText>: </TargetText>
+	<Comment>com.fmi.calculation.text.:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ABC79AF9CBC33D5896C7EBF41641F307</StringID>
+	<SourceText>Function referred to is not supported in this context</SourceText>
+	<TargetText>Function referred to is not supported in this context</TargetText>
+	<Comment>com.fmi.calculation.text.Function referred to is not supported in this context</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ABF6BD7B0C16B7E94CB2ACACDA153968</StringID>
+	<SourceText> end stack = ...<CR/></SourceText>
+	<TargetText> end stack = ...<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. end stack = ..._CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AC00951A9EA5FC07C9FDE9EDF0E5E816</StringID>
+	<SourceText> process exception<CR/></SourceText>
+	<TargetText> process exception<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. process exception_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AC6E31EF00DD4F71EDDA0FB2F6A5C5FF</StringID>
+	<SourceText>ScriptPrivileges: </SourceText>
+	<TargetText>ScriptPrivileges: </TargetText>
+	<Comment>com.fmi.calculation.text.ScriptPrivileges:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ACA4C3785A35E74A6E35536999D5A4FC</StringID>
+	<SourceText>Client must provide account information to proceed</SourceText>
+	<TargetText>Client must provide account information to proceed</TargetText>
+	<Comment>com.fmi.calculation.text.Client must provide account information to proceed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ACA5337DCA3DE218533E907E896F0564</StringID>
+	<SourceText>file</SourceText>
+	<TargetText>file</TargetText>
+	<Comment>com.fmi.calculation.text.file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AD48A8639F7272B344B8D14BFC9FC938</StringID>
+	<SourceText> (Server)</SourceText>
+	<TargetText> (Server)</TargetText>
+	<Comment>com.fmi.calculation.text. (Server)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AD6A14AFA703CC82B9CEC93A69F39F86</StringID>
+	<SourceText>Running out of memory</SourceText>
+	<TargetText>Running out of memory</TargetText>
+	<Comment>com.fmi.calculation.text.Running out of memory</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ADBEEF139F08658221D237906C0DC23F</StringID>
+	<SourceText>_</SourceText>
+	<TargetText>_</TargetText>
+	<Comment>com.fmi.calculation.text._</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ADDAE471579F7D1E6691534D8A87FF3F</StringID>
+	<SourceText>SError.message</SourceText>
+	<TargetText>SError.message</TargetText>
+	<Comment>com.fmi.calculation.text.SError.message</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ADE943FAF4EDD1B065EB1D540E1EBC67</StringID>
+	<SourceText>Specified Excel worksheet or named range is missing</SourceText>
+	<TargetText>Specified Excel worksheet or named range is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Specified Excel worksheet or named range is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AF0B077B3A1CECF83FCD9766178DA7F8</StringID>
+	<SourceText>You do not have permission to add records to or modify records in the target table</SourceText>
+	<TargetText>You do not have permission to add records to or modify records in the target table</TargetText>
+	<Comment>com.fmi.calculation.text.You do not have permission to add records to or modify records in the target table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AF57223E36CDC7BFCE5B62C3BEBA0337</StringID>
+	<SourceText>Error</SourceText>
+	<TargetText>Error</TargetText>
+	<Comment>com.fmi.calculation.text.Error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.AF883124ABF61C8CFB666CAF69E1CC8F</StringID>
+	<SourceText>Error in parsing XML file (from Xerces)</SourceText>
+	<TargetText>Error in parsing XML file (from Xerces)</TargetText>
+	<Comment>com.fmi.calculation.text.Error in parsing XML file (from Xerces)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B01E6316E6E50D81C0374FFD16732279</StringID>
+	<SourceText>Unable to open file. (Invalid database name, File is closed in FileMaker Server, Invalid permission)</SourceText>
+	<TargetText>Unable to open file. (Invalid database name, File is closed in FileMaker Server, Invalid permission)</TargetText>
+	<Comment>com.fmi.calculation.text.Unable to open file. (Invalid database name, File is closed in FileMaker Server, Invalid permission)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B115B7CCCA8CB9F059B898229B4EF967</StringID>
+	<SourceText>One or both match fields are missing (invalid relationship)</SourceText>
+	<TargetText>One or both match fields are missing (invalid relationship)</TargetText>
+	<Comment>com.fmi.calculation.text.One or both match fields are missing (invalid relationship)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B116CF48EC8B21083A856BCB0EC7EB92</StringID>
+	<SourceText>Replace/Reserialize criteria are invalid</SourceText>
+	<TargetText>Replace/Reserialize criteria are invalid</TargetText>
+	<Comment>com.fmi.calculation.text.Replace/Reserialize criteria are invalid</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B5B5001A9D5373A4B763BE81CDB31919</StringID>
+	<SourceText> check for FileMaker error<CR/></SourceText>
+	<TargetText> check for FileMaker error<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. check for FileMaker error_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B5E9C4EA38BBD43C3159A164B46384AE</StringID>
+	<SourceText>Comment is not terminated with \&quot;*/\&quot;</SourceText>
+	<TargetText>Comment is not terminated with \&quot;*/\&quot;</TargetText>
+	<Comment>com.fmi.calculation.text.Comment is not terminated with \&quot;*/\&quot;</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B694923DDD35EF5F006B2784CC2B9EF0</StringID>
+	<SourceText>No access to field(s) in sort order</SourceText>
+	<TargetText>No access to field(s) in sort order</TargetText>
+	<Comment>com.fmi.calculation.text.No access to field(s) in sort order</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B6EAD4150404C39B33973058C23B181F</StringID>
+	<SourceText>Specified authentication is not supported by SMTP server</SourceText>
+	<TargetText>Specified authentication is not supported by SMTP server</TargetText>
+	<Comment>com.fmi.calculation.text.Specified authentication is not supported by SMTP server</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B7607D8D7D27A88D445778DE9A8D143C</StringID>
+	<SourceText>File(s) cannot be opened because maximum number is open</SourceText>
+	<TargetText>File(s) cannot be opened because maximum number is open</TargetText>
+	<Comment>com.fmi.calculation.text.File(s) cannot be opened because maximum number is open</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B78F522A5229D59458B921DC327C58B0</StringID>
+	<SourceText>Record modification ID does not match</SourceText>
+	<TargetText>Record modification ID does not match</TargetText>
+	<Comment>com.fmi.calculation.text.Record modification ID does not match</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B919D4154C82783A4ADFF5978C4F10D3</StringID>
+	<SourceText>F1</SourceText>
+	<TargetText>F1</TargetText>
+	<Comment>com.fmi.calculation.text.F1</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.B97BC34D5FDE4B366D34F8142B9948D2</StringID>
+	<SourceText>User account is inactive</SourceText>
+	<TargetText>User account is inactive</TargetText>
+	<Comment>com.fmi.calculation.text.User account is inactive</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BA3845E8DDD6B6C4BA754B3EC756FD0D</StringID>
+	<SourceText>Message: </SourceText>
+	<TargetText>Message: </TargetText>
+	<Comment>com.fmi.calculation.text.Message:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BA6E1BBF0C95357A8D3AE7BFA1EAC9CC</StringID>
+	<SourceText>File is of the wrong file type for import</SourceText>
+	<TargetText>File is of the wrong file type for import</TargetText>
+	<Comment>com.fmi.calculation.text.File is of the wrong file type for import</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BB913F5B2D7B4A71021A60A0609D8C3D</StringID>
+	<SourceText>Cannot install the plug-in. Cannot delete an existing plug-in or cannot write to the folder or disk</SourceText>
+	<TargetText>Cannot install the plug-in. Cannot delete an existing plug-in or cannot write to the folder or disk</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot install the plug-in. Cannot delete an existing plug-in or cannot write to the folder or disk</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BBE65D1A313724917248E7BBB716C698</StringID>
+	<SourceText>--version</SourceText>
+	<TargetText>--version</TargetText>
+	<Comment>com.fmi.calculation.text.--version</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BCE693EB57A0F8820191ED9ED65B3A8D</StringID>
+	<SourceText>Path is not valid for the operating system</SourceText>
+	<TargetText>Path is not valid for the operating system</TargetText>
+	<Comment>com.fmi.calculation.text.Path is not valid for the operating system</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BD3ECC5DEC55DBEB8D80F05BBFC0399C</StringID>
+	<SourceText>QuickTime movie import failed</SourceText>
+	<TargetText>QuickTime movie import failed</TargetText>
+	<Comment>com.fmi.calculation.text.QuickTime movie import failed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BD559E60A331B73BDA3518A41CFB6C41</StringID>
+	<SourceText>One or more required related records are not available</SourceText>
+	<TargetText>One or more required related records are not available</TargetText>
+	<Comment>com.fmi.calculation.text.One or more required related records are not available</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BD714101D57550B7A7C23F9EA6B61D13</StringID>
+	<SourceText>location</SourceText>
+	<TargetText>location</TargetText>
+	<Comment>com.fmi.calculation.text.location</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.BD89B0F8193F8C54FE2F8A873FED1D93</StringID>
+	<SourceText>)</SourceText>
+	<TargetText>)</TargetText>
+	<Comment>com.fmi.calculation.text.)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C0DBF4EBABAA619D72DBB2DC1C47CCB4</StringID>
+	<SourceText>File is in the process of being closed</SourceText>
+	<TargetText>File is in the process of being closed</TargetText>
+	<Comment>com.fmi.calculation.text.File is in the process of being closed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C0ECA762CFAE0BAD1276FA72D04BEA23</StringID>
+	<SourceText>Conflicting commands (*)</SourceText>
+	<TargetText>Conflicting commands (*)</TargetText>
+	<Comment>com.fmi.calculation.text.Conflicting commands (*)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C101359DD858001DB6DDB1E934F1DB19</StringID>
+	<SourceText> set class<CR/></SourceText>
+	<TargetText> set class<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. set class_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C129442A2C1D7B3EBFA7449CBB5DB0F6</StringID>
+	<SourceText>SError</SourceText>
+	<TargetText>SError</TargetText>
+	<Comment>com.fmi.calculation.text.SError</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C15459EDECA80FA010E6E6EE978E27FA</StringID>
+	<SourceText>Host forced a disconnect</SourceText>
+	<TargetText>Host forced a disconnect</TargetText>
+	<Comment>com.fmi.calculation.text.Host forced a disconnect</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C16AF546144EC3037148E0CE0EFFE0E8</StringID>
+	<SourceText>Unable to create temporary file on System disk</SourceText>
+	<TargetText>Unable to create temporary file on System disk</TargetText>
+	<Comment>com.fmi.calculation.text.Unable to create temporary file on System disk</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C16B4C41FDA2520E42989EEDED77A718</StringID>
+	<SourceText>Class: </SourceText>
+	<TargetText>Class: </TargetText>
+	<Comment>com.fmi.calculation.text.Class:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C16CD68111237B3FF41CF68D959B1693</StringID>
+	<SourceText>Couldn&apos;t open lookup file</SourceText>
+	<TargetText>Couldn&apos;t open lookup file</TargetText>
+	<Comment>com.fmi.calculation.text.Couldn&apos;t open lookup file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C1C05F0CDE20AC64BF7B8E15C319831F</StringID>
+	<SourceText>Invalid value entered in Find mode</SourceText>
+	<TargetText>Invalid value entered in Find mode</TargetText>
+	<Comment>com.fmi.calculation.text.Invalid value entered in Find mode</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C1E9A10AADCDDAA25B4851C1127CC1DB</StringID>
+	<SourceText>Field cannot be modified</SourceText>
+	<TargetText>Field cannot be modified</TargetText>
+	<Comment>com.fmi.calculation.text.Field cannot be modified</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C201F7FB0AF89C09C6CAC23E21E57EB5</StringID>
+	<SourceText>String contains characters other than A-Z, a-z, 0-9 (ASCII)</SourceText>
+	<TargetText>String contains characters other than A-Z, a-z, 0-9 (ASCII)</TargetText>
+	<Comment>com.fmi.calculation.text.String contains characters other than A-Z, a-z, 0-9 (ASCII)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C260B5D13A27B990EA01B5736A4B37B2</StringID>
+	<SourceText>-2</SourceText>
+	<TargetText>-2</TargetText>
+	<Comment>com.fmi.calculation.text.-2</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C293664F41138F3DEF6710110266C917</StringID>
+	<SourceText>Function referred to does not exist</SourceText>
+	<TargetText>Function referred to does not exist</TargetText>
+	<Comment>com.fmi.calculation.text.Function referred to does not exist</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C3ACA556585FCC94B0CAD560F3D17390</StringID>
+	<SourceText>An operator (for example, +, -, *) is expected here</SourceText>
+	<TargetText>An operator (for example, +, -, *) is expected here</TargetText>
+	<Comment>com.fmi.calculation.text.An operator (for example, +, -, *) is expected here</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C4C3BB6D9A96395C8758FAF38D700BE3</StringID>
+	<SourceText>Unexpected end of calculation</SourceText>
+	<TargetText>Unexpected end of calculation</TargetText>
+	<Comment>com.fmi.calculation.text.Unexpected end of calculation</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C56A69A3751C10327751DC4CAA924D29</StringID>
+	<SourceText>Specified field has inappropriate field type</SourceText>
+	<TargetText>Specified field has inappropriate field type</TargetText>
+	<Comment>com.fmi.calculation.text.Specified field has inappropriate field type</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C69770333D74C80A0B80503D30A2DA0D</StringID>
+	<SourceText> MBS<CR/></SourceText>
+	<TargetText> MBS<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. MBS_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C6BC24142997B4E3BBA095D9A9762F82</StringID>
+	<SourceText>Too few parameters in the function</SourceText>
+	<TargetText>Too few parameters in the function</TargetText>
+	<Comment>com.fmi.calculation.text.Too few parameters in the function</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C6C94F2A52293302412C6D58F8B67E7C</StringID>
+	<SourceText>Code: </SourceText>
+	<TargetText>Code: </TargetText>
+	<Comment>com.fmi.calculation.text.Code:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C7019A64A3469A0738929386665D03C5</StringID>
+	<SourceText>Password and verify password do not match</SourceText>
+	<TargetText>Password and verify password do not match</TargetText>
+	<Comment>com.fmi.calculation.text.Password and verify password do not match</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.C7D417948237DABC2469E8E64F441DAD</StringID>
+	<SourceText>You do not have permission to modify records in the target table</SourceText>
+	<TargetText>You do not have permission to modify records in the target table</TargetText>
+	<Comment>com.fmi.calculation.text.You do not have permission to modify records in the target table</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CAF925C0F6CA25D3A96F84D48240448A</StringID>
+	<SourceText>filename</SourceText>
+	<TargetText>filename</TargetText>
+	<Comment>com.fmi.calculation.text.filename</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CB30F33E35A21CB0CB771EA4203A9558</StringID>
+	<SourceText> fr<CR/></SourceText>
+	<TargetText> fr<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. fr_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CC8397F74C25B51D2806C56DA6383865</StringID>
+	<SourceText> from parameter<CR/></SourceText>
+	<TargetText> from parameter<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. from parameter_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CD1E36C7F50F79F25C84E36230B86FDD</StringID>
+	<SourceText>General spelling engine error</SourceText>
+	<TargetText>General spelling engine error</TargetText>
+	<Comment>com.fmi.calculation.text.General spelling engine error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CDA3BBB4B67AE92BEEFE4C1128EB7D67</StringID>
+	<SourceText>Date value does not meet validation entry options</SourceText>
+	<TargetText>Date value does not meet validation entry options</TargetText>
+	<Comment>com.fmi.calculation.text.Date value does not meet validation entry options</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CE59BF120B99010E5574F81FF1BF0D71</StringID>
+	<SourceText>Fehler</SourceText>
+	<TargetText>Fehler</TargetText>
+	<Comment>com.fmi.calculation.text.Fehler</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CF30BC1D6677C293FD6BA7CEBC6BB797</StringID>
+	<SourceText>FMI files not found; reinstall missing files</SourceText>
+	<TargetText>FMI files not found; reinstall missing files</TargetText>
+	<Comment>com.fmi.calculation.text.FMI files not found; reinstall missing files</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CF636D7D353051ABE07C85E5547EDA64</StringID>
+	<SourceText>Copiar</SourceText>
+	<TargetText>Copiar</TargetText>
+	<Comment>com.fmi.calculation.text.Copiar</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.CF8EE14FB5F1716F925DEA66054F7CDC</StringID>
+	<SourceText>Unknown error occurred in the parser or the transformer</SourceText>
+	<TargetText>Unknown error occurred in the parser or the transformer</TargetText>
+	<Comment>com.fmi.calculation.text.Unknown error occurred in the parser or the transformer</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D1658DA07CBF7B61687719C45A3A8226</StringID>
+	<SourceText>Errors occurred during import; records could not be imported</SourceText>
+	<TargetText>Errors occurred during import; records could not be imported</TargetText>
+	<Comment>com.fmi.calculation.text.Errors occurred during import; records could not be imported</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D31241474E6A2DACB3EC64E24BAE97BD</StringID>
+	<SourceText>Failed to allocate environment (ODBC)</SourceText>
+	<TargetText>Failed to allocate environment (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Failed to allocate environment (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D368224758B103B0BB2EFF5175339335</StringID>
+	<SourceText>]</SourceText>
+	<TargetText>]</TargetText>
+	<Comment>com.fmi.calculation.text.]</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D7436BDFBCFF836A902433E74373158F</StringID>
+	<SourceText> else as is<CR/></SourceText>
+	<TargetText> else as is<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. else as is_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D8052B779CB777E92D4D68552F01A8AC</StringID>
+	<SourceText>Command is unavailable (for example, wrong operating system, wrong mode, etc.)</SourceText>
+	<TargetText>Command is unavailable (for example, wrong operating system, wrong mode, etc.)</TargetText>
+	<Comment>com.fmi.calculation.text.Command is unavailable (for example, wrong operating system, wrong mode, etc.)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D8663231582DBD00FD4EB0CBA7327B64</StringID>
+	<SourceText>Action requires that current file be remote</SourceText>
+	<TargetText>Action requires that current file be remote</TargetText>
+	<Comment>com.fmi.calculation.text.Action requires that current file be remote</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D8E50C0EA850A692526543B724FE1DEA</StringID>
+	<SourceText> return exception object result<CR/></SourceText>
+	<TargetText> return exception object result<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. return exception object result_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D8FBA7877A65FE2766E55B3F5441D4C9</StringID>
+	<SourceText>--to-string</SourceText>
+	<TargetText>--to-string</TargetText>
+	<Comment>com.fmi.calculation.text.--to-string</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D8FE49537370704A74E1C3DF5A146DB8</StringID>
+	<SourceText>File is damaged; use Recover command</SourceText>
+	<TargetText>File is damaged; use Recover command</TargetText>
+	<Comment>com.fmi.calculation.text.File is damaged; use Recover command</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D915E9D922EE86E674EE6F5697857E98</StringID>
+	<SourceText>EPSF file has no preview image</SourceText>
+	<TargetText>EPSF file has no preview image</TargetText>
+	<Comment>com.fmi.calculation.text.EPSF file has no preview image</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D91AB5D9E4E6A95DA89FB581700FFD48</StringID>
+	<SourceText>Connection timed out; the timeout value is 60 seconds</SourceText>
+	<TargetText>Connection timed out; the timeout value is 60 seconds</TargetText>
+	<Comment>com.fmi.calculation.text.Connection timed out; the timeout value is 60 seconds</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D920BC932EE3F9B70AD00DD2DE0E7ED4</StringID>
+	<SourceText>Clipboard.SetText</SourceText>
+	<TargetText>Clipboard.SetText</TargetText>
+	<Comment>com.fmi.calculation.text.Clipboard.SetText</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.D9D84870C8114BA5720946FBA2CC8042</StringID>
+	<SourceText>SError.stack[0]</SourceText>
+	<TargetText>SError.stack[0]</TargetText>
+	<Comment>com.fmi.calculation.text.SError.stack[0]</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DA94C1AC8AC7EBACE8C320C5EAC1EDBC</StringID>
+	<SourceText>AccountPrivileges: </SourceText>
+	<TargetText>AccountPrivileges: </TargetText>
+	<Comment>com.fmi.calculation.text.AccountPrivileges:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DAB44AE3A7729E0B92241B648DE4501A</StringID>
+	<SourceText>--get-env</SourceText>
+	<TargetText>--get-env</TargetText>
+	<Comment>com.fmi.calculation.text.--get-env</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DC3AB9597239DC46C6D81B5FF4FDA14C</StringID>
+	<SourceText>Database is not a supported data source</SourceText>
+	<TargetText>Database is not a supported data source</TargetText>
+	<Comment>com.fmi.calculation.text.Database is not a supported data source</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DC6120EA40F5159F01838E11FD3B45D2</StringID>
+	<SourceText>Error¶Error¶Warning¶Info¶Info</SourceText>
+	<TargetText>Error¶Error¶Warning¶Info¶Info</TargetText>
+	<Comment>com.fmi.calculation.text.Error¶Error¶Warning¶Info¶Info</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DD118B4523B91D35A77943B3D5C3D9C1</StringID>
+	<SourceText><TAB/>return version<CR/><TAB/>    ----------------------------------------------------------------------------------<CR/><TAB/></SourceText>
+	<TargetText><TAB/>return version<CR/><TAB/>    ----------------------------------------------------------------------------------<CR/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_return version_CR/__TAB/_    ----------------------------------------------------------------------------------_CR/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DD895F8B343A5F90F7B0FA237C7A805E</StringID>
+	<SourceText>Cannot open file because access privileges are damaged</SourceText>
+	<TargetText>Cannot open file because access privileges are damaged</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot open file because access privileges are damaged</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DF5DDED9D6E5410C31EA2A1C99A65922</StringID>
+	<SourceText>AVERAGE, COUNT, EXTEND, GETREPETITION, MAX, MIN, NPV, STDEV, SUM and GETSUMMARY: expression found where a field alone is needed</SourceText>
+	<TargetText>AVERAGE, COUNT, EXTEND, GETREPETITION, MAX, MIN, NPV, STDEV, SUM and GETSUMMARY: expression found where a field alone is needed</TargetText>
+	<Comment>com.fmi.calculation.text.AVERAGE, COUNT, EXTEND, GETREPETITION, MAX, MIN, NPV, STDEV, SUM and GETSUMMARY: expression found where a field alone is needed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.DFF68FB7893692AE58CEFD56FFC2C2F2</StringID>
+	<SourceText>Transaction could not be locked because of a communication error with the host</SourceText>
+	<TargetText>Transaction could not be locked because of a communication error with the host</TargetText>
+	<Comment>com.fmi.calculation.text.Transaction could not be locked because of a communication error with the host</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E003573A11BF94A88E449F248EDD2777</StringID>
+	<SourceText>File is not authorized to reference the protected file</SourceText>
+	<TargetText>File is not authorized to reference the protected file</TargetText>
+	<Comment>com.fmi.calculation.text.File is not authorized to reference the protected file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E03F64C98665A02F535670F75D3B0C12</StringID>
+	<SourceText>There are more records in the target table than in the import file; not all records were updated</SourceText>
+	<TargetText>There are more records in the target table than in the import file; not all records were updated</TargetText>
+	<Comment>com.fmi.calculation.text.There are more records in the target table than in the import file; not all records were updated</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E04BF685848FFCDAC19E8DBC55325EC8</StringID>
+	<SourceText>Failed to free environment (ODBC)</SourceText>
+	<TargetText>Failed to free environment (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Failed to free environment (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E0A4149059BD75046F634BB74A3D5487</StringID>
+	<SourceText>Field access is denied</SourceText>
+	<TargetText>Field access is denied</TargetText>
+	<Comment>com.fmi.calculation.text.Field access is denied</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E0A64493BD1ED1BA1AB196BE70BECE68</StringID>
+	<SourceText>Bento table you are importing is missing</SourceText>
+	<TargetText>Bento table you are importing is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Bento table you are importing is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E1AA858D254EEE5E0A73E8F45A10473F</StringID>
+	<SourceText> export records as Excel, preferably to tmp folder </SourceText>
+	<TargetText> export records as Excel, preferably to tmp folder </TargetText>
+	<Comment>com.fmi.calculation.text. export records as Excel, preferably to tmp folder</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E23630256EFA02764F7F6B3EB58EE31A</StringID>
+	<SourceText>SQL statement is too long</SourceText>
+	<TargetText>SQL statement is too long</TargetText>
+	<Comment>com.fmi.calculation.text.SQL statement is too long</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E2A6A4888939BACC41B068389A20FD7C</StringID>
+	<SourceText> check available plugins<CR/></SourceText>
+	<TargetText> check available plugins<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. check available plugins_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E2F7CB57CE4091697C35418C06612A45</StringID>
+	<SourceText>User does not have password change privileges, or file is not modifiable</SourceText>
+	<TargetText>User does not have password change privileges, or file is not modifiable</TargetText>
+	<Comment>com.fmi.calculation.text.User does not have password change privileges, or file is not modifiable</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E3296E328DEE8E2E784B8FCC4836D4F5</StringID>
+	<SourceText>User dictionary cannot be loaded for editing</SourceText>
+	<TargetText>User dictionary cannot be loaded for editing</TargetText>
+	<Comment>com.fmi.calculation.text.User dictionary cannot be loaded for editing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E35EDDFE2661529E6961095D5DC709E7</StringID>
+	<SourceText>This file cannot be inserted because it contains other files</SourceText>
+	<TargetText>This file cannot be inserted because it contains other files</TargetText>
+	<Comment>com.fmi.calculation.text.This file cannot be inserted because it contains other files</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E4390EB627E0EF7A50AA60230C7C1F12</StringID>
+	<SourceText>1</SourceText>
+	<TargetText>1</TargetText>
+	<Comment>com.fmi.calculation.text.1</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E4BBF8090A32EB9D3D9A50E084D66C29</StringID>
+	<SourceText>Requested data is missing</SourceText>
+	<TargetText>Requested data is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Requested data is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E507ABD821FD0F5D8A66EDD14363B3B2</StringID>
+	<SourceText>Error in transforming XML using XSL (from Xalan)</SourceText>
+	<TargetText>Error in transforming XML using XSL (from Xalan)</TargetText>
+	<Comment>com.fmi.calculation.text.Error in transforming XML using XSL (from Xalan)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E51AEABCFA2337B65F28CC01F0D58973</StringID>
+	<SourceText>Value in field failed calculation test of validation entry option</SourceText>
+	<TargetText>Value in field failed calculation test of validation entry option</TargetText>
+	<Comment>com.fmi.calculation.text.Value in field failed calculation test of validation entry option</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E5BE1AB5DD5875C7B96F2CFEF1EDEE2E</StringID>
+	<SourceText>German</SourceText>
+	<TargetText>German</TargetText>
+	<Comment>com.fmi.calculation.text.German</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E5D39055C8E44B1BD5C88E7B71D5FBAD</StringID>
+	<SourceText>Text constant must end with a quotation mark</SourceText>
+	<TargetText>Text constant must end with a quotation mark</TargetText>
+	<Comment>com.fmi.calculation.text.Text constant must end with a quotation mark</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E5F04B2935AD804FB3522BFEFF311803</StringID>
+	<SourceText>Cannot delete an external file from disk</SourceText>
+	<TargetText>Cannot delete an external file from disk</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot delete an external file from disk</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E699D0169FAF485466A5C683764BD35D</StringID>
+	<SourceText>Number, text constant, field name or \&quot;(\&quot; expected</SourceText>
+	<TargetText>Number, text constant, field name or \&quot;(\&quot; expected</TargetText>
+	<Comment>com.fmi.calculation.text.Number, text constant, field name or \&quot;(\&quot; expected</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E6A21D8D46BD4F50B91312A24529E36D</StringID>
+	<SourceText>Function is missing</SourceText>
+	<TargetText>Function is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Function is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E7176E494F6C9081B212D2F720138803</StringID>
+	<SourceText>Layout is in use by another user</SourceText>
+	<TargetText>Layout is in use by another user</TargetText>
+	<Comment>com.fmi.calculation.text.Layout is in use by another user</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E787FDB029100D6A540DE83BF699C57E</StringID>
+	<SourceText>parameter</SourceText>
+	<TargetText>parameter</TargetText>
+	<Comment>com.fmi.calculation.text.parameter</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E79D19AB1E1BF4BA0501AC5760C1A425</StringID>
+	<SourceText>Name is not valid</SourceText>
+	<TargetText>Name is not valid</TargetText>
+	<Comment>com.fmi.calculation.text.Name is not valid</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E7E116D7C813DC3F666F4A0497036BC3</StringID>
+	<SourceText>Unable to log in to the SMTP server</SourceText>
+	<TargetText>Unable to log in to the SMTP server</TargetText>
+	<Comment>com.fmi.calculation.text.Unable to log in to the SMTP server</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E88ACFC73FBE9BB543B30611350E78B3</StringID>
+	<SourceText>CF_UNICODETEXT</SourceText>
+	<TargetText>CF_UNICODETEXT</TargetText>
+	<Comment>com.fmi.calculation.text.CF_UNICODETEXT</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E8C060C08022CC2DF8575F21927550EB</StringID>
+	<SourceText>User dictionary cannot be found</SourceText>
+	<TargetText>User dictionary cannot be found</TargetText>
+	<Comment>com.fmi.calculation.text.User dictionary cannot be found</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E8DA2AE9F6922726AFD342F30BFE7FEC</StringID>
+	<SourceText> number, file, script<CR/></SourceText>
+	<TargetText> number, file, script<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. number, file, script_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E92876D95BA7D2E3E75FD62BA3586B70</StringID>
+	<SourceText>Table is missing</SourceText>
+	<TargetText>Table is missing</TargetText>
+	<Comment>com.fmi.calculation.text.Table is missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.E9E9D4EA37BA97D75B90463696018F83</StringID>
+	<SourceText>Function referred to is not yet implemented</SourceText>
+	<TargetText>Function referred to is not yet implemented</TargetText>
+	<Comment>com.fmi.calculation.text.Function referred to is not yet implemented</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EB01D2E9DB228D9B66C9F609D2DB0732</StringID>
+	<SourceText>Command/operation canceled by triggered script</SourceText>
+	<TargetText>Command/operation canceled by triggered script</TargetText>
+	<Comment>com.fmi.calculation.text.Command/operation canceled by triggered script</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EB089F8A4A6128A7BA2D20DAA63222C7</StringID>
+	<SourceText>User canceled action</SourceText>
+	<TargetText>User canceled action</TargetText>
+	<Comment>com.fmi.calculation.text.User canceled action</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EB35B826ECC22D806D5D57317AD959D9</StringID>
+	<SourceText>Value in field is not an existing value in the database file as required in validation entry options</SourceText>
+	<TargetText>Value in field is not an existing value in the database file as required in validation entry options</TargetText>
+	<Comment>com.fmi.calculation.text.Value in field is not an existing value in the database file as required in validation entry options</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EB631F1E03780E62B86FFE78D46FE7CA</StringID>
+	<SourceText>No records match the request</SourceText>
+	<TargetText>No records match the request</TargetText>
+	<Comment>com.fmi.calculation.text.No records match the request</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EB9DFC3C2BD787D9E18FD1038090B257</StringID>
+	<SourceText> [ID</SourceText>
+	<TargetText> [ID</TargetText>
+	<Comment>com.fmi.calculation.text. [ID</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.ED74E228659D7EEC5230232ECEC5A19B</StringID>
+	<SourceText>&apos; could not be resolved</SourceText>
+	<TargetText>&apos; could not be resolved</TargetText>
+	<Comment>com.fmi.calculation.text.&apos; could not be resolved</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EDD7001A54123C70F7B9918A0AFEED4E</StringID>
+	<SourceText>SError.account</SourceText>
+	<TargetText>SError.account</TargetText>
+	<Comment>com.fmi.calculation.text.SError.account</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EECE2E542B0CDCE586A27B7931BA8BF0</StringID>
+	<SourceText>¶</SourceText>
+	<TargetText>¶</TargetText>
+	<Comment>com.fmi.calculation.text.¶</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EF0F11EF6AFB65F6D4E42DA35012E096</StringID>
+	<SourceText>Import order is invalid</SourceText>
+	<TargetText>Import order is invalid</TargetText>
+	<Comment>com.fmi.calculation.text.Import order is invalid</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.EF1B9E6DB8EF44696B138EBF08F60542</StringID>
+	<SourceText>User account and/or password does not exist</SourceText>
+	<TargetText>User account and/or password does not exist</TargetText>
+	<Comment>com.fmi.calculation.text.User account and/or password does not exist</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F111937819F713B9FFEEBA6D7E0FAD93</StringID>
+	<SourceText> set code from param<CR/></SourceText>
+	<TargetText> set code from param<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. set code from param_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F306F23638774374FF54598C9AA8F9A6</StringID>
+	<SourceText>Related tables are missing</SourceText>
+	<TargetText>Related tables are missing</TargetText>
+	<Comment>com.fmi.calculation.text.Related tables are missing</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F3DB3C66725CA37443504E98EEF3550D</StringID>
+	<SourceText>scriptID</SourceText>
+	<TargetText>scriptID</TargetText>
+	<Comment>com.fmi.calculation.text.scriptID</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F49726F70076CFC6AB23FC27995AA7BC</StringID>
+	<SourceText>Dialog.Run</SourceText>
+	<TargetText>Dialog.Run</TargetText>
+	<Comment>com.fmi.calculation.text.Dialog.Run</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F5313A18699B601E88D58ECEF327E7B6</StringID>
+	<SourceText>Main spelling dictionary not installed</SourceText>
+	<TargetText>Main spelling dictionary not installed</TargetText>
+	<Comment>com.fmi.calculation.text.Main spelling dictionary not installed</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F5D8593BFB0493DF037C58273B9783B0</StringID>
+	<SourceText>Dialog.SetDefaultButton</SourceText>
+	<TargetText>Dialog.SetDefaultButton</TargetText>
+	<Comment>com.fmi.calculation.text.Dialog.SetDefaultButton</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F5E3F0FCA9DF7B779C5DE9BBA856E1CA</StringID>
+	<SourceText>Cannot import data into a file that has no fields</SourceText>
+	<TargetText>Cannot import data into a file that has no fields</TargetText>
+	<Comment>com.fmi.calculation.text.Cannot import data into a file that has no fields</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F6459E0D48C662B1A38611758D82BAEB</StringID>
+	<SourceText>Error (ODBC)</SourceText>
+	<TargetText>Error (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Error (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F659B71B7B2BEF0AC05B29073589BE66</StringID>
+	<SourceText><TAB/>filter parameter<CR/><TAB/><TAB/><TAB/>------------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/>@about resolve class:code to message<CR/><TAB/><TAB/><TAB/>@param string _code as parameter<CR/><TAB/><TAB/><TAB/>@return string filtered parameter<CR/><TAB/><TAB/></SourceText>
+	<TargetText><TAB/>filter parameter<CR/><TAB/><TAB/><TAB/>------------------------------------------------------------------------------<CR/><TAB/><TAB/><TAB/>@about resolve class:code to message<CR/><TAB/><TAB/><TAB/>@param string _code as parameter<CR/><TAB/><TAB/><TAB/>@return string filtered parameter<CR/><TAB/><TAB/></TargetText>
+	<Comment>com.fmi.calculation.text._TAB/_filter parameter_CR/__TAB/__TAB/__TAB/_------------------------------------------------------------------------------_CR/__TAB/__TAB/__TAB/_@about resolve class:code to message_CR/__TAB/__TAB/__TAB/_@param string _code as parameter_CR/__TAB/__TAB/__TAB/_@return string filtered parameter_CR/__TAB/__TAB/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F73720646380FDA950E22A8B6699E15B</StringID>
+	<SourceText>Custom: </SourceText>
+	<TargetText>Custom: </TargetText>
+	<Comment>com.fmi.calculation.text.Custom:</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F8710B3521DB78C11CDFA85E214DFB3B</StringID>
+	<SourceText>Connection refused by SMTP server</SourceText>
+	<TargetText>Connection refused by SMTP server</TargetText>
+	<Comment>com.fmi.calculation.text.Connection refused by SMTP server</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F8F83D18AB338B298C0449E012C8E325</StringID>
+	<SourceText>Maximum number of database sessions exceeded (*)</SourceText>
+	<TargetText>Maximum number of database sessions exceeded (*)</TargetText>
+	<Comment>com.fmi.calculation.text.Maximum number of database sessions exceeded (*)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F91C029121D5868513D69E7685C919A3</StringID>
+	<SourceText>SError.utc</SourceText>
+	<TargetText>SError.utc</TargetText>
+	<Comment>com.fmi.calculation.text.SError.utc</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.F9378086669CBAE99C86F6706591C5E6</StringID>
+	<SourceText>User does not have sufficient privileges to modify administrator account</SourceText>
+	<TargetText>User does not have sufficient privileges to modify administrator account</TargetText>
+	<Comment>com.fmi.calculation.text.User does not have sufficient privileges to modify administrator account</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FA9BFDE8655EFFCA474338EF5B839F66</StringID>
+	<SourceText>class¶code¶message¶window¶table¶timestamp¶utc¶stack</SourceText>
+	<TargetText>class¶code¶message¶window¶table¶timestamp¶utc¶stack</TargetText>
+	<Comment>com.fmi.calculation.text.class¶code¶message¶window¶table¶timestamp¶utc¶stack</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FC62405311A4FEB13B3646117F0D69B4</StringID>
+	<SourceText> generic de<CR/></SourceText>
+	<TargetText> generic de<CR/></TargetText>
+	<Comment>com.fmi.calculation.text. generic de_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FC885E0CEF421CB272B54709D86114AE</StringID>
+	<SourceText>Record access is denied</SourceText>
+	<TargetText>Record access is denied</TargetText>
+	<Comment>com.fmi.calculation.text.Record access is denied</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FD50CA765E104C902C792E86EF16289B</StringID>
+	<SourceText>Failed to disconnect (ODBC)</SourceText>
+	<TargetText>Failed to disconnect (ODBC)</TargetText>
+	<Comment>com.fmi.calculation.text.Failed to disconnect (ODBC)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FDD76C9D3D948FECE58138A33CAE4DDE</StringID>
+	<SourceText>A field cannot be used in its own formula</SourceText>
+	<TargetText>A field cannot be used in its own formula</TargetText>
+	<Comment>com.fmi.calculation.text.A field cannot be used in its own formula</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FE920D44B0C84AFA3E24514B1DA8B0CC</StringID>
+	<SourceText>Could not launch the Help system</SourceText>
+	<TargetText>Could not launch the Help system</TargetText>
+	<Comment>com.fmi.calculation.text.Could not launch the Help system</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FEB03550099DFFAC7F24697DF5564D2A</StringID>
+	<SourceText>Wrong version of FileMaker Pro used to recover file</SourceText>
+	<TargetText>Wrong version of FileMaker Pro used to recover file</TargetText>
+	<Comment>com.fmi.calculation.text.Wrong version of FileMaker Pro used to recover file</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FEC4477A6DEA0407524DEE2A9D4FDC4C</StringID>
+	<SourceText>Unbalanced parenthesis</SourceText>
+	<TargetText>Unbalanced parenthesis</TargetText>
+	<Comment>com.fmi.calculation.text.Unbalanced parenthesis</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FF092C7E15D17225E2D414A570DF4CAD</StringID>
+	<SourceText>Import translator cannot be found</SourceText>
+	<TargetText>Import translator cannot be found</TargetText>
+	<Comment>com.fmi.calculation.text.Import translator cannot be found</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.calculation.text.FF0D377B87FA9404A43E1C577C14FB6C</StringID>
+	<SourceText>Unsupported Excel version (convert file to Excel 2007/2008 format or a later supported version and try again)</SourceText>
+	<TargetText>Unsupported Excel version (convert file to Excel 2007/2008 format or a later supported version and try again)</TargetText>
+	<Comment>com.fmi.calculation.text.Unsupported Excel version (convert file to Excel 2007/2008 format or a later supported version and try again)</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.datasource.C1989D3E4BD2F9C7537B49E25CA0AD59</StringID>
+	<SourceText>FX_ReportsRef</SourceText>
+	<TargetText>FX_ReportsRef</TargetText>
+	<Comment>com.fmi.datasource.FX_ReportsRef</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.externaldatasource.C1989D3E4BD2F9C7537B49E25CA0AD59</StringID>
+	<SourceText>FX_ReportsRef</SourceText>
+	<TargetText>FX_ReportsRef</TargetText>
+	<Comment>com.fmi.externaldatasource.FX_ReportsRef</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.401F644C442B29E72C5B2971AFEC1DCF</StringID>
+	<SourceText># CONNECTOR</SourceText>
+	<TargetText># CONNECTOR</TargetText>
+	<Comment>com.fmi.script.# CONNECTOR</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.4937742C77A2718B2EEE6DFC2812B2FF</StringID>
+	<SourceText>*FxReports.excelGenerate( $filename, $location )</SourceText>
+	<TargetText>*FxReports.excelGenerate( $filename, $location )</TargetText>
+	<Comment>com.fmi.script.*FxReports.excelGenerate( $filename, $location )</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.69BEF00763067DF81E909FCF09427525</StringID>
+	<SourceText>exportAndGenerate()</SourceText>
+	<TargetText>exportAndGenerate()</TargetText>
+	<Comment>com.fmi.script.exportAndGenerate()</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.FEF9AA2A48DF10F1208E698DFB31FC17</StringID>
+	<SourceText># EXAMPLE</SourceText>
+	<TargetText># EXAMPLE</TargetText>
+	<Comment>com.fmi.script.# EXAMPLE</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.script.folder.C9063CEF8CE5C9887E9BA715ECEAB2CF</StringID>
+	<SourceText>FxReports</SourceText>
+	<TargetText>FxReports</TargetText>
+	<Comment>com.fmi.script.folder.FxReports</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.097C677A571F8CC46409871EA093FCF8</StringID>
+	<SourceText>return</SourceText>
+	<TargetText>return</TargetText>
+	<Comment>com.fmi.scriptstep.text.return</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.0B4F72EA905257F07E8E952102DFEBA0</StringID>
+	<SourceText>call generate()<CR/>you can either specify the target location and filename here or in directly the template <CR/>script parameter is expected to be a json object: {&quot;location&quot;:&quot;tmp&quot;,&quot;filename&quot;:&quot;my_beautiful_export.xlsx&quot;}<CR/>location accepts the following aliases: desktop, tmp, documents, ~, ... (e.g. &quot;desktop/My Exports/123&quot;)<CR/>folders are being created on the way<CR/>do not call the public script in FX_Reports directly, always call the connector script to reduce dependencies<CR/></SourceText>
+	<TargetText>call generate()<CR/>you can either specify the target location and filename here or in directly the template <CR/>script parameter is expected to be a json object: {&quot;location&quot;:&quot;tmp&quot;,&quot;filename&quot;:&quot;my_beautiful_export.xlsx&quot;}<CR/>location accepts the following aliases: desktop, tmp, documents, ~, ... (e.g. &quot;desktop/My Exports/123&quot;)<CR/>folders are being created on the way<CR/>do not call the public script in FX_Reports directly, always call the connector script to reduce dependencies<CR/></TargetText>
+	<Comment>com.fmi.scriptstep.text.call generate()_CR/_you can either specify the target location and filename here or in directly the template _CR/_script parameter is expected to be a json object: {&quot;location&quot;:&quot;tmp&quot;,&quot;filename&quot;:&quot;my_beautiful_export.xlsx&quot;}_CR/_location accepts the following aliases: desktop, tmp, documents, ~, ... (e.g. &quot;desktop/My Exports/123&quot;)_CR/_folders are being created on the way_CR/_do not call the public script in FX_Reports directly, always call the connector script to reduce dependencies_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.0BE223ED810B47DA52EC43A86F4D383C</StringID>
+	<SourceText>return $result</SourceText>
+	<TargetText>return $result</TargetText>
+	<Comment>com.fmi.scriptstep.text.return $result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.1B374491CA6F8C5A00EB070F0A7FAE62</StringID>
+	<SourceText>pass script result</SourceText>
+	<TargetText>pass script result</TargetText>
+	<Comment>com.fmi.scriptstep.text.pass script result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.2DE4FD2E76E97961FE10C89AF273ECF9</StringID>
+	<SourceText>set vars</SourceText>
+	<TargetText>set vars</TargetText>
+	<Comment>com.fmi.scriptstep.text.set vars</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.2EAE2666A39AF821B4D7DCFDAA8B1240</StringID>
+	<SourceText>set layout - table to export from</SourceText>
+	<TargetText>set layout - table to export from</TargetText>
+	<Comment>com.fmi.scriptstep.text.set layout - table to export from</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.39A1DBD66442AE83308D7AC8DF9D891C</StringID>
+	<SourceText>call public script</SourceText>
+	<TargetText>call public script</TargetText>
+	<Comment>com.fmi.scriptstep.text.call public script</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.4DC3DFF02FDEAC6EF7B9439B4C8E5A37</StringID>
+	<SourceText>on error display message and exit</SourceText>
+	<TargetText>on error display message and exit</TargetText>
+	<Comment>com.fmi.scriptstep.text.on error display message and exit</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.5017FB01015C58840E9451FCBB4E9804</StringID>
+	<SourceText>set $path, export foundset to tmp</SourceText>
+	<TargetText>set $path, export foundset to tmp</TargetText>
+	<Comment>com.fmi.scriptstep.text.set $path, export foundset to tmp</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.51FC10F109384579536BFB6B16420DDF</StringID>
+	<SourceText>set $template</SourceText>
+	<TargetText>set $template</TargetText>
+	<Comment>com.fmi.scriptstep.text.set $template</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.54796E8AC884C0438B9D05ACADF130A7</StringID>
+	<SourceText>@about example implementation<CR/>@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt; <CR/>@copyright ©2021 FMGARAGE.com <CR/>@version 1.0.0-100 - 01.11.2021 – NW: <CR/>@return true<CR/><CR/></SourceText>
+	<TargetText>@about example implementation<CR/>@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt; <CR/>@copyright ©2021 FMGARAGE.com <CR/>@version 1.0.0-100 - 01.11.2021 – NW: <CR/>@return true<CR/><CR/></TargetText>
+	<Comment>com.fmi.scriptstep.text.@about example implementation_CR/_@author Nils Waldherr &lt;nils.waldherr@fmgarage.com&gt; _CR/_@copyright ©2021 FMGARAGE.com _CR/_@version 1.0.0-100 - 01.11.2021 – NW: _CR/_@return true_CR/__CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.74E5F84C7D0EE1A0F15154CF7D7166D3</StringID>
+	<SourceText>display</SourceText>
+	<TargetText>display</TargetText>
+	<Comment>com.fmi.scriptstep.text.display</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.774ECBFBF75A34781332A4D39F752241</StringID>
+	<SourceText>on error</SourceText>
+	<TargetText>on error</TargetText>
+	<Comment>com.fmi.scriptstep.text.on error</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.87522207DB171EDED417B7498C29BA89</StringID>
+	<SourceText>copy template to FxReports</SourceText>
+	<TargetText>copy template to FxReports</TargetText>
+	<Comment>com.fmi.scriptstep.text.copy template to FxReports</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.BB642607EB55927412170BCE20609A6C</StringID>
+	<SourceText>set $result</SourceText>
+	<TargetText>set $result</TargetText>
+	<Comment>com.fmi.scriptstep.text.set $result</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.CC1C37109C6DDB53F1D26CD10903C8D1</StringID>
+	<SourceText>@uses function SError.catch_v7()<CR/>      function SError.display_v7()<CR/></SourceText>
+	<TargetText>@uses function SError.catch_v7()<CR/>      function SError.display_v7()<CR/></TargetText>
+	<Comment>com.fmi.scriptstep.text.@uses function SError.catch_v7()_CR/_      function SError.display_v7()_CR/_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.scriptstep.text.D987D923F22A44BF0B2BA837703F1429</StringID>
+	<SourceText>check for errors</SourceText>
+	<TargetText>check for errors</TargetText>
+	<Comment>com.fmi.scriptstep.text.check for errors</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.C9063CEF8CE5C9887E9BA715ECEAB2CF</StringID>
+	<SourceText>FxReports</SourceText>
+	<TargetText>FxReports</TargetText>
+	<Comment>com.fmi.tableoccurrence.FxReports</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.field.FxReports::58CA81C245E08B46DDAE97505704A6EA</StringID>
+	<SourceText>a_container_</SourceText>
+	<TargetText>a_container_</TargetText>
+	<Comment>com.fmi.tableoccurrence.field.FxReports::a_container_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.text.820B396BB835A93C4A06A1D2EC825629</StringID>
+	<SourceText>Module _​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_</SourceText>
+	<TargetText>Module _​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_</TargetText>
+	<Comment>com.fmi.tableoccurrence.text.Module _​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_​_</Comment>
+</DynamicTemplateString>
+
+<DynamicTemplateString>
+	<StringID>com.fmi.tableoccurrence.text.D9262A9672A4E609FCD743486C685A9B</StringID>
+	<SourceText>LOCAL ​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█</SourceText>
+	<TargetText>LOCAL ​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█</TargetText>
+	<Comment>com.fmi.tableoccurrence.text.LOCAL ​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█​█</Comment>
+</DynamicTemplateString>
