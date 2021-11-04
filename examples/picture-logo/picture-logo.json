@@ -1,0 +1,68 @@
+{
+	"columnWidth": -1,
+	"filename": "picture-logo.xlsx",
+	"display": {
+		"hideGrid": true,
+		"zoom": 150
+	},
+	"cells": [
+		{
+			"pos": [0,0],
+			"picture": {
+				"ref": "logo",
+				"width": 227,
+				"height": 60,
+				"position": "resize"
+			}
+		}
+	],
+	"columns": [{
+		"pos": 3,
+		"width": 6,
+		"case": {
+			"if": {
+				"value": { "equalTo": "visa"}
+			},
+			"then": {
+				"picture": {
+					"ref": "suitcase",
+					"width": 39,
+					"height": 29,
+					"position": "resize"
+				},
+				"value": null
+			},
+			"else": {"value": null}
+		}
+	}],
+	"rows": [
+		{
+			"values": [ "Title", "Firstname", "Surname", " "],
+			"pos": 5,
+			"formatRef": "Header",
+			"height": 25
+		},
+		{
+			"path": "desktop/examples/picture-logo/data-file.xlsx",
+			"fields": [ "Title", "GivenName", "Surname", "CCType" ],
+			"height": 25,
+			"formatRef": "Table"
+		}
+	],
+	"formats": {
+		"Table": {
+			"alignV": 1,
+			"border": 7
+		},
+		"Header": {
+			"formatRef": "Table",
+			"alignV": 1,
+			"bold": true,
+			"backgroundColorRgb": [89, 173, 255]
+		}
+	},
+	"pictures": {
+		"logo": "desktop/examples/picture-logo/fx-reports.png",
+		"suitcase": "desktop/examples/picture-logo/suitcase.png"
+	}
+}

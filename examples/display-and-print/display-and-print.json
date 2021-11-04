@@ -1,24 +1,22 @@
 ﻿{
 	"filename": "display-and-print.xlsx",
-	"sheets": [
-		{
-			"name": "print 1",
-			"split": [2,2],
-			"cells": [
-				{
-					"pos": [0,0],
-					"value": "Split on position 2/2"
-				}
-			]
+	"sheets": [{
+			"name": "Split",
+			"split": [2, 2],
+			"cells": [{
+				"pos": [0, 0],
+				"value": "Split on position 2/2"
+			}]
 		},
 		{
-			"name": "grid",
-			"display": { "hideGrid": true }},
-			"cells": [
-				{
-					"pos": [0,0],
-					"value": "hide grid"
-				}
-			]
+			"name": "Hidden Grid",
+			"display": {
+				"hideGrid": true
+			},
+			"cells": [{
+				"pos": [0, 0],
+				"value": "hide grid"
+			}]
+		}
 	]
 }
