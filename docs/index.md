@@ -11,7 +11,7 @@ FX_Reports is a powerful extension for genererating fully-featured spreadsheets 
 
 Exports from a FileMaker database are extremely quick to set up but also very limited – think of human readable column headers for instance. On the other end there is [LibXL](https://www.libxl.com) via the [MBS plugin](https://www.mbsplugins.eu/component_XL.shtml) where you can (and have to!) define every single detail of every cell that you want to put into your Excel file.
 
-FX_Reports combines both the simplicity and flexibility into a single tool. You can use JSON to define the structure and content of your output file. For instance changing the column headers of a previously exported file looks something like this:
+FX_Reports combines both the simplicity and flexibility into a single tool. You can use JSON to define the structure and content of your output file. For instance changing the column headers of a previously exported file is as easy as this: 
 
 ```json
 { "rows": [
@@ -19,6 +19,10 @@ FX_Reports combines both the simplicity and flexibility into a single tool. You 
     {"path": "desktop/contacts.xlsx"}
 ]}
 ```
+
+
+
+-- Der große Vorteil von FX Reports liegt darin, dass neue Exportformate oder Änderungen an bestehenden nicht mehr programmiert werden müssen, es reicht die Bereitstellung eines Textes.
 
 Most of the Excel features are already supported, like
 

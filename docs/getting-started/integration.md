@@ -7,3 +7,7 @@ nav_order: 10
 
 ## Installation
 
+
+
+- using the add-on
+- installing manually
