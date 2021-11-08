@@ -1,6 +1,7 @@
 <span style="background-color:#ffffff;"><img src="docs/assets/images/logo.png" style="height:80px;magin-bottom: 20px;"></span>
 
-Generate fully featured Excel spreadsheets from FileMaker, dynamically defined with json. No programming required!
+Generate fully featured Excel spreadsheets from FileMaker, dynamically defined using JSON. 
+No programming required!
 
 <img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
 
