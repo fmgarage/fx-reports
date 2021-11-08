@@ -1,0 +1,9 @@
+.je-modal {
+    border:1px solid #ced4da;
+    box-shadow: none;
+    border-radius: 0.25rem;
+}
+
+.property-selector {
+    max-height:none;
+}
