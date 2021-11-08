@@ -4,6 +4,9 @@ Generate fully featured Excel spreadsheets from FileMaker.
 
 <img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
 
+:exclamation: | There are currently some issues when using the demo version of libXL, the output can be faulty!
+:---: | :---
+
 #### Downloads
 
 - [**FX_Reports.fmp12**](https://fmgarage.com/download/fx-reports/FX_Reports.fmp12.zip) – 
