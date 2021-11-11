@@ -293,7 +293,7 @@
 		"colorName": {
 			"type": "string",
 			"title": "Color Name",
-			"description": "Excel's predifined Colors",
+			"description": "Excel's predefined Colors",
 			"enum": ["none", "black", "white", "red", "brightgreen", "blue", "yellow", "pink", "turquoise", "darkred", "green", "darkblue", "darkyellow", "violet", "teal", "gray25", "gray50", "periwinkle cf", "plum cf", "ivory cf", "lightturquoise cf", "darkpurple cf", "coral cf", "oceanblue cf", "iceblue cf", "darkblue cl", "pink cl", "yellow cl", "turquoise cl", "violet cl", "darkred cl", "teal cl", "blue cl", "skyblue", "lightturquoise", "lightgreen", "lightyellow", "paleblue", "rose", "lavender", "tan", "lightblue", "aqua", "lime", "gold", "lightorange", "orange", "bluegray", "gray40", "darkteal", "seagreen", "darkgreen", "olivegreen", "brown", "plum", "indigo", "gray80", "default foreground", "default background", "tooltip", "auto"]
 		},
 		"colorRef": {
