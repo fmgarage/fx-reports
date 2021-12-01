@@ -6,8 +6,4 @@ nav_order: 20
 
 ## Getting Started
 
-- Installation
-
-- (Templates per drag & drop)
-- Integration
-
+In the following chapters, we will explain how to install FX Reports and how to integrate it into your solution.
