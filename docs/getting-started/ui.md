@@ -7,16 +7,13 @@ nav_order: 2
 
 > @todo wird title aus dem front matter im gerenderten Dokument verwendet?
 
-## Using the User Interfaces
-
+## User Interfaces
 
 FX Reports provides 2 different modes for interaction.
 
 1. GUI
 
-By using the graphical user interface it is easy to achieve results in a minimum of time. Templates can be written right in the editor window of FX_Reports or - useful for more complex tasks/outputs - pasted from an external [editor](https://fmgarage.github.io/fx-reports/editor/). With a click on `Generate xlsx`, the document will be generated.
-
-> @todo Screenshot
+By using the graphical user interface it is easy to achieve results in a minimum of time. Templates can be written right in the editor window of FX_Reports or - useful for more complex tasks/outputs - pasted from an external [editor]({{ site.baseurl }}{% link writing-templates/tools.md %}). With a click on `Generate xlsx`, the document will be generated.
 
 <img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
 

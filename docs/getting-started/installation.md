@@ -12,6 +12,7 @@ nav_order: 1
 - An Installation of FileMaker Pro / Server at Version 18 or higher
 - MBS Plugin Version 10.0 or higher
 - LibXL Version (xxx) or higher
+> @todo
 
 ### Install MBS-plugin
 
@@ -28,8 +29,7 @@ Find here the individual downloads:
 
 The plugin file must be copied into the FileMaker plugin directory. There is a matching file for every operating system.
 
-Assuming no plugins have been installed before, the directory does not exist yet. Still, it will be created when clicking 'Reveal Plug-in Folder' in the FileMaker settings in the 'Plug-Ins' tab. You can then place the plugin file in the ... that has opened.
-> @todo
+Assuming no plugins have been installed before, the directory does not exist yet. Still, it will be created when clicking 'Reveal Plug-in Folder' in the FileMaker settings in the 'Plug-Ins' tab. You can then place the plugin file in the folder that has opened.
 
 After restarting FileMaker, the plugin is shown in the 'Plug-Ins' tab in the settings. It is now ready to use.
 
@@ -56,6 +56,4 @@ The file FX_Reports.fmp12 must not be renamed. You can open it locally or upload
 
 An appropriate license is necessary to host FX_Reports on FileMaker Server, it is not possible to do that with just the demo.
 
-### already usable in manual mode
-> @todo
 

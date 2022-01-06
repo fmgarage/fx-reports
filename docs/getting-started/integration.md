@@ -9,15 +9,13 @@ nav_order: 3
 
 This article is about how you can integrate FX Reports with your own application. There are 2 ways to do that.
 
-> @todo both in the same directory or server
-
 ### 1. Using the add-on
 
 Working from FileMaker 19
 
 The Add-on provides the easiest way to integrate FX Reports into your application. To do that, copy the folder from inside the repositories `addon` directory into the FileMaker `AddonModules` folder.
 
-Here is a hassle-free/smooth/uncomplicated way to find that folder: from the FileMaker settings, go to the Plug-ins tab and 'Reveal Plug-in Folder'. Relativ to the now open directory, go up 2 steps in the directory structure and into `Extensions`, where you will find `AddonModules`.
+Here is a uncomplicated way to find that folder: from the FileMaker settings, go to the Plug-ins tab and 'Reveal Plug-in Folder'. Relativ to the now open directory, go up 2 steps in the directory structure and into `Extensions`, where you will find `AddonModules`.
 
 macOS:
 
