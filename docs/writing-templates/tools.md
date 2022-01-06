@@ -3,6 +3,7 @@ title: Tools for writing templates
 parent: Writing templates
 nav_order: 1
 has_children: false
+has_toc: false
 ---
 
 ## Tools for writing templates

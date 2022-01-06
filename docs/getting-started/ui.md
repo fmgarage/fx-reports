@@ -1,6 +1,7 @@
 ---
 title: Using the UI
 has_children: true
+has_toc: false
 parent: Getting Started
 nav_order: 2
 ---
@@ -15,7 +16,7 @@ FX Reports provides 2 different modes for interaction.
 
 By using the graphical user interface it is easy to achieve results in a minimum of time. Templates can be written right in the editor window of FX_Reports or - useful for more complex tasks/outputs - pasted from an external [editor]({{ site.baseurl }}{% link writing-templates/tools.md %}). With a click on `Generate xlsx`, the document will be generated.
 
-<img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
+<img src="/fx-reports/assets/images/screen1.png" style="magin-bottom: 20px;">
 
 1. API
 

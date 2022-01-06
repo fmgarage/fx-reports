@@ -1,6 +1,7 @@
 ---
 title: Integration
 has_children: true
+has_toc: false
 parent: Getting Started
 nav_order: 3
 ---

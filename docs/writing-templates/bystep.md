@@ -3,6 +3,7 @@ title: Example, step-by-step
 parent: Writing templates
 nav_order: 3
 has_children: false
+has_toc: false
 ---
 
 ## An example template: step-by-step

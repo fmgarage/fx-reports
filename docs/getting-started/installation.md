@@ -1,6 +1,7 @@
 ---
 title: Installation
 has_children: true
+has_toc: false
 parent: Getting Started
 nav_order: 1
 ---
@@ -22,10 +23,10 @@ Find here the individual downloads:
 
 |Version|Link|Pluginfile|
 |-|-|-|
-| macOS | https://fmgarage.com/download/plugins/mbs/mbs-mac.zip | MBS.fmplugin |
-| Windows 64bit | https://fmgarage.com/download/plugins/mbs/mbs-win64.zip | MBS.fmx64 |
-| Windows 32bit | https://fmgarage.com/download/plugins/mbs/mbs-win32.zip | MBS.fmx |
-| Linux | https://fmgarage.com/download/plugins/mbs/mbs-linux.zip | MBS.xxx.fmx |
+| macOS | (https://fmgarage.com/download/plugins/mbs/mbs-mac.zip) | MBS.fmplugin |
+| Windows 64bit | (https://fmgarage.com/download/plugins/mbs/mbs-win64.zip) | MBS.fmx64 |
+| Windows 32bit | (https://fmgarage.com/download/plugins/mbs/mbs-win32.zip) | MBS.fmx |
+| Linux | (https://fmgarage.com/download/plugins/mbs/mbs-linux.zip) | MBS.xxx.fmx |
 
 The plugin file must be copied into the FileMaker plugin directory. There is a matching file for every operating system.
 
@@ -39,10 +40,10 @@ Download:
 
 |Version|Link|Pluginfile|
 |-|-|-|
-| macOS | https://fmgarage.com/download/plugins/libxl/libxl-mac.zip | libxl.dylib |
-| Windows 64bit | https://fmgarage.com/download/plugins/libxl/libxl-win64.zip | libxl.dll |
-| Windows 32bit | https://fmgarage.com/download/plugins/libxl/libxl-32.zip | libxl32.dll |
-| Linux | https://fmgarage.com/download/plugins/libxl/libxl-linux.zip | libxl<area>.so |
+| macOS | (https://fmgarage.com/download/plugins/libxl/libxl-mac.zip) | libxl.dylib |
+| Windows 64bit | (https://fmgarage.com/download/plugins/libxl/libxl-win64.zip) | libxl.dll |
+| Windows 32bit | (https://fmgarage.com/download/plugins/libxl/libxl-32.zip) | libxl32.dll |
+| Linux | (https://fmgarage.com/download/plugins/libxl/libxl-linux.zip) | libxl<area>.so |
 
 For the creation of Excel-documents, the LibXL extension from version (xxx) upwards is needed. The library is controlled via the MBS-plugin.
 
