@@ -6,8 +6,6 @@ parent: Getting Started
 nav_order: 2
 ---
 
-> @todo wird title aus dem front matter im gerenderten Dokument verwendet?
-
 ## User Interfaces
 
 FX Reports provides 2 different modes for interaction.
@@ -22,6 +20,4 @@ By using the graphical user interface it is easy to achieve results in a minimum
 
 When using FX Reports professionally, you might want to integrate it into your application. With an easy-to-use API you provide a template and call one script to generate the document.
 
-> @todo Screenshot oder Grafik
-
-Examples
+> @todo screenshot or illustration
