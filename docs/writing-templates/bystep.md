@@ -1,7 +1,7 @@
 ---
 title: Example, step-by-step
 parent: Writing templates
-nav_order: 1
+nav_order: 3
 has_children: false
 ---
 

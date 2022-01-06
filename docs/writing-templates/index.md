@@ -1,6 +1,6 @@
 ---
 title: Writing templates
-nav_order: 30
+nav_order: 3
 has_children: true
 ---
 
