@@ -2,6 +2,8 @@
 title: Licensing
 nav_order: 40
 has_children: true
+nav_exclude: true
+search_exclude: true
 ---
 
 ## Licensing
