@@ -1,6 +1,0 @@
-{
-	"rows": [
-		{"values": [ "Gender", "Language", "Title", "GivenName", "Surname"]},
-		{"path": "desktop/examples/simple-header/contacts.xlsx"}
-	]
-}
