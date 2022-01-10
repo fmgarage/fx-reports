@@ -1,9 +1,3 @@
-/**
- * Skipped minification because the original files appears to be already minified.
- * Original file: /npm/@json-editor/json-editor@2.6.1/dist/jsoneditor.js
- *
- * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
- */
 /*!
  * /**
  * * @name JSON Editor

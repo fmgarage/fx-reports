@@ -1,0 +1,26 @@
+﻿{
+	"filename": "simple-data-objects.xlsx",
+	"columnWidth": -1,
+	"rows": [{
+			"values": ["Last Name", "First Name", "Gender"]
+		},
+		{
+			"values": ["Waldherr", "Nils", "m"]
+		},
+		{
+			"values": ["Smith", "John", "m" ]
+		},
+		{
+			"values": ["Jonson", "James", "m" ]
+		},
+		{
+			"values": ["Maxwell", "Mary", "f" ]
+		},
+		{
+			"values": ["McNeil", "Leila", "f" ]
+		},
+		{
+			"values": ["Smithers", "Jim", "m" ]
+		}
+	]
+}

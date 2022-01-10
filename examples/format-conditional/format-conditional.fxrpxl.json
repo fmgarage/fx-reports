@@ -1,0 +1,129 @@
+﻿{
+	"filename": "format-conditional.xlsx",
+	"display": {
+		"hideGrid": true,
+		"zoom": 150
+	},
+	"columnWidth": -1,
+	"rows": [
+		{
+			"values": [ "equalTo 10", "greaterThan 10", "greaterThanOrEqualTo 10",  "lessThan 10", "lessThanOrEqualTo 10", "beginsWith \"G\"/endsWith \")\"", "contains \"p\"" ],
+			"format": {
+				"bold": true,
+				"backgroundColor": {"ref": "Lightblue"},
+				"border": 7
+
+			}
+		},
+		{
+			"path": "desktop/examples/format-conditional/data-file.xlsx",
+			"fields": [ "Number", "Number", "Number", "Number", "Number", "NameSet", "CountryFull"],
+			"formatRef": "Table"
+		}
+	],
+	"columns": [
+		{
+			"dataType": "number",
+			"case": {
+				"if": {
+					"value": { "equalTo": 10 }
+				},
+				"then": {
+					"formatRef": "Table-red"
+				}
+			}
+		},
+		{
+			"dataType": "number",
+			"case": {
+				"if": {
+					"value": { "greaterThan": 10 }
+				},
+				"then": {
+					"formatRef": "Table-red"
+				}
+			}
+		},
+		{
+			"dataType": "number",
+			"case": {
+				"if": {
+					"value": { "greaterThanOrEqualTo": 10 }
+				},
+				"then": {
+					"formatRef": "Table-red"
+				}
+			}
+		},
+		{
+			"dataType": "number",
+			"case": {
+				"if": {
+					"value": { "lessThan": 10 }
+				},
+				"then": {
+					"formatRef": "Table-red"
+				}
+			}
+		},
+		{
+			"dataType": "number",
+			"case": {
+				"if": {
+					"value": { "lessThanOrEqualTo": 10 }
+				},
+				"then": {
+					"formatRef": "Table-red"
+				}
+			}
+		},
+		{
+			"case": [
+				{
+					"if": {
+						"value": { "beginsWith": "G" }
+					},
+					"then": {
+						"formatRef": "Table-red"
+					}
+				},
+				{
+					"if": {
+						"value": { "endsWith": ")" }
+					},
+					"then": {
+						"formatRef": "Table-blue"
+					}
+				}
+			]
+		},
+		{
+			"case": {
+				"if": {
+					"value": { "contains": "p" }
+				},
+				"then": {
+					"formatRef": "Table-red"
+				}
+			}
+		}
+	],
+	"formats": {
+		"Table": {
+			"border": "hair"
+		},
+		"Table-blue": {
+			"formatRef": "Table",
+			"fontColor": { "ref": "Blue" }
+		},
+		"Table-red": {
+			"formatRef": "Table",
+			"fontColor": { "ref": "Red" }
+		}
+	},
+	"colors": {
+		"Lightblue": {"rgb": [160,210,255]},
+		"Blue": {"name": "violet"},
+		"Red": {"rgb": [255,0,0]}
+	}
+}

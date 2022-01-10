@@ -1,0 +1,63 @@
+{
+	"filename": "format-basic.xlsx",
+	"display": {
+		"hideGrid": true,
+		"zoom": 150
+	},
+	"columnWidth": -1,
+	"rows": [{
+			"values": ["Number", "Title", "Firstname", "Surname", "Gender", "Language"],
+			"height": 26,
+			"format": {
+				"fontRef": "Bold",
+				"backgroundColor": {"ref": "Lightblue"},
+				"alignV": 1,
+				"border": "hair"
+			}
+		},
+		{
+			"path": "desktop/examples/format-basic/data-file.xlsx",
+			"fields": ["Number", "Title", "GivenName", "Surname", "Gender", "NameSet"],
+			"height": 26,
+			"formatRef": "Table"
+		}
+	],
+	"columns": [{
+			"dataType": "number",
+			"formatRef": "Table",
+			"format": {"fontRef": "Numbers"}
+		},
+		{
+			"pos": 5,
+			"formatRef": "Table",
+			"format": {
+				"fontRef": "Bold"
+			}
+		}
+	],
+	"fonts": {
+		"Numbers": {
+			"fontName": "Courier",
+			"fontSize": 13,
+			"fontColor": {"name": "Red"}
+		},
+		"Standard": {
+			"fontName": "Calibri",
+			"fontSize": 13
+		},
+		"Bold": {
+			"fontRef": "Standard",
+			"bold": true
+		}
+	},
+	"formats": {
+		"Table": {
+			"fontRef": "Standard",
+			"alignV": 1,
+			"border": "hair"
+		}
+	},
+	"colors": {
+		"Lightblue": {"rgb": [160, 210, 255]}
+	}
+}

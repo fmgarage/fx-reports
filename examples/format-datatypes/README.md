@@ -28,8 +28,8 @@ This is a collection of different formatting options.
 		}
 	},
 	"colors": {
-		"lightblue": [160,210,255],
-		"red": [255,0,0]
+		"lightblue": {"rgb": [160,210,255]},
+		"red": {"rgb":[255,0,0]}
 	}
 }
 ```
@@ -46,7 +46,6 @@ Define cell format options. Again, it is possible to use definitions from the ot
 
 Here you can define colors.
 
-
 **Use styles**
 
 ```json
@@ -58,7 +57,7 @@ Here you can define colors.
 			"format": {
 				"fontRef": "Standard-bold",
 				"pattern": 1,
-				"foregroundColorRef": "lightblue",
+				"foregroundColor": {"ref": "lightblue"},
 				"alignV": 1,
 				"border": 7
 			}
@@ -89,4 +88,3 @@ Define a format by referencing a preset set of options.
 
 Set a number format like currencies or datetimes. We will provide a compilation of the most common formats in the docs.
 All formats are completely documented on [this page](https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml).
-

@@ -31,18 +31,18 @@ This example demonstrates how to split the spreadsheat and how hide the grid on 
 
 #### filename
 
-Specify output file name. Otherwise *YYMMDD_hhmmss.xslx* will be used as default. 
+Specify output file name. Otherwise `YYMMDD_hhmmss.xslx` will be used as default.
 
 #### sheets
 
-Array of sheets.
+Array of sheets. This array can be used if more than one sheet is defined.
 
 #### name
 Name of each sheet.
 
 #### split
 
-Split the sheet at the givven position.
+Split the sheet at the given position.
 
 #### cells
 

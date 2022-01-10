@@ -1,4 +1,4 @@
-## Example: format-conditional
+## Example: format-conditional-data-array
 
 This example shows how to use conditional formatting on an array.
 
@@ -28,7 +28,7 @@ The conditions are ... in a `if...then` clause:
 Compare values. Case-insensitive when comparing strings.
 
 ```json
-"value": { "equalTo": 10 }
+"value": { "equalTo": "m" }
 ```
 
 #### greaterThan
@@ -41,7 +41,6 @@ Check if number is greater.
 "value": { "greaterThan": 10 }
 ```
 
-
 #### greaterThanOrEqualTo
 
 - value types: number
@@ -51,7 +50,6 @@ Check if number is greater or equal.
 ```json
 "value": { "greaterThanOrEqualTo": 10 }
 ```
-
 
 #### lessThan
 
@@ -63,7 +61,6 @@ Check if number is lower.
 "value": { "lessThan": 10 }
 ```
 
-
 #### lessThanOrEqualTo
 
 - value types: number
@@ -73,7 +70,6 @@ Check if number is lower or equal.
 ```json
 "value": { "lessThanOrEqualTo": 10 }
 ```
-
 
 #### beginsWith
 
@@ -85,7 +81,6 @@ Check if string has substring at the start.
 "value": { "beginsWith": "G" }
 ```
 
-
 #### endsWith
 
 - value types: string
@@ -95,7 +90,6 @@ Check if string has substring at the end.
 ```json
 "value": { "endsWith": ")" }
 ```
-
 
 #### contains
 
@@ -107,7 +101,6 @@ Check if string has substring anywhere.
 "value": { "contains": "p" }
 ```
 
-
 #### containsAny
 
 - value types: array of string
@@ -118,12 +111,11 @@ Check if any of multiple substrings exists in string.
 "value": { "containsAny": ["0","1"] }
 ```
 
-
 #### containsAll
 
 - value types: array of string
 
-Check if all multiple substrings exist in string.
+Check if all of multiple substrings exist in string.
 
 ```json
 "value": { "containsAll": ["0","1"] }

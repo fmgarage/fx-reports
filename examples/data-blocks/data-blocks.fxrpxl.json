@@ -1,0 +1,42 @@
+{
+	"columnWidth": -1,
+	"filename": "data-blocks.xlsx",
+	"display": {
+		"hideGrid": true,
+		"zoom": 150
+	},
+	"rows": [
+		{
+			"values": [ "Title", "Firstname", "Surname"],
+			"formatRef": "Header"
+		},
+		{
+			"pos": [4,0],
+			"values": [ "Title", "Firstname", "Surname"],
+			"formatRef": "Header"
+		},
+		{
+			"path": "desktop/examples/data-blocks/data-file.xlsx",
+			"fields": [ "Title", "GivenName", "Surname"],
+			"limit": 13,
+			"formatRef": "Table"
+		},
+		{
+			"pos": [4,1],
+			"path": "desktop/examples/data-blocks/data-file.xlsx",
+			"fields": [ "Title", "GivenName", "Surname"],
+			"offset": 13,
+			"formatRef": "Table"
+		}		
+	],
+	"formats": {
+		"Table": {
+			"border": 7
+		},
+		"Header": {
+			"formatRef": "Table",
+			"bold": true,
+			"backgroundColor": {"rgb": [89, 173, 255]}
+		}
+	}
+}

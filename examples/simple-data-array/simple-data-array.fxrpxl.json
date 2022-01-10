@@ -1,0 +1,19 @@
+﻿{
+	"filename": "simple-data-array.xlsx",
+	"columnWidth": -1,
+	"rows": [
+		{
+			"values": ["Last Name", "First Name", "Gender"]
+		},
+		{
+			"values": [
+				["Waldherr", "Nils", "m"],
+				["Smith", "John", "m" ],
+				["Jonson", "James", "m" ],
+				["Maxwell", "Mary", "f" ],
+				["McNeil", "Leila", "f" ],
+				["Smithers", "Jim", "m" ]
+			]
+		}
+	]
+}

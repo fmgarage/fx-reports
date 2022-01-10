@@ -1,0 +1,1140 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"id": "https://fmgarage.com/schemas/json2excel/v2-1-1.json",
+	"title": "FX Reports Template Editor",
+	"description": "Generating xlsx spreadsheets from a json definition",
+	"$comment": "https://json-schema.org/understanding-json-schema/index.html",
+	"type": "object",
+	"properties": {
+		"$comment": {
+			"title": "Internal Comment",
+			"type": "string"
+		},
+		"schemaVersion": {
+			"type": "string",
+			"title": "Schema Version",
+			"description": "Specify a minimum Schema Version",
+			"minLength": 1,
+			"pattern": "^\\d{1,3}(\\.\\d{1,3}(\\.\\d{1,3})?)?$"
+		},
+		"filename": {
+			"title": "Target Filename",
+			"description": "Name of the generated file, placeholders are supported",
+			"type": "string",
+			"default": "Export.xslx"
+		},
+		"location": {
+			"title": "Target Location",
+			"description": "folder path ('desktop/exports') or field reference (e.g. FxReports::a_tmp_[1])",
+			"default": "FxReports::a_tmp_[1]",
+			"type": "string"
+		},
+		"formats": {
+			"type": "object",
+			"title": "Format definitions",
+			"description": "Add named formats that can be referenced in columns, rows and cells",
+			"additionalProperties": {
+				"$ref": "#/definitions/format"
+			}
+		},
+		"fonts": {
+			"type": "object",
+			"title": "Font definitions",
+			"description": "Add Font definitions by specifying a unique Name.",
+			"additionalProperties": {
+				"$ref": "#/definitions/font"
+			}
+		},
+		"colors": {
+			"type": "object",
+			"title": "Color definitions",
+			"description": "",
+			"additionalProperties": {
+				"oneOf": [
+					{
+						"$ref": "#/definitions/colorName"
+					},
+					{
+						"$ref": "#/definitions/colorRgb"
+					}
+				]
+			}
+		},
+		"pictures": {
+			"type": "object",
+			"title": "Picture Catalog",
+			"description": "picture name as ref and path as field reference or file path",
+			"additionalProperties": {
+				"type": "string"
+			}
+		},
+		"formatRef": {
+			"title": "Default Format Reference",
+			"description": "Will be applied to the Document",
+			"$ref": "#/definitions/formatRef"
+		},
+		"format": {
+			"title": "Default Format Options",
+			"description": "Will be applied to the Document",
+			"$ref": "#/definitions/format"
+		},
+		"display": {
+			"title": "Default Display Options",
+			"description": "Will be applied to the Document",
+			"$ref": "#/definitions/display"
+		},
+		"print": {
+			"title": "Default Print Options",
+			"$ref": "#/definitions/print"
+		},
+		"columnWidth": {
+			"title": "Default Column Width",
+			"description": "Use -1 for 'auto'",
+			"$ref": "#/definitions/columnWidth"
+		},
+		"columns": {
+			"title": "Columns",
+			"$ref": "#/definitions/columns"
+		},
+		"rows": {
+			"title": "Rows",
+			"$ref": "#/definitions/rows"
+		},
+		"cells": {
+			"title": "Cells",
+			"$ref": "#/definitions/cells"
+		},
+		"name": {
+			"title": "Sheet Name",
+			"$ref": "#/definitions/sheetName"
+		},
+		"split": {
+			"title": "Sheet Split",
+			"$ref": "#/definitions/split"
+		},
+		"sheets": {
+			"title": "Multiple Sheets",
+			"$ref": "#/definitions/sheets"
+		}
+	},
+	"additionalProperties": false,
+	"definitions": {
+		"border": {
+			"type": "integer",
+			"minimum": 0,
+			"maximum": 13,
+			"enum": [1,2,3,4,5,6,7,8,9,10,11,12,13]
+		},
+		"case": {
+			"title": "Case-Statement",
+			"description": "conditional cell properties",
+			"oneOf": [
+				{
+					"type": "object",
+					"properties": {
+						"if": {
+							"$ref": "#/definitions/if"
+						},
+						"then": {
+							"$ref": "#/definitions/thenOrElse"
+						},
+						"else": {
+							"$ref": "#/definitions/thenOrElse"
+						}
+					},
+					"required": ["if", "then"],
+					"additionalProperties": false
+				},
+				{
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"type": "object",
+						"title": "Condition",
+						"properties": {
+							"if": {
+								"$ref": "#/definitions/if"
+							},
+							"then": {
+								"$ref": "#/definitions/thenOrElse"
+							},
+							"else": {
+								"$ref": "#/definitions/thenOrElse"
+							}
+						},
+						"additiomalProperties": false,
+						"required": ["if", "then"]
+					}
+				}
+			]
+		},
+		"cell": {
+			"type": "object",
+			"properties": {
+				"pos": {
+					"title": "Cell Position",
+					"description": "",
+					"type": "array",
+					"items": [{
+							"type": "integer",
+							"minimum": 0
+						},
+						{
+							"type": "integer",
+							"minimum": 0
+						},
+						{
+							"type": "integer",
+							"minimum": -1
+						},
+						{
+							"type": "integer",
+							"minimum": -1
+						}
+					],
+					"minItems": 2,
+					"maxItems": 4,
+					"$comment": "col, row, col-length, row-length -- default length is 1"
+				},
+				"formatRef": {
+					"$ref": "#/definitions/formatRef"
+				},
+				"format": {
+					"$ref": "#/definitions/format"
+				},
+				"value": {
+					"$ref": "#/definitions/value"
+				},
+				"height": {
+					"title": "Cell Height",
+					"description": "",
+					"type": "integer"
+				},
+				"width": {
+					"title": "Cell Width",
+					"description": "",
+					"type": "integer"
+				},
+				"picture": {
+					"$ref": "#/definitions/picture"
+				},
+				"case": {
+					"$ref": "#/definitions/case"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["pos"]
+		},
+		"cells": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties": {
+					"pos": {
+						"type": "array",
+						"items": [{
+								"type": "integer",
+								"minimum": 0
+							},
+							{
+								"type": "integer",
+								"minimum": 0
+							},
+							{
+								"type": "integer",
+								"minimum": -1
+							},
+							{
+								"type": "integer",
+								"minimum": -1
+							}
+						],
+						"minItems": 2,
+						"maxItems": 4,
+						"$comment": "col, row, col-length, row-length -- default length is 1"
+					},
+					"formatRef": {
+						"$ref": "#/definitions/formatRef"
+					},
+					"format": {
+						"$ref": "#/definitions/format"
+					},
+					"value": {
+						"$ref": "#/definitions/value"
+					},
+					"height": {
+						"type": "integer"
+					},
+					"width": {
+						"type": "integer"
+					},
+					"picture": {
+						"$ref": "#/definitions/picture"
+					},
+					"additionalProperties": false
+				},
+				"required": ["pos"]
+			},
+			"minItems": 1
+		},
+		"colorRgb": {
+			"type": "array",
+			"title": "Color RGB",
+			"description": "Color as RGB values (0-255)",
+			"minItems": 3,
+			"maxItems": 3,
+			"items": {
+				"type": "integer",
+				"minimum": 0,
+				"maximum": 255,
+				"default": 0
+			}
+		},
+		"colorName": {
+			"type": "string",
+			"title": "Color Name",
+			"description": "Excel's predefined Colors",
+			"enum": ["none", "black", "white", "red", "brightgreen", "blue", "yellow", "pink", "turquoise", "darkred", "green", "darkblue", "darkyellow", "violet", "teal", "gray25", "gray50", "periwinkle cf", "plum cf", "ivory cf", "lightturquoise cf", "darkpurple cf", "coral cf", "oceanblue cf", "iceblue cf", "darkblue cl", "pink cl", "yellow cl", "turquoise cl", "violet cl", "darkred cl", "teal cl", "blue cl", "skyblue", "lightturquoise", "lightgreen", "lightyellow", "paleblue", "rose", "lavender", "tan", "lightblue", "aqua", "lime", "gold", "lightorange", "orange", "bluegray", "gray40", "darkteal", "seagreen", "darkgreen", "olivegreen", "brown", "plum", "indigo", "gray80", "default foreground", "default background", "tooltip", "auto"]
+		},
+		"colorRef": {
+			"type": "string",
+			"title": "Color Reference",
+			"description": "Name of Color Definition",
+			"pattern": "^[a-zA-Z0-9-_]{2,}"
+		},
+		"column": {
+			"title": "Column",
+			"type": "object",
+			"properties": {
+				"pos": {
+					"title": "Column Position",
+					"description": "Either Position or Range",
+					"anyOf": [{
+							"type": "integer",
+							"minimum": -1
+						},
+						{
+							"type": "array",
+							"$comment": "start index, length. -1 or undefined for auto.",
+							"minItems": 1,
+							"maxItems": 2,
+							"items": {
+								"type": "integer",
+								"minimum": -1
+							}
+						}
+					]
+				},
+				"type": {
+					"type": "string",
+					"enum": ["header", "data", "summary"]
+				},
+				"width": {
+					"title": "Column Width",
+					"description": "",
+					"type": "integer",
+					"minValue": -1
+				},
+				"formatRef": {
+					"$ref": "#/definitions/formatRef"
+				},
+				"format": {
+					"$ref": "#/definitions/format"
+				},
+				"dataType": {
+					"$ref": "#/definitions/dataType"
+				},
+				"dataOnly": {
+					"title": "Data Only",
+					"description": "",
+					"type": "boolean",
+					"default": true
+				},
+				"case": {
+					"title": "Case-Statement",
+					"$ref": "#/definitions/case"
+				}
+			},
+			"additionalProperties": false
+		},
+		"columnWidth": {
+			"title": "Default Column Width",
+			"description": "Set default Column Width for all Sheets",
+			"type": "integer",
+			"minimum": -1
+		},
+		"columns": {
+			"title": "Columns",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"title": "Column",
+				"$ref": "#/definitions/column"
+			}
+		},
+		"dataType": {
+			"title": "Data Type",
+			"type": "string",
+			"enum": ["text", "number", "date", "timestamp"]
+		},
+		"dateFormat": {},
+		"display": {
+			"title": "Display Options",
+			"type": "object",
+			"$comment": "can be applied to book or sheet",
+			"properties": {
+				"hideGrid": {
+					"title": "Hide Grid",
+					"type": "boolean"
+				},
+				"zoom": {
+					"type": "integer",
+					"minimum": 25,
+					"maximum": 400
+				}
+			}
+		},
+		"font": {
+			"type": "object",
+			"description": "Font Definition",
+			"properties": {
+				"fontRef": {
+					"title": "Font Reference",
+					"$ref": "#/definitions/fontRef"
+				},
+				"fontColorRef": {
+					"title": "Font Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"fontColorName": {
+					"title": "Font Color Reference",
+					"$ref": "#/definitions/colorName"
+				},
+				"fontColorRgb": {
+					"title": "Font Color as RGB values",
+					"$ref": "#/definitions/colorRgb"
+				},
+				"fontName": {
+					"type": "string",
+					"title": "Font Name",
+					"description": "Font face (e.g. 'Helvetica'"
+				},
+				"fontSize": {
+					"type": "integer",
+					"minimum": 1,
+					"title": "Font Size",
+					"desciption": ""
+				},
+				"bold": { 
+					"title": "Bold",
+					"type": "boolean" 
+				}
+			},
+			"additionalProperties": false
+		},
+		"fontRef": {
+			"type": "string",
+			"title": "Font Reference",
+			"description": "Name of a Font Definition"
+		},
+		"format": {
+			"type": "object",
+			"description": "",
+			"properties": {
+				"formatRef": {
+					"title": "Format Reference",
+					"description": "Use an existing Format Definition to apply Changes to.",
+					"$ref": "#/definitions/formatRef"
+				},
+				"dataType": {
+					"title": "Cell Data Type",
+					"type": "string",
+					"description": "Data Type of the Excel Cell",
+					"enum": ["string", "number", "date", "blank", "timestamp", "formula"]
+				},
+				"lock": {
+					"title": "Cell Lock",
+					"type": "boolean"
+				},
+				"hide": {
+					"title": "Cell Hide",
+					"type": "boolean"
+				},
+				"shrinkToFit": {
+					"title": "Cell Shrink to Fit",
+					"type": "boolean"
+				},
+				"fontRef": {
+					"title": "Font Reference",
+					"type": "string",
+					"description": "Name of a defined Font"
+				},
+				"fontName": {
+					"title": "Font Name",
+					"description": "Font face name (e.g. 'Helvetica')",
+					"type": "string"
+				},
+				"fontSize": {
+					"title": "Font Size",
+					"desciption": "Font Size in pt",
+					"type": "integer",
+					"minimum": 1
+				},
+				"fontColorRef": {
+					"title": "Font Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"fontColorName": {
+					"title": "Font Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"fontColorRgb": {
+					"title": "Font Color RGB",
+					"$ref": "#/definitions/colorRgb"
+				},
+				"bold": {
+					"title": "Text is Bold",
+					"type": "boolean"
+				},
+				"italic": {
+					"title": "Text is Italic",
+					"type": "boolean"
+				},
+				"underline": {
+					"title": "Text Underline",
+					"type": "string",
+					"enum": ["single", "double", "acc single", "acc double"]
+				},
+				"alignH": {
+					"title": "Text Horizontal Alignment",
+					"description": "Alignment of Text in Cell: 0 general, 1 left, 2 center, 3 right, 4 full, 5 justify, 6 merge, 7 distributed",
+					"$comment": "general, left, center, right, full, justify, merge, distributed",
+					"type": "integer",
+					"enum": [0, 1, 2, 3, 4, 5, 6, 7],
+					"minValue": 1,
+					"maxValue": 7
+				},
+				"alignV": {
+					"title": "Text Vertical Alignment",
+					"description": "Alignment of Text in Cell",
+					"type": "integer",
+					"minValue": 1,
+					"$comment": "top, center, bottom, justify, distributed"
+				},
+				"wrap": {
+					"title": "Text Wrap",
+					"type": "boolean",
+					"description": ""
+				},
+				"indent": {
+					"title": "Text Indent",
+					"type": "integer"
+				},
+				"rotate": {
+					"title": "Text Rotate",
+					"type": "integer",
+					"description": "Rotate Text by value from 0 to 255",
+					"minimum": 0,
+					"maximum": 255
+				},
+				"numberFormat": {
+					"title": "Number Format Reference",
+					"$ref": "#/definitions/numberFormat"
+				},
+				"numberFormatCustom": {
+					"$ref": "#/definitions/numberFormatCustom"
+				},
+				"border": {
+					"title": "Border",
+					"$ref": "#/definitions/border"
+				},
+				"borderColorRef": {
+					"title": "Border Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"borderColorName": {
+					"title": "Border Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"borderColorRgb": {
+					"title": "Border Color RGB",
+					"$ref": "#/definitions/colorRgb"
+				},
+				"borderColor": {
+					"title": "Border Color",
+					"anyOf": [
+						{
+							"title": "Reference",
+							"type": "string"
+						},
+						{
+							"title": "Name",
+							"type": "string"
+						},
+						{
+							"title": "RGB values",
+							"description": "RGB values 0-255",
+							"type": "array",
+							"minItems": 3,
+							"maxItems": 3,
+							"items": [
+								{
+									"title": "Red",
+									"type": "integer",
+									"minimum": 0,
+									"maximum": 255
+								},
+								{
+									"title": "Green",
+									"type": "integer",
+									"minimum": 0,
+									"maximum": 255
+								},
+								{
+									"title": "Blue",
+									"type": "integer",
+									"minimum": 0,
+									"maximum": 255
+								}
+							]
+						}
+					]
+				},
+
+				"borderTop": {
+					"title": "Border Top",
+					"$ref": "#/definitions/border"
+				},
+				"borderTopColorRef": {
+					"title": "Border Top: Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"borderTopColorName": {
+					"title": "Border Top: Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"borderTopColorRgb": {
+					"title": "Border Top: Color RGB",
+					"$ref": "#/definitions/colorRgb"
+				},
+				
+
+				"borderRight": {
+					"title": "Border Right",
+					"$ref": "#/definitions/border"
+				},
+				"borderRightColorRef": {
+					"title": "Border Right: Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"borderRightColorName": {
+					"title": "Border Right: Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"borderRightColorRgb": {
+					"title": "Border Right: Color RGB",
+					"$ref": "#/definitions/colorRgb"
+				},
+
+				"borderBottom": {
+					"title": "Border Bottom",
+					"$ref": "#/definitions/border"
+				},
+				"borderBottomColorRef": {
+					"title": "Border Bottom: Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"borderBottomColorName": {
+					"title": "Border Bottom: Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"borderBottomColorRgb": {
+					"title": "Border Bottom: Color RGB",
+					"$ref": "#/definitions/colorRgb"
+				},
+
+				"borderLeft": {
+					"title": "Border Left",
+					"$ref": "#/definitions/border"
+				},
+				"borderLeftColorRef": {
+					"title": "Border Left: Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"borderLeftColorName": {
+					"title": "Border Left: Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"borderLeftColorRgb": {
+					"title": "Border Left: Color RGB",
+					"$ref": "#/definitions/colorRef"
+				},
+				
+				"borderDiagonal": {
+					"title": "Border Diagonal",
+					"type": "string",
+					"enum": ["none", "up", "down", "both"]
+				},
+				"borderDiagonalStyle": {
+					"title": "Border Diagonal Style"
+				},
+				"borderDiagonalColorRef": {
+					"title": "Border Diagonal: Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"borderDiagonalColorName": {
+					"title": "Border Diagonal: Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"borderDiagonalColorRgb": {
+					"title": "Border Diagonal: Color RGB",
+					"$ref": "#/definitions/colorRgb"
+				},
+				
+				"pattern": {
+					"title": "Background Pattern",
+					"oneOf": [{
+							"type": "string",
+							"enum": ["none", "solid", "50% gray", "75% gray", "25% gray", "horizontal stripes", "vertical stripes", "reverse diagonal stripes", "diagonal stripes", "diagonal cross hatch", "thick diagonal stripe", "thin horizontal stripe", "thin vertical stripe", "thin reverse diagonal stripe", "thin diagonal stripe", "thin horizontal cross hatch", "thin diagonal cross hatch", "gray 12p5", "gray 6p25"]
+						},
+						{
+							"type": "integer",
+							"minimum": 0,
+							"maximum": 18,
+							"$comment": "see: https://www.mbsplugins.eu/XLFormatSetFillPattern.shtml"
+						}
+					],
+					"$comment": "see: https://www.mbsplugins.eu/XLFormatSetFillPattern.shtml"
+				},
+				"backgroundColorRef": {
+					"title": "Background Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"backgroundColorName": {
+					"title": "Background Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"backgroundColorRgb": {
+					"title": "Background Color RGB",
+					"$ref": "#/definitions/colorRgb"
+				},
+				"foregroundColorRef": {
+					"title": "Foreground Color Reference",
+					"$ref": "#/definitions/colorRef"
+				},
+				"foregroundColorName": {
+					"title": "Foreground Color Name",
+					"$ref": "#/definitions/colorName"
+				},
+				"foregroundColorRgb": {
+					"title": "Foreground Color RGB",
+					"$ref": "#/definitions/colorRgb"
+				}
+			},
+			"additionalProperties": false
+		},
+		"formatRef": {
+			"type": "string",
+			"title": "Format Reference",
+			"description": "Name of a defined Format"
+		},
+		"if": {
+			"type": "object",
+			"properties": {
+				"value": {
+					"type": "object",
+					"title": "Value",
+					"description": "Caution: specify only *one* operator.",
+					"properties": {
+						"equalTo": {
+							"type": ["string", "number"]
+						},
+						"beginsWith": {
+							"type": "string"
+						},
+						"endsWith": {
+							"type": "string"
+						},
+						"contains": {
+							"type": "string"
+						},
+						"containsAny": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"containsAll": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"greaterThan": {
+							"type": "number"
+						},
+						"greaterThanOrEqualTo": {
+							"type": "number"
+						},
+						"lessThan": {
+							"type": "number"
+						},
+						"lessThanOrEqualTo": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"required": ["value"],
+			"additionalProperties": false
+		},
+		"numberFormat": {
+			"title": "Number Format",
+			"description": "invidiual format options for numbers, dates, currencies\rsee https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml",
+			"oneOf": [
+				{
+					"type": "string",
+					"enum": ["general", "number", "number_d2"],
+					"$comment": "@todo: parametrisieren, url: https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml"
+				},
+				{
+					"type": "integer",
+					"minValue": 0,
+					"maxValue": 49
+				}
+			]
+		},
+		"numberFormatCustom": {
+			"title": "custom format options for numbers, dates, currencies...",
+			"description": "check https://www.libxl.com/custom-format.html",
+			"type": "string"
+		},
+		"picture": {
+			"type": "object",
+			"title": "Picture",
+			"$comment": "@todo oneOf",
+			"properties": {
+				"ref": {
+					"title": "picture reference",
+					"description": "named picture from catalog",
+					"type": "string"
+				},
+				"path": {
+					"type": "string",
+					"format": "uri-reference",
+					"title": "path to image file",
+					"description": "system path, shortcuts are supported (e.g. 'desktop/logo.jpeg')"
+				},
+				"base64": {
+					"type": "string",
+					"contentEncoding": "base64",
+					"contentMediaType": "image/png"
+				},
+				"width": {
+					"type": "integer",
+					"title": "image width",
+					"description": "pixels, can be -1 or non-defined for auto"
+				},
+				"height": {
+					"type": "integer",
+					"title": "image height",
+					"description": "pixels, can be -1 or non-defined for auto"
+				},
+				"scale": {
+					"title": "scale factor of picture",
+					"description": "you can either use scale or width and height. Default ist 1.0",
+					"type": "number",
+					"exclusiveMinimum": 0,
+					"maximum": 1
+				},
+				"x": {
+					"type": "integer",
+					"title": "relative offset from left in pixels"
+				},
+				"y": {
+					"type": "integer",
+					"title": "relative offset from top in pixels"
+				},
+				"position": {
+					"type": "string",
+					"titel": "positioning of the image",
+					"enum": ["resize", "move", "fix"],
+					"description": "resize: move&resize, move: only move, fix: position is absolute"
+				}
+			}
+		},
+		"print": {
+			"title": "Default Print Options",
+			"description": "Will be applied to the Document",
+			"type": "object",
+			"$comment": "can be applied to book or sheet",
+			"properties": {
+				"landscape": {
+					"type": "boolean"
+				},
+				"headerText": {
+					"type": "string",
+					"example": "Meine Auswertung"
+				},
+				"headerMargin": {
+					"type": "number",
+					"$comment": "default = 0"
+				},
+				"withGrid": {
+					"type": "boolean"
+				},
+				"fit": {
+					"type": "array",
+					"minItems": 1,
+					"maxItems": 2,
+					"contains": {
+						"type": "integer",
+						"minimum": 0
+					}
+				}
+			}
+		},
+		"row": {
+			"type": "object",
+			"title": "Row",
+			"description": "Row is added after the previous one if not defined otherwise using 'Position'",
+			"properties": {
+				"type": {
+					"type": "string",
+					"title": "Row Type",
+					"description": "Rows can be of type 'header', 'data' or 'summary'",
+					"enum": ["header", "data", "summary"]
+				},
+				"pos": {
+					"title": "Position",
+					"description": "Absolute Position (integer) or Position and Length (array)",
+					"oneOf": [{
+							"type": "integer",
+							"$comment": "Position of row. First column has pos 0",
+							"minimum": 0
+						},
+						{
+							"type": "array",
+							"$comment": "optional column offset",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": {
+								"type": "integer",
+								"minimum": 0
+							}
+						}
+					]
+				},
+				"formatRef": {
+					"title": "Format Reference",
+					"$ref": "#/definitions/formatRef"
+				},
+				"format": {
+					"$ref": "#/definitions/format"
+				},
+				"includeFirstRow": {
+					"title": "Include first row",
+					"description": "Include the first row of the source file, normally contains columns headers",
+					"type": "boolean",
+					"default": true
+				},					
+				"values": {
+					"type": "array",
+					"minItems": 1,
+					"oneOf": [{
+							"items": {
+								"$ref": "#/definitions/value"
+							}
+						},
+						{
+							"items": {
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/value"
+								}
+							}
+						}
+					]
+				},
+				"path": {
+					"title": "Path",
+					"description": "File path or field name",
+					"type": "string",
+					"$comment": "include path for data file",
+					"default": "FxReports::a_container_[2]"
+				},
+				"limit": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"offset": {
+					"type": "integer",
+					"minimum": 0
+				},
+				"contentType": {
+					"type": "string",
+					"enum": ["json", "csv", "tab"]
+				},
+				"fields": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"minItems": 1
+				},
+				"height": {
+					"type": "integer"
+				},
+				"widths": {
+					"type": "array",
+					"items": {
+						"type": "integer",
+						"minValue": -1
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"rows": {
+			"title": "Rows ",
+			"description": "Array of Rows, starting from top if not specified by Position.\rData Rows are repeated regarding to their input.",
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/definitions/row"
+			}
+		},
+		"sheet": {
+			"title": "Sheet",
+			"description": "Content and Structure of an Excel Sheet. 'Columns', 'Rows' and 'Cells' will be processed in this very order",
+			"type": "object",
+			"properties": {
+				"name": {
+					"title": "Sheet Name",
+					"$ref": "#/definitions/sheetName"
+				},
+				"formatRef": {
+					"title": "Default Format Reference",
+					"description": "Set Default Format for Sheet",
+					"$ref": "#/definitions/formatRef"
+				},
+				"format": {
+					"title": "Format Details",
+					"$ref": "#/definitions/format"
+				},
+				"display": {
+					"title": "Display Options",
+					"$ref": "#/definitions/display"
+				},
+				"print": {
+					"title": "Print Options",
+					"$ref": "#/definitions/print"
+				},
+				"split": {
+					"title": "Sheet split",
+					"description": "Split Sheet at 0:1 (boolean) or individual x:y location (array)",
+					"$ref": "#/definitions/split"
+				},
+				"columnWidth": {
+					"title": "Default Column Width",
+					"description": "Set the default width for all columns in the worksheet, use -1 for auto",
+					"type": "integer",
+					"minimum": -1
+				},
+				"columns": {
+					"title": "Columns",
+					"$ref": "#/definitions/columns"
+				},
+				"rows": {
+					"title": "Rows",
+					"$ref": "#/definitions/rows"
+				},
+				"cells": {
+					"title": "Cells",
+					"$ref": "#/definitions/cells"
+				},
+				"filters": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object",
+						"properties": {}
+					}
+				},
+				"defaultColumn": {
+					"type": "object",
+					"properties": {
+						"width": {
+							"type": "integer",
+							"minValue": -1
+						},
+						"minWidth": {
+							"type": "integer",
+							"minValue": 1
+						},
+						"maxWidth": {
+							"type": "integer",
+							"minValue": 1
+						}
+					},
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		},
+		"sheetName": {
+			"type": "string",
+			"title": "Sheet Name",
+			"description": "Optional sheet name",
+			"default": "Sheet1"
+		},
+		"sheets": {
+			"type": "array",
+			"title": "Multiple Sheets",
+			"description": "This array can be used, if more than one sheet are defined",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/definitions/sheet"
+			}
+		},
+		"split": {
+			"title": "Sheet Split",
+			"description": "Split Sheet at 0:1 (boolean) or individual x:y location (array)",
+			"oneOf": [{
+					"type": "boolean",
+					"description": "true for default split at 0|1"
+				},
+				{
+					"type": "array",
+					"maxItems": 2,
+					"description": "empty for default, col/row",
+					"items": {
+						"type": "integer"
+					}
+				}
+			]
+		},
+		"thenOrElse": {
+			"type": "object",
+			"properties": {
+				"formatRef": {
+					"title": "Format Reference",
+					"$ref": "#/definitions/formatRef"
+				},
+				"picture": {
+					"title": "Picture",
+					"$ref": "#/definitions/picture"
+				},
+				"value": {
+					"title": "Value",
+					"type": ["string", "number", "null"]
+				}
+			},
+			"additionalProperties": false
+		},
+		"value": {
+			"type": ["string", "number", "boolean", "null"],
+			"default": ""
+		}
+	}
+}

@@ -1,6 +1,6 @@
 ## Example: data-file
 
-This example demonstrates how to change the header and field order from a given export. 
+This example demonstrates how to change the header and field order from a given export.
 
 ```json
 {
@@ -16,17 +16,21 @@ This example demonstrates how to change the header and field order from a given 
 ```
 
 #### columnWidth
-Adjust column width to the cells' content using *-1* as value.
+
+Adjust column width to the cells' content using `-1` as value.
 
 #### rows
-Two rows arrays with with an offset.
+
+An array here with two rows.
 
 #### values
-Values array for the first row.
+
+Values array for the first row. The values are written directly to the row.
 
 #### path
-File path to the file to be modified. 
+
+File path to a source file providing data.
 
 #### fields
-Name of the source fields (column headers).
 
+Array of source fields (column headers) that result in the columns that will be taken from the source file.
