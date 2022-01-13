@@ -1,6 +1,6 @@
 <span style="background-color:#ffffff;"><img src="docs/assets/images/logo.png" style="height:80px;magin-bottom: 20px;"></span>
 
-Generate fully featured Excel spreadsheets from FileMaker, dynamically defined using JSON. No programming required!
+Generate fully featured Excel spreadsheets from FileMaker, dynamically defined using JSON. No scripting or programming required!
 
 <img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
 
@@ -12,41 +12,37 @@ Generate fully featured Excel spreadsheets from FileMaker, dynamically defined u
 
 
 
+**Required Plugins:**
+
+FX Reports requires both the MBS plugin and LibXL being installed on your machine. You also need licenses for those but evaluation can still be done in a trial mode.
+
+You can download the latest version from their websites:
+
+**[MBS FileMaker Plugin](https://www.monkeybreadsoftware.com/filemaker/)**
+
+**[LibXL](https://www.libxl.com/download.html)**
+
+
+
+### The Editor
+
+Create and maintain templates for using with FX Reports. If you do not want to use it online, simply download the index.html and open it locally in your browser.
+
+
+
+<img src="docs/assets/images/editor.png" style="magin-bottom: 20px;">
+
+[Schema Editor](https://fmgarage.github.io/fx-reports/editor/)
+
+
+
 #### What does 'FX' stand for? 
 
-All our **FileMaker**-based projects and products are prefixed with an **F**, the **X** stands for **extension** or **extract**. FX files are modules that you can simply add to your own solution and they mostly contain classes and functionality taken from our **F1 Framework**.
+All our **FileMaker**-based projects and products are prefixed with an **F**, the **X** stands for **extension** or **extract**. FX database files are modules that you can simply add to your own solution and they mostly contain classes and functionality taken from our **F1 Framework**.
 
 FX modules are mostly closed source, i.e. the admin account is removed. They are free to use or have at least a free tier. Extra functionality can then be unlocked by purchasing a license.
 
 [Browse all our FX repos](https://github.com/fmgarage?q=fx-)
 
 
-**Plugins for FX Reports:**
 
-These are needed for FX Reports to work. Choose the ones for your Operating System.
-
-- MBS Plugin
-
-[MBS macOS](https://fmgarage.com/download/plugins/mbs/mbs-mac.zip)
-
-[MBS Windows 32bit](https://fmgarage.com/download/plugins/mbs/mbs-win32.zip)
-
-[MBS Windows 64bit](https://fmgarage.com/download/plugins/mbs/mbs-win64.zip)
-
-[MBS Linux](https://fmgarage.com/download/plugins/mbs/mbs-linux.zip)
-
-- LibXL
-
-[LibXL macOS](https://fmgarage.com/download/plugins/libxl/libxl-mac.zip)
-
-[LibXL Windows 64bit](https://fmgarage.com/download/plugins/libxl/libxl-win64.zip)
-
-[LibXL Windows 32bit](https://fmgarage.com/download/plugins/libxl/libxl-win32.zip)
-
-[LibXL Linux](https://fmgarage.com/download/plugins/libxl/libxl-linux.zip)
-
-### The Editor
-
-Design templates to paste into FX Reports.
-
-[Schema Editor](https://fmgarage.github.io/fx-reports/editor/)
