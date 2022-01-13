@@ -2,7 +2,7 @@
 
 Generate fully featured Excel spreadsheets from FileMaker, dynamically defined using JSON. No scripting or programming required!
 
-<img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
+<img src="docs/assets/images/screen1-80.png" style="magin-bottom: 20px;">
 
 #### Downloads
 
