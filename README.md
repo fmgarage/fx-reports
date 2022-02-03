@@ -32,7 +32,7 @@ Create and maintain templates for using with FX Reports. If you do not want to u
 
 <img src="docs/assets/images/editor.png" style="magin-bottom: 20px;">
 
-[Schema Editor](https://fmgarage.github.io/fx-reports/editor/)
+[Template Editor](https://fmgarage.github.io/fx-reports/editor/)
 
 
 
