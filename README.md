@@ -26,7 +26,7 @@ You can download the latest version from their websites:
 
 ### The Editor
 
-Create and maintain templates for using with FX Reports. If you do not want to use it online, simply download the index.html and open it locally in your browser.
+Create and maintain templates for using with FX Reports. If you do not want to use it online, simply download the `editor` folder and open `index.html` locally in your browser.
 
 
 
