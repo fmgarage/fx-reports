@@ -1,22 +1,22 @@
 ---
 title: Integration
-has_children: true
+has_children: false
 has_toc: false
 parent: Getting Started
 nav_order: 3
 ---
 
-## Using the API
+## Integrate FX Reports
 
-This article is about how you can integrate FX Reports with your own application. There are 2 ways to do that.
+This article is about how you can integrate **FX Reports** with your own application. There are 2 ways to do that.
 
 ### 1. Using the add-on
 
-Working from FileMaker 19
+Requires FileMaker 19 and up.
 
-The Add-on provides the easiest way to integrate FX Reports into your application. To do that, copy the folder from inside the repositories `addon` directory into the FileMaker `AddonModules` folder.
+The Add-on provides the easiest way to integrate **FX Reports** into your application. To do that, copy the folder from inside the repositories `addon` directory into the FileMaker `AddonModules` folder.
 
-Here is a uncomplicated way to find that folder: from the FileMaker settings, go to the Plug-ins tab and 'Reveal Plug-in Folder'. Relativ to the now open directory, go up 2 steps in the directory structure and into `Extensions`, where you will find `AddonModules`.
+Here is a uncomplicated way to find that folder: In the FileMaker settings dialog, go to the Plug-ins tab and 'Reveal Plug-in Folder'. Relative to the now open directory, go up 2 steps in the directory structure and into `Extensions`, where you will find `AddonModules`.
 
 macOS:
 
@@ -26,11 +26,11 @@ Windows:
 
 `C:\Users\<User>\AppData\Local\FileMaker\Extensions\AddonModules\`
 
-If FileMaker has been running while copying the add-on, it must be restarted. Now, going into layout mode and switching to 'Add-ons' in the left sidebar, add-ons can be added to the application with the `+` button at the bottom. Choose "FX_Reports" in the list to add the elements necessary to talk to FX_Reports.
+If FileMaker has been running while copying the add-on, it must be restarted. Now, going into layout mode and switching to 'Add-ons' in the left sidebar, add-ons can be added to the application with the `+` button at the bottom. Choose "FX_Reports" in the list to add the elements necessary to talk to **FX Reports**.
 
 The add-on does not replace the FX_Reports database but merely provides a connection and simplifies the integration into an existing solution.
 
-### Manually with copy/paste
+### 2. Manually with copy/paste
 
 The target file, `FX_Reports.fmp12` and `FX_ReportsExample.fmp12` must be located in the same directory or on the same server.
 
@@ -60,24 +60,22 @@ The file reference to `FX_Reports.fmp12` should now be present.
 
 At last, create the table occurence for `FxReports` in the target file. It must not be renamed.
 
-> @todo describe
-
 ## Basic Usage
 
-1. Provide the **source file**
+### Provide the source data
 
-    The source data usually comes as/from exports of the application where FX Reports is supposed to be used. These are placed in a directory of choice, the temporary folder for example; or they can be put in a container field.
+The source data can be written directly into the template that is used to create a report or it can be provided as an xlsx export file. This file is placed in a directory of choice, the temporary folder for example; or it can be copied into a special container field.
 
-    The path to the source file is then defined in `path` in the template.
+The source file is then referenced in the template by its path.
 
-2. Prepare the **template**
+### Prepare the template
 
-    The templates prepared for custom exports can be stored in fields in the application, where they can be edited before specific tasks, like setting a desired target filename or the output directory.
+The templates prepared for custom exports can be stored in fields in the application, where they can be edited before specific tasks, like setting a desired target filename or the output directory.
 
-3. Generate the **document** with FX_Reports
+### Generate the document with FX Reports
 
-    To generate the output
-    - copy the template json to the container field `FxReports::a_container_`
-    - call the script `*FxReports.excelGenerate( $filename, $location )`
+To generate the output:
+- copy the template json to the container field `FxReports::a_container_`
+- call the script `*FxReports.excelGenerate()`
 
-    The file will be generated and saved at the location specified by `location` and `filename` (or by default on the desktop).
+The file will be generated and saved at the location specified by `location` and `filename` either by parameter or as specified in the template (or by default on the desktop with a generic filename).

@@ -3,15 +3,15 @@ title: Home
 nav_order: 1
 ---
 
-## Welcome to FX_Reports
+## Welcome to FX Reports
 
-FX_Reports is a powerful extension for genererating fully-featured spreadsheets in xslx format from FileMaker. It can easily be integrated into your existing solution.
+**FX Reports** is a powerful extension for genererating fully-featured spreadsheets in xslx format from FileMaker. It can easily be integrated into your existing solution.
 
 ### What can I achieve with it?
 
 Exports from a FileMaker database are extremely quick to set up but also very limited – think of human readable column headers for instance. On the other end there is [LibXL](https://www.libxl.com) via the [MBS plugin](https://www.mbsplugins.eu/component_XL.shtml) where you can (and have to!) define every single detail of every cell that you want to put into your Excel file. That can be a lot of work for one output.
 
-FX_Reports combines both the simplicity and flexibility into a single tool. It works as a wrapper around the excel functions of the MBS-Plugin, covering the all of the possibilities, but you can use JSON text to define the structure and content of your output file. Like Alan Kay said: *“Simple things should be simple, complex things should be possible”*
+**FX Reports** combines both the simplicity and flexibility into a single tool. It works as a wrapper around the Excel functions of the MBS-Plugin, covering the all of the possibilities, but you can use JSON text to define the structure and content of your output file. Like Alan Kay said: *“Simple things should be simple, complex things should be possible”*.
 
 For instance changing the column headers of a previously exported file is as easy as this:
 
@@ -30,22 +30,8 @@ Most of the Excel features are already supported, like
 - formatting of text, numbers, dates etc.
 - images
 
-We will constantly improve the functionality of FX_Reports, so if you have a feature request, feel free to add or comment on an issue [here](https://github.com/fmgarage/fx-reports/labels/enhancement) or start a [discussion](https://github.com/fmgarage/fx-reports/discussions).
-
-### What's in the Pipeline?
-
-#### Formats
-
-Integration into your existing solution will be even easier with formats. This will also include support for native outputs.
-
-#### Queries
-
-#### DynaPDF
-
-Using a JSON schema as a meta format for describing and generating complex PDF documents using a similar approach as the one for Excel.
-
-#### Word
+We will constantly improve the functionality of **FX Reports**, so if you have a feature request, feel free to add or comment on an issue [here](https://github.com/fmgarage/fx-reports/labels/enhancement) or start a [discussion](https://github.com/fmgarage/fx-reports/discussions).
 
 ### Support or Contact
 
-Having trouble with implementing FX_Reports? Not sure, if FX_Reports matches your individual requirements? We are happy to assist, just contact us via our website, Twitter ([@fmgarage](https://twitter.com/fmgarage)) or email (support@fmgarage.com).
+Having trouble with implementing **FX Reports**? Not sure, if **FX Reports** matches your individual requirements? We are happy to assist, just contact us via our website, Twitter ([@fmgarage](https://twitter.com/fmgarage)) or email (support@fmgarage.com).

@@ -1,23 +1,27 @@
 ---
 title: Using the UI
-has_children: true
+has_children: false
 has_toc: false
 parent: Getting Started
 nav_order: 2
 ---
 
-## User Interfaces
+## Using the UI
 
-FX Reports provides 2 different modes for interaction.
+FX Reports provides a GUI for simple interactions.
 
-1. GUI
+It is easy to achieve results in a minimum of time by using the graphical user interface. Templates can be written right in the editor window of **FX Reports** or - useful for more complex tasks/outputs - pasted from an external [editor]({{ site.baseurl }}{% link writing-templates/tools.md %}).
 
-By using the graphical user interface it is easy to achieve results in a minimum of time. Templates can be written right in the editor window of FX_Reports or - useful for more complex tasks/outputs - pasted from an external [editor]({{ site.baseurl }}{% link writing-templates/tools.md %}). With a click on `Generate xlsx`, the document will be generated.
+With a click on `Generate xlsx`, the document will be generated.
 
-<img src="/fx-reports/assets/images/screen1.png" style="magin-bottom: 20px;">
+To check if your template is free of errors, click on `Validate Template`.
 
-1. API
+In the settings tab, you can enter license keys for **FX Reports** and both dependencies, MBS and LibXL.
 
-When using FX Reports professionally, you might want to integrate it into your application. With an easy-to-use API you provide a template and call one script to generate the document.
+<img src="/assets/images/screen1.png" style="magin-bottom: 20px;">
 
-> @todo screenshot or illustration
+### API
+
+When using **FX Reports** at scale, you might want to integrate it into your application. With an easy-to-use API you only need to provide a template and call one script to generate the document.
+
+Read next how to integrate **FX Reports** and use the API: [Integration]({{ site.baseurl }}{% link getting-started/integration.md %})

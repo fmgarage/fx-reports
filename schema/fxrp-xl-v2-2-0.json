@@ -1,6 +1,6 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://fmgarage.com/schema/fxrp-xl-v2-2-0.json",
+	"$id": "https://fmgarage.com/schema/fxrp-xl-v2-2-2.json",
 	"title": "FX Reports Template Editor",
 	"description": "Generating xlsx spreadsheets from a json definition",
 	"$comment": "https://json-schema.org/understanding-json-schema/index.html",
@@ -25,13 +25,27 @@
 		},
 		"location": {
 			"title": "Target Location",
-			"description": "folder path ('desktop/exports') or field reference (e.g. FxReports::a_tmp_[1])",
-			"default": "FxReports::a_tmp_[1]",
+			"description": "folder path ('desktop/exports') or field reference (e.g. FxReports::a_container_[2])",
+			"default": "desktop/exports",
 			"type": "string"
+		},
+		"filters": {
+			"type": "object",
+			"title": "Sheet Filters",
+			"description": "Sets a sheet filter",
+			"properties": {
+				"autofilter": {
+					"title": "Autofilter",
+					"description": "Toggle sheet auto filter",
+					"type": "boolean",
+					"default": true
+				}
+			},
+			"additionalProperties": false
 		},
 		"formats": {
 			"type": "object",
-			"title": "Definitions: Formats",
+			"title": "Definitions Formats",
 			"description": "Add named formats that can be referenced in columns, rows and cells",
 			"additionalProperties": {
 				"$ref": "#/definitions/format"
@@ -39,16 +53,16 @@
 		},
 		"fonts": {
 			"type": "object",
-			"title": "Definitions: Fonts",
-			"description": "Add Font definitions by specifying a unique Name.",
+			"title": "Definitions Fonts",
+			"description": "Add Font definitions by specifying a unique Name. It is possible to extend other fontRefs.",
 			"additionalProperties": {
 				"$ref": "#/definitions/font"
 			}
 		},
 		"colors": {
 			"type": "object",
-			"title": "Definitions: Colors",
-			"description": "",
+			"title": "Definitions Colors",
+			"description": "Add Color definitions by specifying a unique Name.",
 			"additionalProperties": {
 				"type": "object",
 				"anyOf": [
@@ -73,7 +87,7 @@
 		},
 		"pictures": {
 			"type": "object",
-			"title": "Definitions: Pictures",
+			"title": "Definitions Pictures",
 			"description": "picture name as ref and path as field reference or file path",
 			"additionalProperties": {
 				"title": "picture catalog item",
@@ -87,7 +101,7 @@
 								"type": "string",
 								"format": "uri-reference",
 								"title": "path to image file",
-								"description": "system path, shortcuts are supported (e.g. 'desktop/logo.jpeg')"
+								"description": "system path, shortcuts are supported (e.g. 'desktop/logo.jpeg') or field reference (e.g. FxReports::a_container_[2])"
 							}
 						},
 						"required": ["path"],
@@ -111,17 +125,17 @@
 		},
 		"formatRef": {
 			"title": "Default Format Reference",
-			"description": "Will be applied to the Document",
+			"description": "Will be applied to the workbook",
 			"$ref": "#/definitions/formatRef"
 		},
 		"format": {
 			"title": "Default Format Options",
-			"description": "Will be applied to the Document",
+			"description": "Will be applied to the workbook",
 			"$ref": "#/definitions/format"
 		},
 		"display": {
 			"title": "Default Display Options",
-			"description": "Will be applied to the Document",
+			"description": "Will be applied to the workbook",
 			"$ref": "#/definitions/display"
 		},
 		"print": {
@@ -150,12 +164,52 @@
 			"$ref": "#/definitions/sheetName"
 		},
 		"split": {
-			"title": "Sheet Split",
-			"$ref": "#/definitions/split"
+			"title": "Sheet Freeze Panes",
+			"$comment": "deprecated",
+			"$ref": "#/definitions/freezePanes"
 		},
 		"sheets": {
 			"title": "Multiple Sheets",
 			"$ref": "#/definitions/sheets"
+		},
+		"columnSeparator": {
+			"title": "column separator in a text-file",
+			"default": ";",
+			"type": "string"
+		},
+		"rowSeparator": {
+			"title": "row separator in a text-file",
+			"default": "¶",
+			"type": "string"
+		},
+		"values": {
+			"title": "Central Value Storage",
+			"description": "Values that can be referenced in the template.",
+			"type": "object",
+			"additionalProperties": {
+				"anyOf": [
+					{
+						"title": "Row data array",
+						"description": "Row data array. Can contain arrays or objects.",
+						"type": "array",
+						"items": {
+							"oneOf": [
+								{
+									"type": "array"
+								},
+								{
+									"type": "object"
+								}
+							]
+						}
+					},
+					{
+						"title": "Scalar",
+						"description": "for cell data",
+						"type": ["number","boolean","integer","null","string"]
+					}
+				]
+			}
 		}
 	},
 	"additionalProperties": false,
@@ -206,9 +260,9 @@
 				"else": {
 					"$ref": "#/definitions/thenOrElse"
 				},
-				"note": { 
+				"note": {
 					"title": "internal note",
-					"$ref": "#/definitions/note" 
+					"$ref": "#/definitions/note"
 				}
 			},
 			"required": ["if", "then"],
@@ -216,44 +270,58 @@
 		},
 		"cell": {
 			"type": "object",
+			"$comment": "when applying changes also apply at mirror cellInclude (without pos and case)",
 			"properties": {
 				"pos": {
 					"title": "Cell Position",
-					"description": "",
+					"description": "[col, row, col-length, row-length]. Default length is 1",
 					"type": "array",
-					"items": [{
+					"items": [
+						{
 							"type": "integer",
-							"title": "x",
+							"title": "column start",
 							"minimum": 0
 						},
 						{
 							"type": "integer",
-							"title": "y",
+							"title": "row start",
 							"minimum": 0
 						},
 						{
 							"type": "integer",
-							"title": "length x",
+							"title": "columns length",
 							"minimum": -1
 						},
 						{
 							"type": "integer",
-							"title": "length y",
+							"title": "rows length",
 							"minimum": -1
 						}
 					],
 					"minItems": 2,
 					"maxItems": 4,
-					"$comment": "col, row, col-length, row-length -- default length is 1"
+					"$comment": ""
 				},
 				"formatRef": {
+					"title": "Format Reference",
 					"$ref": "#/definitions/formatRef"
 				},
 				"format": {
+					"title": "Format Options",
 					"$ref": "#/definitions/format"
 				},
 				"value": {
+					"title": "Cell Content",
 					"$ref": "#/definitions/value"
+				},
+				"dataType": {
+					"title": "Data Type",
+					"$ref": "#/definitions/dataType"
+				},
+				"valueRef": {
+					"title": "Value reference",
+					"description": "Reference to central value storage.",
+					"type": "string"
 				},
 				"height": {
 					"title": "Cell Height",
@@ -266,18 +334,66 @@
 					"type": "integer"
 				},
 				"picture": {
+					"title": "Picture",
 					"$ref": "#/definitions/picture"
 				},
 				"case": {
+					"title": "Case-Statement",
 					"$ref": "#/definitions/case"
 				},
-				"note": { 
-					"title": "internal note",
-					"$ref": "#/definitions/note" 
+				"note": {
+					"title": "Internal Note",
+					"$ref": "#/definitions/note"
 				}
 			},
 			"additionalProperties": false,
 			"required": ["pos"]
+		},
+		"cellInclude": {
+			"type": "object",
+			"$comment": "should mirror cell without pos and case",
+			"properties": {
+				"formatRef": {
+					"title": "Format Reference",
+					"$ref": "#/definitions/formatRef"
+				},
+				"format": {
+					"title": "Format Options",
+					"$ref": "#/definitions/format"
+				},
+				"value": {
+					"title": "Value Type",
+					"$ref": "#/definitions/value"
+				},
+				"dataType": {
+					"title": "Data Type",
+					"$ref": "#/definitions/dataType"
+				},
+				"valueRef": {
+					"title": "Value reference",
+					"description": "Reference to central value storage.",
+					"type": "string"
+				},
+				"height": {
+					"title": "Cell Height",
+					"description": "",
+					"type": "integer"
+				},
+				"width": {
+					"title": "Cell Width",
+					"description": "",
+					"type": "integer"
+				},
+				"picture": {
+					"title": "Picture",
+					"$ref": "#/definitions/picture"
+				},
+				"note": {
+					"title": "Internal Note",
+					"$ref": "#/definitions/note"
+				}
+			},
+			"additionalProperties": false
 		},
 		"cells": {
 			"type": "array",
@@ -373,13 +489,14 @@
 				"pos": {
 					"title": "Column Position",
 					"description": "Either Position or Range",
-					"anyOf": [{
+					"anyOf": [
+						{
 							"type": "integer",
 							"minimum": -1
 						},
 						{
 							"type": "array",
-							"$comment": "start index, length. -1 or undefined for auto.",
+							"description": "start index, length. -1 or undefined for auto.",
 							"minItems": 1,
 							"maxItems": 2,
 							"items": {
@@ -390,8 +507,10 @@
 					]
 				},
 				"type": {
+					"description": "If dataType is set, this says where the format is applied.",
 					"type": "string",
-					"enum": ["header", "data", "summary"]
+					"enum": ["header", "data", "summary"],
+					"default": "data"
 				},
 				"width": {
 					"$ref": "#/definitions/columnWidth"
@@ -405,12 +524,6 @@
 				"dataType": {
 					"$ref": "#/definitions/dataType"
 				},
-				"dataOnly": {
-					"title": "Data Only",
-					"description": "",
-					"type": "boolean",
-					"default": true
-				},
 				"case": {
 					"title": "Case-Statement",
 					"$ref": "#/definitions/case"
@@ -420,7 +533,7 @@
 		},
 		"columnWidth": {
 			"title": "Default Column Width",
-			"description": "Set default Column Width for all Sheets",
+			"description": "Set default Column Width. Unit: character. Auto width: -1",
 			"type": "integer",
 			"minimum": -1,
 			"default": -1
@@ -437,13 +550,13 @@
 		"dataType": {
 			"title": "Data Type",
 			"type": "string",
-			"enum": ["text", "number", "date", "timestamp"]
+			"enum": ["text", "number", "date", "blank", "timestamp", "formula"]
 		},
 		"dateFormat": {},
 		"display": {
 			"title": "Display Options",
 			"type": "object",
-			"$comment": "can be applied to book or sheet",
+			"description": "can be applied to book or sheet",
 			"properties": {
 				"hideGrid": {
 					"title": "Hide Grid",
@@ -456,13 +569,19 @@
 					"minimum": 25,
 					"maximum": 400,
 					"default": 150
+				},
+				"freeze": {
+					"title": "Freeze panes",
+					"description": "Freeze panes at 0:1 (boolean) or individual x:y location (array)",
+					"$ref": "#/definitions/freezePanes"
 				}
 			},
 			"additionalProperties": false
 		},
 		"font": {
 			"type": "object",
-			"description": "Font Definition",
+			"title": "Font Definition",
+			"description": "Create a font definition with font name and format options.",
 			"properties": {
 				"fontRef": {
 					"title": "Font Reference",
@@ -478,18 +597,29 @@
 					"description": "Font face (e.g. 'Helvetica'"
 				},
 				"fontSize": {
+					"title": "Font Size",
+					"desciption": "",
 					"type": "integer",
 					"minimum": 1,
-					"title": "Font Size",
-					"desciption": ""
+					"default": 13
 				},
 				"bold": {
 					"title": "Bold",
 					"type": "boolean"
 				},
-				"note": { 
+				"italic": {
+					"title": "Text is Italic",
+					"type": "boolean"
+				},
+				"underline": {
+					"title": "Text Underline",
+					"description": "Sets the underline style of the font. 0 no underline, 1 single, 2 double, 33 acc single, 34 acc double",
+					"type": "integer",
+					"enum": [0, 1, 2, 33, 34]
+				},
+				"note": {
 					"title": "internal note",
-					"$ref": "#/definitions/note" 
+					"$ref": "#/definitions/note"
 				}
 			},
 			"additionalProperties": false
@@ -501,6 +631,7 @@
 		},
 		"format": {
 			"type": "object",
+			"title": "Format Options",
 			"description": "",
 			"properties": {
 				"formatRef": {
@@ -512,15 +643,19 @@
 					"title": "Cell Data Type",
 					"type": "string",
 					"description": "Data Type of the Excel Cell",
-					"enum": ["string", "number", "date", "blank", "timestamp", "formula"]
+					"enum": ["text", "number", "date", "blank", "timestamp", "formula"]
 				},
 				"lock": {
 					"title": "Cell Lock",
+					"description": "(not implemented) lock cell for editing",
 					"type": "boolean"
 				},
 				"hide": {
 					"title": "Cell Hide",
-					"type": "boolean"
+					"type": "boolean",
+					"options": {
+						"hidden": true
+					}
 				},
 				"shrinkToFit": {
 					"title": "Cell Shrink to Fit",
@@ -555,24 +690,21 @@
 				},
 				"underline": {
 					"title": "Text Underline",
-					"type": "string",
-					"enum": ["single", "double", "acc single", "acc double"]
+					"description": "Sets the underline style of the font. 0 no underline, 1 single, 2 double, 33 acc single, 34 acc double",
+					"type": "integer",
+					"enum": [0, 1, 2, 33, 34]
 				},
 				"alignH": {
 					"title": "Text Horizontal Alignment",
 					"description": "Alignment of Text in Cell: 0 general, 1 left, 2 center, 3 right, 4 full, 5 justify, 6 merge, 7 distributed",
-					"$comment": "general, left, center, right, full, justify, merge, distributed",
 					"type": "integer",
-					"enum": [0, 1, 2, 3, 4, 5, 6, 7],
-					"minimum": 1,
-					"maxValue": 7
+					"enum": [0, 1, 2, 3, 4, 5, 6, 7]
 				},
 				"alignV": {
 					"title": "Text Vertical Alignment",
-					"description": "Alignment of Text in Cell",
+					"description": "Alignment of Text in Cell, 0 top, 1 center, 2 bottom, 3 justify, 4 distributed",
 					"type": "integer",
-					"minimum": 1,
-					"$comment": "top, center, bottom, justify, distributed"
+					"enum": [0, 1, 2, 3, 4]
 				},
 				"wrap": {
 					"title": "Text Wrap",
@@ -580,13 +712,14 @@
 					"description": ""
 				},
 				"indent": {
-					"title": "Text Indent",
-					"type": "integer"
+					"title": "Text Indentation",
+					"type": "integer",
+					"description": "(not implemented)"
 				},
 				"rotate": {
 					"title": "Text Rotate",
 					"type": "integer",
-					"description": "Rotate Text by value from 0 to 255",
+					"description": "(not implemented) Rotate Text by value from 0 to 255",
 					"minimum": 0,
 					"maximum": 255
 				},
@@ -595,6 +728,7 @@
 					"$ref": "#/definitions/numberFormat"
 				},
 				"numberFormatCustom": {
+					"title": "Number Format Custom",
 					"$ref": "#/definitions/numberFormatCustom"
 				},
 				"border": {
@@ -653,7 +787,8 @@
 				},
 				"pattern": {
 					"title": "Background Pattern",
-					"anyOf": [{
+					"anyOf": [
+						{
 							"type": "string",
 							"enum": ["none", "solid", "50% gray", "75% gray", "25% gray", "horizontal stripes", "vertical stripes", "reverse diagonal stripes", "diagonal stripes", "diagonal cross hatch", "thick diagonal stripe", "thin horizontal stripe", "thin vertical stripe", "thin reverse diagonal stripe", "thin diagonal stripe", "thin horizontal cross hatch", "thin diagonal cross hatch", "gray 12p5", "gray 6p25"]
 						},
@@ -661,10 +796,9 @@
 							"type": "integer",
 							"minimum": 0,
 							"maximum": 18,
-							"$comment": "see: https://www.mbsplugins.eu/XLFormatSetFillPattern.shtml"
+							"description": "see: https://www.mbsplugins.eu/XLFormatSetFillPattern.shtml"
 						}
-					],
-					"$comment": "see: https://www.mbsplugins.eu/XLFormatSetFillPattern.shtml"
+					]
 				},
 				"backgroundColor": {
 					"title": "Background Color",
@@ -674,9 +808,9 @@
 					"title": "Foreground Color",
 					"$ref": "#/definitions/color"
 				},
-				"note": { 
+				"note": {
 					"title": "internal note",
-					"$ref": "#/definitions/note" 
+					"$ref": "#/definitions/note"
 				}
 			},
 			"additionalProperties": false
@@ -686,58 +820,201 @@
 			"title": "Format Reference",
 			"description": "Name of a defined Format"
 		},
+		"headerOrFooter": {
+			"type": "object",
+			"title": "Definition of header or footer",
+			"properties": {
+				"margin": {
+					"title": "Margin",
+					"description": "Margin from header or footer cell to the outer bounds of paper. The unit is inches.",
+					"type": "number",
+					"minimum": 0
+				},
+				"left": {"$ref": "#/definitions/headerOrFooterSection"},
+				"center": {"$ref": "#/definitions/headerOrFooterSection"},
+				"right": {"$ref": "#/definitions/headerOrFooterSection"}
+			}
+		},
+		"headerOrFooterSection": {
+			"type": "object",
+			"anyOf": [
+				{
+					"title": "with Font as Reference",
+					"properties": {
+						"text": {
+							"type": "string",
+							"title": "Text",
+							"description": "Placeholders: {page} {total} {date} {time} {picture} {filepath} {filename} {sheet}, format tags (start/stop):  {strike} {sup} {sub} {underline} {underlines} {b} {i}"
+						},
+						"fontRef": {
+							"title": "Font Reference",
+							"$ref": "#/definitions/fontRef"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["text"]
+				},
+				{
+					"title": "with Font as Definition",
+					"properties": {
+						"fontName": {
+							"type": "string",
+							"title": "Font Name",
+							"description": "Font face (e.g. 'Helvetica')"
+						},
+						"fontSize": {
+							"type": "integer",
+							"minimum": 1,
+							"default": 1,
+							"title": "Font Size",
+							"desciption": "Font Size in point"
+						},
+						"bold": {
+							"title": "Bold",
+							"type": "boolean"
+						},
+						"italic": {
+							"title": "Italic",
+							"type": "boolean"
+						},
+						"text": {
+							"type": "string",
+							"title": "Text",
+							"description": "Placeholders: {page} {total} {date} {time} {picture} {filepath} {filename} {sheet}. format tags (start/stop):  {strike} {sup} {sub} {underline} {underlines} {b} {i}"
+						}
+					},
+					"additionalProperties": false,
+					"required": ["text"]
+				}
+			]
+		},
 		"if": {
 			"type": "object",
-			"title": "condition",
-			"$comment": "{'if':{'value':{'beginsWith':'a'}}}",
+			"title": "If Condition",
+			"description": "",
 			"properties": {
 				"value": {
 					"type": "object",
 					"title": "Value",
-					"description": "Caution: specify only *one* operator.",
-					"properties": {
-						"equalTo": {
-							"type": ["string", "number"]
+					"description": "Object holding ONE condition rule.",
+					"oneOf": [
+						{
+							"title": "equalTo",
+							"properties": {
+								"equalTo": {
+									"type": ["string", "number"]
+								}
+							},
+							"additionalProperties": false,
+							"required": ["equalTo"]
 						},
-						"beginsWith": {
-							"type": "string"
+						{
+							"title": "beginsWith",
+							"properties": {
+								"beginsWith": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false,
+							"required": ["beginsWith"]
 						},
-						"endsWith": {
-							"type": "string"
+						{
+							"title": "endsWith",
+							"properties": {
+								"endsWith": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false,
+							"required": ["endsWith"]
 						},
-						"contains": {
-							"type": "string"
+						{
+							"title": "contains",
+							"properties": {
+								"contains": {
+									"type": "string"
+								}
+							},
+							"additionalProperties": false,
+							"required": ["contains"]
 						},
-						"containsAny": {
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
+						{
+							"title": "containsAny",
+							"properties": {
+								"containsAny": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								}
+							},
+							"additionalProperties": false,
+							"required": ["containsAny"]
 						},
-						"containsAll": {
-							"type": "array",
-							"items": {
-								"type": "string"
-							}
+						{
+							"title": "containsAll",
+							"properties": {
+								"containsAll": {
+									"type": "array",
+									"items": {
+										"type": "string"
+									}
+								}
+							},
+							"additionalProperties": false,
+							"required": ["containsAll"]
 						},
-						"greaterThan": {
-							"type": "number"
+						{
+							"title": "greaterThan",
+							"properties": {
+								"greaterThan": {
+									"type": "number"
+								}
+							},
+							"additionalProperties": false,
+							"required": ["greaterThan"]
 						},
-						"greaterThanOrEqualTo": {
-							"type": "number"
+						{
+							"title": "greaterThanOrEqualTo",
+							"properties": {
+								"greaterThanOrEqualTo": {
+									"type": "number"
+								}
+							},
+							"additionalProperties": false,
+							"required": ["greaterThanOrEqualTo"]
 						},
-						"lessThan": {
-							"type": "number"
+						{
+							"title": "lessThan",
+							"properties": {
+								"lessThan": {
+									"type": "number"
+								}
+							},
+							"additionalProperties": false,
+							"required": ["lessThan"]
 						},
-						"lessThanOrEqualTo": {
-							"type": "number"
+						{
+							"title": "lessThanOrEqualTo",
+							"properties": {
+								"lessThanOrEqualTo": {
+									"type": "number"
+								}
+							},
+							"additionalProperties": false,
+							"required": ["lessThanOrEqualTo"]
 						}
-					},
-					"additionalProperties": false
+					]
 				}
 			},
 			"required": ["value"],
 			"additionalProperties": false
+		},
+		"margin": {
+			"title": "Margins of the sheet",
+			"description": "Margins of the sheet. The unit is inches.",
+			"type": "number",
+			"minimum": 0
 		},
 		"note": {
 			"title": "internal note",
@@ -745,7 +1022,7 @@
 		},
 		"numberFormat": {
 			"title": "Number Format",
-			"description": "invidiual format options for numbers, dates, currencies\rsee https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml",
+			"description": "individual format options for numbers, dates, currencies, see https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml",
 			"anyOf": [
 				{
 					"type": "string",
@@ -761,7 +1038,7 @@
 		},
 		"numberFormatCustom": {
 			"title": "Custom Number Format",
-			"description": "custom format options for numbers, dates, currencies..., check https://www.libxl.com/custom-format.html",
+			"description": "custom format options for numbers, dates, currencies..., check https://www.mbsplugins.eu/XLBookAddCustomNumFormat.shtml",
 			"type": "string"
 		},
 		"picture": {
@@ -809,7 +1086,7 @@
 						"position": {"$ref": "#/definitions/picturePosition" },
 						"note": {
 							"title": "internal note",
-							"$ref": "#/definitions/note" 
+							"$ref": "#/definitions/note"
 						}
 					},
 					"additionalProperties": false,
@@ -831,7 +1108,7 @@
 						"position": {"$ref": "#/definitions/picturePosition" },
 						"note": {
 							"title": "internal note",
-							"$ref": "#/definitions/note" 
+							"$ref": "#/definitions/note"
 						}
 					},
 					"additionalProperties": false,
@@ -851,7 +1128,7 @@
 		},
 		"pictureScale": {
 			"title": "Scale factor of picture",
-			"description": "You can either use scale or width and height. Default ist 1.0",
+			"description": "(not recommended) You can either use scale or width and height. Default ist 1.0",
 			"type": "number",
 			"exclusiveMinimum": 0,
 			"maximum": 1
@@ -872,38 +1149,110 @@
 		},
 		"print": {
 			"title": "Default Print Options",
-			"description": "Will be applied to the Document",
+			"description": "Option defining the print settings.",
 			"type": "object",
-			"$comment": "can be applied to book or sheet",
 			"properties": {
-				"landscape": {
-					"type": "boolean"
-				},
-				"headerText": {
-					"type": "string",
-					"example": "Meine Auswertung"
-				},
-				"headerMargin": {
-					"type": "number",
-					"$comment": "default = 0"
-				},
-				"withGrid": {
-					"type": "boolean"
-				},
 				"fit": {
+					"title": "Fit to Page",
+					"description": "Fit sheet to page(s) in width and height when printed. [ pages width, pages height ]",
 					"type": "array",
 					"minItems": 1,
 					"maxItems": 2,
-					"contains": {
+					"items": {
 						"type": "integer",
 						"minimum": 0
 					}
 				},
-				"note": { 
+				"footer": {"$ref": "#/definitions/headerOrFooter",
+					"title": "Footer",
+					"description": "set up a Footer"
+				},
+				"header": {"$ref": "#/definitions/headerOrFooter",
+					"title": "Header",
+					"description": "Set up a header."
+				},
+				"landscape": {
+					"title": "Landscape Orientation",
+					"type": "boolean"
+				},
+				"marginBottom":{
+					"$ref": "#/definitions/margin",
+					"title": "bottom margin of the sheet"
+				},
+				"marginLeft":{
+					"$ref": "#/definitions/margin",
+					"title": "left margin of the sheet"
+				},
+				"marginRight":{
+					"$ref": "#/definitions/margin",
+					"title": "right margin of the sheet"
+				},
+				"marginTop":{
+					"$ref": "#/definitions/margin",
+					"title": "top margin of the sheet"
+				},
+				"paperSize": {
+					"title": "Paper size",
+					"anyOf": [
+						{
+							"type": "string",
+							"title": "by Name",
+							"description": "Set paper size by name, 'default' depends on the machine the template is processed on, this could also be different on server",
+							"enum": ["DEFAULT","LETTER","LETTERSMALL","TABLOID","LEDGER","LEGAL","STATEMENT","EXECUTIVE","A3","A4","A4SMALL","A5","B4","B5","FOLIO","QUATRO","10x14","10x17","NOTE","ENVELOPE_9","ENVELOPE_10","ENVELOPE_11","ENVELOPE_12","ENVELOPE_14","C_SIZE","D_SIZE","E_SIZE","ENVELOPE_DL","ENVELOPE_C5","ENVELOPE_C3","ENVELOPE_C4","ENVELOPE_C6","ENVELOPE_C65","ENVELOPE_B4","ENVELOPE_B5","ENVELOPE_B6","ENVELOPE","ENVELOPE_MONARCH","US_ENVELOPE","FANFOLD","GERMAN_STD_FANFOLD","GERMAN_LEGAL_FANFOLD"]
+						},
+						{
+							"type": "integer",
+							"title": "as Integer",
+							"description": "default: 0, Letter: 1, A4: 9 (see documentation or use the 'by name' option ",
+							"minimum": 0,
+							"maximum": 41,
+							"default": 0
+						}
+					]
+				},
+				"repeatRows": {
+					"title": "Repeat rows",
+					"description":  "Repeat these row(s) as header after each pagebreak.",
+					"anyOf": [
+						{
+							"type": "integer",
+							"title": "Single row",
+							"minimum": 0,
+							"default": 0
+						},
+						{
+							"type": "array",
+							"title": "Multiple rows",
+							"description": "Set first row (starting with 0) and count of rows to repeat.",
+							"minItems": 2,
+							"maxItems": 2,
+							"items": [
+								{
+									"type": "integer",
+									"title": "Start row",
+									"minimum": 0
+								},
+								{
+									"type": "integer",
+									"title": "Row count",
+									"minimum": 1,
+									"default": 1
+								}
+							]
+						}
+					]
+				},
+				"withGrid": {
+					"title": "Print Grid",
+					"description": "Include cell grid when printing.",
+					"type": "boolean"
+				},
+				"note": {
 					"title": "internal note",
-					"$ref": "#/definitions/note" 
+					"$ref": "#/definitions/note"
 				}
-			}
+			},
+			"additionalProperties": false
 		},
 		"row": {
 			"type": "object",
@@ -913,21 +1262,23 @@
 				"type": {
 					"type": "string",
 					"title": "Row Type",
-					"description": "Rows can be of type 'header', 'data' or 'summary'",
+					"description": "Rows can be of type 'header', 'data' or 'summary'. Choosing one applies specific formattings.",
+					"$comment": "these values trigger formats defined by fx-reports",
 					"enum": ["header", "data", "summary"]
 				},
 				"dataType": {"$ref": "#/definitions/dataType"},
 				"pos": {
 					"title": "Position",
 					"description": "Absolute Position (integer) or Position and Length (array)",
-					"anyOf": [{
+					"anyOf": [
+						{
 							"type": "integer",
-							"$comment": "Position of row. First column has pos 0",
+							"description": "Position of row. First row has pos 0",
 							"minimum": 0
 						},
 						{
 							"type": "array",
-							"$comment": "optional column offset",
+							"description": "[x,y]: x - optional column offset, y - position of row. First column/row has pos 0",
 							"minItems": 2,
 							"maxItems": 2,
 							"items": {
@@ -946,15 +1297,9 @@
 					"description": "Define a format from scratch or modify a referenced format",
 					"$ref": "#/definitions/format"
 				},
-				"includeFirstRow": {
-					"title": "Include first row",
-					"description": "Include the first row of the source file, normally contains columns headers",
-					"type": "boolean",
-					"default": true
-				},
 				"values": {
 					"title": "Values",
-					"description": "Add one row (array of values) or multiple rows (array of arrays)",
+					"description": "Add one row (array of values) or multiple rows (array of arrays|rows)",
 					"type": "array",
 					"minItems": 1,
 					"anyOf": [
@@ -975,12 +1320,23 @@
 						}
 					]
 				},
+				"valuesRef": {
+					"title": "Value reference",
+					"description": "reference to central value storage",
+					"type": "string",
+					"pattern": "^[a-zA-Z0-9\\/]+$"
+				},
 				"path": {
 					"title": "Data Source Path",
-					"description": "File path or field name",
+					"description": "Path to a source excel file. Located in the filesystem or in a container field.",
 					"type": "string",
-					"$comment": "include path for data file",
 					"default": "FxReports::a_container_[2]"
+				},
+				"includeFirstRow": {
+					"title": "Include first row",
+					"description": "Include the first row of the source file, normally contains columns headers",
+					"type": "boolean",
+					"default": true
 				},
 				"limit": {
 					"title": "Data Source Limit",
@@ -1003,7 +1359,7 @@
 				},
 				"fields": {
 					"title": "Data Source Filter",
-					"description": "Filter Data Source by Column Names",
+					"description": "Determines which fields from the source shall be in the target file. References the header names.",
 					"type": "array",
 					"items": {
 						"type": "string"
@@ -1012,12 +1368,12 @@
 				},
 				"height": {
 					"title": "Row Height",
-					"description": "Set the Row Height",
+					"description": "Set the Row Height in points.",
 					"type": "integer"
 				},
 				"widths": {
 					"title": "Column Widths",
-					"description": "Specify Columns Widths, use -1 for 'auto'. To specify the width for all columns, set Default Column Width in sheet or workbook",
+					"description": "Specify Columns Widths, use -1 for 'auto'. The unit is `character`. To specify the width for all columns, set Default Column Width in sheet or workbook",
 					"type": "array",
 					"minItems": 1,
 					"items": {
@@ -1026,9 +1382,12 @@
 						"default": -1
 					}
 				},
-				"note": { 
+				"note": {
 					"title": "internal note",
-					"$ref": "#/definitions/note" 
+					"options": {
+						"hidden": true
+					},
+					"$ref": "#/definitions/note"
 				}
 			},
 			"additionalProperties": false
@@ -1069,9 +1428,8 @@
 					"$ref": "#/definitions/print"
 				},
 				"split": {
-					"title": "Sheet split",
-					"description": "Split Sheet at 0:1 (boolean) or individual x:y location (array)",
-					"$ref": "#/definitions/split"
+					"$comment": "deprecated",
+					"$ref": "#/definitions/freezePanes"
 				},
 				"columnWidth": {
 					"title": "Default Column Width",
@@ -1092,32 +1450,42 @@
 				},
 				"filters": {
 					"type": "object",
-					"additionalProperties": {
-						"type": "object",
-						"properties": {}
-					}
+					"title": "Sheet Filters",
+					"description": "Sets sheet filter",
+					"properties": {
+						"autofilter": {
+							"title": "Autofilter",
+							"description": "Sets sheet auto filter",
+							"type": "boolean",
+							"default": true
+						}
+					},
+					"additionalProperties": false
 				},
 				"defaultColumn": {
 					"type": "object",
 					"properties": {
 						"width": {
 							"type": "integer",
+							"description": "unit: character",
 							"minimum": -1
 						},
 						"minWidth": {
 							"type": "integer",
+							"description": "unit: character",
 							"minimum": 1
 						},
 						"maxWidth": {
 							"type": "integer",
+							"description": "unit: character",
 							"minimum": 1
 						}
 					},
 					"additionalProperties": false
 				},
-				"note": { 
+				"note": {
 					"title": "internal note",
-					"$ref": "#/definitions/note" 
+					"$ref": "#/definitions/note"
 				}
 			},
 			"additionalProperties": false
@@ -1137,42 +1505,44 @@
 				"$ref": "#/definitions/sheet"
 			}
 		},
-		"split": {
-			"title": "Sheet Split",
-			"description": "Split Sheet at 0:1 (boolean) or individual x:y location (array)",
-			"anyOf": [{
+		"freezePanes": {
+			"title": "Freeze panes",
+			"description": "Freeze panes at [0, 1] (boolean) or at individual [column, row] position (array)",
+			"anyOf": [
+				{
+					"title": "Freeze first row",
 					"type": "boolean",
-					"description": "true for default split at 0|1"
+					"description": "Freeze default pane (first row)"
 				},
 				{
+					"title": "Freeze at custom position",
 					"type": "array",
+					"minItems": 2,
 					"maxItems": 2,
-					"description": "empty for default, col/row",
-					"items": {
-						"type": "integer"
-					}
+					"description": "[column, row]",
+					"items": [
+						{
+							"title": "column",
+							"type": "integer",
+							"default": 0
+						},
+						{
+							"title": "row",
+							"type": "integer",
+							"default": 1
+						}
+					]
 				}
 			]
 		},
 		"thenOrElse": {
+			"title": "Case result",
+			"description": "Cell properties and values.",
 			"type": "object",
-			"properties": {
-				"formatRef": {
-					"title": "Format Reference",
-					"$ref": "#/definitions/formatRef"
-				},
-				"picture": {
-					"title": "Picture",
-					"$ref": "#/definitions/picture"
-				},
-				"value": {
-					"title": "Value",
-					"type": ["string", "number", "null"]
-				}
-			},
-			"additionalProperties": false
+			"$ref": "#/definitions/cellInclude"
 		},
 		"value": {
+			"title": "Value Type",
 			"type": ["string", "number", "boolean", "null"],
 			"default": ""
 		}
