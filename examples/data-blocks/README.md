@@ -9,7 +9,8 @@ This example demonstrates how to distribute records over two column groups.
     "display": {
         "hideGrid": true,
         "zoom": 150
-    },
+    }
+}
 ```
 
 #### columnWidth
@@ -32,7 +33,12 @@ Hides the grid on the entire spreadsheet.
 
 Set the zoom to 150%.
 
+#### rows
+
+Two rows arrays with an offset.
+
 ```json
+{
     "rows": [
         {
             "values": [ "Title", "Firstname", "Surname"],
@@ -55,13 +61,10 @@ Set the zoom to 150%.
             "fields": [ "Title", "GivenName", "Surname"],
             "offset": 13,
             "formatRef": "Table"
-        }    
-    ],
+        }
+    ]
+}
 ```
-
-#### rows
-
-Two rows arrays with with an offset.
 
 #### values
 
@@ -88,27 +91,29 @@ Name of the source fields (column headers).
 
 Row to stop processing the source file.
 
+Keep in mind, the count starts at row number 0, so limiting to 13 rows will stop at row number 12.
+
 #### offset
 
 Row to start processing the source file.
 
-```json
-    "formats": {
-        "Table": {
-            "border": 7
-        },
-        "Header": {
-            "formatRef": "Table",
-            "bold": true,
-            "backgroundColor": {"rgb": [89, 173, 255]}
-        }
-    }
-}
-```
 
 #### formats
 
 Named object for formats, eg "Table", "Header". They are aplied using "formatRef"
+
+```json
+"formats": {
+    "Table": {
+        "border": 7
+    },
+    "Header": {
+        "formatRef": "Table",
+        "bold": true,
+        "backgroundColor": {"rgb": [89, 173, 255]}
+    }
+}
+```
 
 #### border
 

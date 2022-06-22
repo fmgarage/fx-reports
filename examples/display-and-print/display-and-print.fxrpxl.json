@@ -1,11 +1,14 @@
 ﻿{
 	"filename": "display-and-print.xlsx",
-	"sheets": [{
-			"name": "Split",
-			"split": [2, 2],
+	"sheets": [
+		{
+			"name": "Freeze Panes",
+			"display": {
+				"freeze": [2, 2]
+			},
 			"cells": [{
 				"pos": [0, 0],
-				"value": "Split on position 2/2"
+				"value": "Freeze panes on position 2/2"
 			}]
 		},
 		{
@@ -17,6 +20,51 @@
 				"pos": [0, 0],
 				"value": "hide grid"
 			}]
+		},
+		{
+			"name": "Zoom",
+			"display": {
+				"zoom": 200
+			},
+			"cells": [{
+				"pos": [0, 0],
+				"value": "zoom 200%"
+			}]
+		},
+		{
+			"name": "Print Options",
+			"cells": [
+				{
+					"pos": [0, 0, 5],
+					"value": "print options: A4 landscape"
+				},
+				{
+					"pos": [0, 1, 5],
+					"value": "rows 0 and 1 are printed on each page"
+				}
+			],
+			"print":{
+				"paperSize": "A4",
+				"landscape": true,
+				"repeatRows": [0,2],
+				"header":{
+					"right":{
+						"text": "page: {page} of {total}"
+					}
+				},
+				"footer":{
+					"left":{
+						"text": "{date} {time}"
+					},
+					"center":{
+						"text": "{filepath} {filename} {sheet}",
+						"bold": true
+					},
+					"right":{
+						"text": "page: {page} of {total}"
+					}
+				}
+			}
 		}
 	]
 }

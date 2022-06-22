@@ -27,7 +27,7 @@
 			"fields": [ "Title", "GivenName", "Surname"],
 			"offset": 13,
 			"formatRef": "Table"
-		}		
+		}
 	],
 	"formats": {
 		"Table": {

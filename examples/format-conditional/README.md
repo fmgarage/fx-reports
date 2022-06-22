@@ -5,14 +5,14 @@ This example shows how to use conditional formatting.
 The conditions are in a `if...then` clause:
 
 ```json
-			"case": {
-				"if": {
-					"value": { "equalTo": 10 }
-				},
-				"then": {
-					"formatRef": "Table-red"
-				}
-			}
+"case": {
+	"if": {
+		"value": { "equalTo": 10 }
+	},
+	"then": {
+		"formatRef": "Table-red"
+	}
+}
 ```
 
 ### Properties

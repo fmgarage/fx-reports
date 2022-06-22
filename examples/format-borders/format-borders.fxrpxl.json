@@ -19,7 +19,7 @@
 	],
 	"cells": [
 		{
-			"$comment": "upper left corner",
+			"note": "upper left corner",
 			"pos": [1,1],
 			"format": {
 				"borderDiagonalMode": "up",
