@@ -13,6 +13,8 @@ This example demonstrates how to distribute records over two column groups.
 }
 ```
 
+![Preview](Preview.png)![]()
+
 #### columnWidth
 
 Adjust column width to the cells' content using `-1` as value.
