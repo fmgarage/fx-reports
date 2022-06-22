@@ -30,6 +30,8 @@ File path to a source file providing data.
 
 ### Extras
 
+![Preview](Preview extra.png)
+
 #### columnWidth
 
 Adjust the column width to the cells' content using `-1` as value.
