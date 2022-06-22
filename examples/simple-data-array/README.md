@@ -24,7 +24,7 @@ This example demonstrates how to provide data rows inside the template document.
 }
 ```
 
-
+![Preview](Preview.png)
 
 #### filename
 

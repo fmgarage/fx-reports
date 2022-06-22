@@ -14,6 +14,7 @@ The conditions are in a `if...then` clause:
 	}
 }
 ```
+![Preview](Preview.png)
 
 ### Properties
 

@@ -74,6 +74,7 @@ This example demonstrates how to freeze panes on a spreadsheet and how to hide t
 	]
 }
 ```
+![Preview](Preview.png)
 
 #### filename
 

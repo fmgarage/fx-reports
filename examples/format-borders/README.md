@@ -10,6 +10,7 @@ Borders are a `"format"` property:
 	"borderColor": {"rgb": [0,50,50]}
 }
 ```
+![Preview](Preview.png)
 
 #### border
 

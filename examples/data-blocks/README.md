@@ -13,7 +13,7 @@ This example demonstrates how to distribute records over two column groups.
 }
 ```
 
-![Preview](Preview.png)![]()
+![Preview](Preview.png)
 
 #### columnWidth
 

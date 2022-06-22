@@ -1,6 +1,6 @@
 ## Example: data-reference
 
-This example shows another way to provide datavalues that can be referenced in the template. By adding your json data-array with a name (here 'myContacts') to *values*, it will be accessible throughout the template when using the `valuesRef` key (or `valueRef` in a cell) .
+This example shows another way to provide data values that can be referenced in the template. By adding your json data array with a name (here 'myContacts') to *values*, it will be accessible throughout the template when using the `valuesRef` key (or `valueRef` in a cell). So no matter how complex your template is you can easily store records at a central position.
 
 ```json
 {
@@ -26,6 +26,7 @@ This example shows another way to provide datavalues that can be referenced in t
 	}
 }
 ```
+![Preview](Preview.png)
 
 #### filename
 

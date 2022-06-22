@@ -14,6 +14,7 @@ Tip: if place a copy of the *examples* folder on your desktop all example code a
   ]
 }
 ```
+![Preview](Preview.png)
 
 #### rows
 

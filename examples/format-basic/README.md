@@ -33,6 +33,7 @@ This is a collection of different formatting options.
 	}
 }
 ```
+![Preview](Preview.png)
 
 ### fonts
 

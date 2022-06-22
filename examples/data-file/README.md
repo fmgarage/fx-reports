@@ -15,6 +15,8 @@ This example demonstrates how to change the header and field order from a given 
 }
 ```
 
+![Preview](Preview.png)
+
 #### columnWidth
 
 Adjust column width to the cells content using `-1` as value.
