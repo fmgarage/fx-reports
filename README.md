@@ -8,7 +8,7 @@ Generate fully featured Excel spreadsheets from FileMaker, dynamically defined u
 
 - [**FX_Reports.fmp12**](https://fmgarage.com/download/fx-reports/FX_Reports.fmp12.zip)
 - [**FX_ReportsExample.fmp12**](https://fmgarage.com/download/fx-reports/FX_ReportsExample.fmp12.zip) – example implementation in *Contacts* Starter Solution 
-- [**FX_Reports Add-On**](https://fmgarage.com/download/fx-reports/FX_ReportsAddOn.zip) – FileMaker Add-on for easy implementation
+- [**FX_Reports.fmaddon**](https://fmgarage.com/download/fx-reports/FX_Reports.fmaddon.zip) – FileMaker Add-on for easy implementation
 
 
 

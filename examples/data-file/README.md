@@ -15,13 +15,15 @@ This example demonstrates how to change the header and field order from a given 
 }
 ```
 
+![Preview](Preview.png)
+
 #### columnWidth
 
-Adjust column width to the cells' content using `-1` as value.
+Adjust column width to the cells content using `-1` as value.
 
 #### rows
 
-An array here with two rows.
+An array with a header row object followed by a row object with a path property and a fields filter.
 
 #### values
 
@@ -33,4 +35,4 @@ File path to a source file providing data.
 
 #### fields
 
-Array of source fields (column headers) that result in the columns that will be taken from the source file.
+Array of source field names (column headers) that result in the columns that will be taken from the source file.

@@ -1,6 +1,6 @@
 ## Examples
 
-Collection of templates to lern from.
+Collection of templates to learn from.
 
 ### simple-header
 

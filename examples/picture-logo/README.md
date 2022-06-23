@@ -19,6 +19,7 @@ This example demonstrates how to place images in cells, as a logo on top or as i
 		"suitcase": {"path": "desktop/examples/picture-logo/suitcase.png"}
 	}
 ```
+![Preview](Preview.png)
 
 #### picture
 
