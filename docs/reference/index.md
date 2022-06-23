@@ -14,21 +14,21 @@ Here, you can find the objects and the syntax needed for writing json templates 
 
 #### custom definitions
 
-- [Print Options](/reference/print/)
-- [Font Definition](/reference/font/)
-- [Format Definition](/reference/format/)
-- [Pictures Definition](/reference/pictures/)
+- [Print Options]({{ 'reference/print' | relative_url }})
+- [Font Definition]({{ 'reference/font' | relative_url }})
+- [Format Definition]({{ 'reference/format' | relative_url }})
+- [Pictures Definition]({{ 'reference/pictures' | relative_url }})
 
 #### document objects
 
-- [Workbook](/reference/workbook/)
-- [Sheet](/reference/sheet/)
-- [Column](/reference/column/)
-- [Row](/reference/row/)
-- [Cell](/reference/cell/)
+- [Workbook]({{ 'reference/workbook' | relative_url }})
+- [Sheet]({{ 'reference/sheet' | relative_url }})
+- [Column]({{ 'reference/column' | relative_url }})
+- [Row]({{ 'reference/row' | relative_url }})
+- [Cell]({{ 'reference/cell' | relative_url }})
 
 #### abstract objects
 
-- [Case Object](/reference/case/)
-- [Color Object](/reference/color/)
-- [Picture Object](/reference/picture/)
+- [Case Object]({{ 'reference/case' | relative_url }})
+- [Color Object]({{ 'reference/color' | relative_url }})
+- [Picture Object]({{ 'reference/picture' | relative_url }})

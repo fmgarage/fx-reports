@@ -13,21 +13,20 @@ A template needs a valid **JSON schema** as a blueprint. In that schema, allowed
 
 #### Introduction
 
-- [Tools for writing templates]({{ 'css/style.css' | relative_url }})
-- [Tools for writing templates](/writing-templates/tools)
-- [Basic structure of a template](/writing-templates/structure)
-- [Example, step-by-step](/writing-templates/bystep)
+- [Tools for writing templates]({{ 'writing-templates/tools' | relative_url }})
+- [Basic structure of a template]({{ 'writing-templates/structure' | relative_url }})
+- [Example, step-by-step]({{ 'writing-templates/bystep' | relative_url }})
 
 #### Structure
 
-- [Workbook](/writing-templates/workbook)
-- [Column](/writing-templates/column)
-- [Row](/writing-templates/row)
-- [Cell](/writing-templates/cell)
+- [Workbook]({{ 'writing-templates/workbook' | relative_url }})
+- [Column]({{ 'writing-templates/column' | relative_url }})
+- [Row]({{ 'writing-templates/row' | relative_url }})
+- [Cell]({{ 'writing-templates/cell' | relative_url }})
 
 #### Design Definitions
 
-- [Formats](/writing-templates/formats)
-- [Fonts](/writing-templates/fonts)
-- [Pictures](/writing-templates/pictures)
-- [Colors](/writing-templates/colors)
+- [Formats]({{ 'writing-templates/formats' | relative_url }})
+- [Fonts]({{ 'writing-templates/fonts' | relative_url }})
+- [Pictures]({{ 'writing-templates/pictures' | relative_url }})
+- [Colors]({{ 'writing-templates/colors' | relative_url }})
