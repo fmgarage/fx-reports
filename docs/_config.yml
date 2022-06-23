@@ -1,5 +1,5 @@
 # https://github.com/pmarsceill/just-the-docs
-repository: fmgarage/fx-reports-dev
+repository: fmgarage/fx-reports
 remote_theme: pmarsceill/just-the-docs
 
 logo: "/assets/images/logo.png"
@@ -8,5 +8,3 @@ exclude: ["_inbox", ".docker"]
 aux_links:
   "FMGARAGE Homepage":
     - "//fmgarage.com"
-  # "auf Deutsch":
-  #   https://fmgarage.github.io/fx-reports-doc-de/

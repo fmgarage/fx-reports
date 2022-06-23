@@ -13,6 +13,7 @@ A template needs a valid **JSON schema** as a blueprint. In that schema, allowed
 
 #### Introduction
 
+- [Tools for writing templates]({{ 'css/style.css' | relative_url }})
 - [Tools for writing templates](/writing-templates/tools)
 - [Basic structure of a template](/writing-templates/structure)
 - [Example, step-by-step](/writing-templates/bystep)
