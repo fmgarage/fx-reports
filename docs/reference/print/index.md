@@ -66,9 +66,9 @@ This is the place to set options for a print output. Options can be set at the w
 
 ### Implementations
 
-[Workbook](/reference/workbook)
+[Workbook]({{ '/reference/workbook' | relative_url }})
 
-[Sheet](/reference/sheet)
+[Sheet]({{ '/reference/sheet' | relative_url }})
 
 ### Properties
 

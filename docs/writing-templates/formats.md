@@ -21,4 +21,4 @@ The central location is the `formats` objects on the top level of the template. 
 
 (example)
 
-See the complete reference: [Format Reference](/reference/format)
+See the complete reference: [Format Reference]({{ 'reference/format' | relative_url }})

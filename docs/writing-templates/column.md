@@ -21,7 +21,7 @@ In a `column` object, properties like width, position and format are set. Furthe
 }
 ```
 
-See the complete reference: [Column Reference](/reference/column)
+See the complete reference: [Column Reference]({{ 'reference/column' | relative_url }})
 
 ### Data Types
 

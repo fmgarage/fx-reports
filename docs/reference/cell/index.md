@@ -69,9 +69,9 @@ Define the content, look, dimensions and place of a single cell. Must be placed 
 
 ### Implementations
 
-[Sheet](/reference/sheet)
+[Sheet]({{ '/reference/sheet' | relative_url }})
 
-[Workbook](/reference/workbook)
+[Workbook]({{ '/reference/workbook' | relative_url }})
 
 ### Properties
 

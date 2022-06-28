@@ -27,12 +27,12 @@ A cell is the smallest element of an excel workbook. While most properties can a
 ]
 ```
 
-See the complete reference: [Cell Reference](/reference/cell)
+See the complete reference: [Cell Reference]({{ 'reference/cell' | relative_url }})
 
-### Values
+### Value
 
 Like in rows, cell data can be pulled from Central Data Storage with the `valueRef` key, making it easy to deal with dynamic values. Alternatively the value is written directly into the cell using the `value` key.
 
-### Pictures
+### Picture
 
 Pictures can only be set in cells. They are set by either writing directly into the cell or by using a reference to the workbook pictures repository.

@@ -7,4 +7,4 @@ nav_order: 11
 
 ## Colors
 
-See the complete reference: [Color Reference](/reference/color)
+See the complete reference: [Color Reference]({{ '/reference/color' | relative_url }})

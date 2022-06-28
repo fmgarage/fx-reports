@@ -62,9 +62,9 @@ The row object describes one or many rows on a sheet. A row is added after the p
 
 ### Implementations
 
-[Workbook](/reference/workbook)
+[Workbook]({{ '/reference/workbook' | relative_url }})
 
-[Sheet](/reference/sheet)
+[Sheet]({{ '/reference/sheet' | relative_url }})
 
 ### Properties
 
@@ -87,7 +87,7 @@ The row object describes one or many rows on a sheet. A row is added after the p
     <tr>
         <th>includeFirstRow</th>
         <td>boolean</td>
-        <td>Import first row from source.<br>When processing a source file and the target row is on pos:1 (second row), the source's first row is omitted as it usually contains column headers. If your source file's data starts in row 0 or you want to export the original headers you have to set <code>includeFirstRow: true</code>.</td>
+        <td>Import first row from source.<br><br>When processing a source file and the target row is on pos:1 (second row), the source's first row is omitted as it usually contains column headers. If your source file's data starts in row 0 or you want to export the original headers you have to set <code>includeFirstRow: true</code>.<br><br>default: <code>false</code></td>
     </tr>
     <tr>
         <th>limit</th>

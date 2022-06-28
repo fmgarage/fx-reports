@@ -69,9 +69,9 @@ Column object describing one or many columns.
 
 ### Implementations
 
-[Workbook](/reference/workbook)
+[Workbook]({{ '/reference/workbook' | relative_url }})
 
-[Sheet](/reference/sheet)
+[Sheet]({{ '/reference/sheet' | relative_url }})
 
 ### Properties
 
