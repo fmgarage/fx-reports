@@ -26,7 +26,7 @@ Example for a minimal template:
 }
 ```
 
-See the complete reference: [Workbook Reference](/reference/workbook)
+See the complete reference: [Workbook Reference]({{ '/reference/workbook' | relative_url }})
 
 ### Definitions
 

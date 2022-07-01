@@ -32,7 +32,7 @@ If the source provides multiple rows of data, multiple rows will be created from
 ]
 ```
 
-See the complete reference: [Row Reference](/reference/row)
+See the complete reference: [Row Reference]({{ 'reference/row' | relative_url }})
 
 ### Data Sources
 
@@ -88,7 +88,9 @@ With defining the path to a source excel file located in the filesystem (or in a
 
 `includeFirstRow`:
 
-Controls wether the first row from the source file appears in the target document. Set to `false` if the source contains a header row that should not appear in the resulting document.
+Controls wether the first row from the source file appears in the target document. Set to `true` if the source contains a header row that shall appear in the resulting document.
+
+default: `false`
 
 `fields`:
 

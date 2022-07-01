@@ -20,4 +20,4 @@ You will have to adjust the width/height values until the desired result is achi
 
 This behaviour also seems to be inconsistent across operating systems and Excel versions.
 
-See the complete reference: [Picture Reference](/reference/picture)
+See the complete reference: [Picture Reference]({{ '/reference/picture' | relative_url }})

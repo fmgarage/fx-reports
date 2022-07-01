@@ -54,9 +54,9 @@ Colors can be applied to text, backgrounds, borders, and other elements in 3 way
 ```
 ### Implementations
 
-[Format](/reference/format)
+[Format]({{ '/reference/format' | relative_url }})
 
-[Font](/reference/font)
+[Font]({{ '/reference/font' | relative_url }})
 
 ### Properties
 

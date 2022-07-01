@@ -110,11 +110,6 @@ Represents the Excel workbook, a file containing one or more sheets. Also holds 
     <td>system path, shortcuts are supported (e.g. 'desktop/logo.jpeg')</td>
 </tr>
 <tr>
-    <th>pictures.base64</th>
-    <td>string</td>
-    <td>a base64 encoded picture file as string</td>
-</tr>
-<tr>
     <th>filename</th>
     <td>string</td>
     <td>Specify output file name. Otherwise <code>YYMMDD_hhmmss.xslx</code> will be used as default.</td>
@@ -122,7 +117,7 @@ Represents the Excel workbook, a file containing one or more sheets. Also holds 
 <tr>
     <th>location</th>
     <td>string</td>
-    <td>folder path ('desktop/exports') or field reference (e.g. FxReports::a_tmp_[1])<br>default: desktop/fx-exports</td>
+    <td>folder path ('desktop/exports') or field reference (e.g. FxReports::a_container_[2])<br>default: desktop/fx-exports</td>
 </tr>
 <tr>
     <th>sheets</th>

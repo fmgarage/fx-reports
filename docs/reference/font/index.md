@@ -55,9 +55,9 @@ Definition of a font. Define the font face, the size, color and styles. It is po
 
 ### Implementations
 
-[Workbook](/reference/workbook)
+[Workbook]({{'/reference/workbook' | relative_url}})
 
-[Format](/reference/format)
+[Format]({{'/reference/format' | relative_url}})
 
 ### Properties
 

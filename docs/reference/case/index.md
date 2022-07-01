@@ -68,9 +68,9 @@ When multiple conditionals shall be applied, they must be items in an array.
 
 ### Implementations
 
-[Cell](/reference/cell)
+[Cell]({{ '/reference/cell' | relative_url }})
 
-[Column](/reference/column)
+[Column]({{ '/reference/column' | relative_url }})
 
 ### Properties
 
@@ -248,9 +248,3 @@ When multiple conditionals shall be applied, they must be items in an array.
     }
 ]
 ```
-
-### Implementations
-
-[Cell](/reference/cell/#case)
-
-[Column](/reference/column/#case)

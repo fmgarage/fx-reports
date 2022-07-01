@@ -27,24 +27,24 @@ Setup pictures by path.
 
 ##### fonts
 
-Define [fonts]({{ site.url }}/reference/font) and styles for different requirements/occasions.
+Define [fonts]({{ '/reference/font' | relative_url }}) and styles for different requirements/occasions.
 
 ##### formats
 
-Cell [format]({{ site.url }}/reference/format) definitions similar to fonts.
+Cell [format]({{ '/reference/format' | relative_url }}) definitions similar to fonts.
 
-### sheet [(Reference)]({{ site.url }}/reference/sheet)
+### sheet [(Reference)]({{ '/reference/sheet' | relative_url }})
 
 Next are properties of the worksheet. These can contain format options too, as well as frozen panes or the default column definitions. Also, columns, rows and cells of that worksheet will be defined here.
 
-### column [(Reference)]({{ site.url }}/reference/column)
+### column [(Reference)]({{ '/reference/column' | relative_url }})
 
 In the column object, one may define format- and data properties, like column width or position.
 
-### row [(Reference)]({{ site.url }}/reference/row)
+### row [(Reference)]({{ '/reference/row' | relative_url }})
 
 Rows can be of type header, data or summary. Data can be saved as individual rows or referenced to a data source. Formats specific to the row also go here.
 
-### cell [(Reference)]({{ site.url }}/reference/cell)
+### cell [(Reference)]({{ '/reference/cell' | relative_url }})
 
 For single cells it is possible to define position, size, formats and content, like data or an image for instance. That way, richly designed documents featuring headlines, description texts and logos are possible to make.

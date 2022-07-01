@@ -66,7 +66,7 @@ Content and Structure of an Excel Sheet. 'Columns', 'Rows' and 'Cells' will be p
 
 ### Implementations
 
-[Workbook](/reference/workbook)
+[Workbook]({{ '/reference/workbook' | relative_url }})
 
 ### Properties
 

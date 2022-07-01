@@ -64,7 +64,7 @@ It is recommended to use width and height to adjust the size of pictures rather 
 ```
 ### Implementations
 
-[Cell](/reference/cell)
+[Cell]({{ '/reference/cell' | relative_url }})
 
 ### Properties
 

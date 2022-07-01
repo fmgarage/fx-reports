@@ -56,15 +56,15 @@ Format provides styling and display options for a **cell**, but can also be appl
 
 ### Implementations
 
-[Workbook](/reference/workbook)
+[Workbook]({{ '/reference/workbook' | relative_url }})
 
-[Sheet](/reference/sheet)
+[Sheet]({{ '/reference/sheet' | relative_url }})
 
-[Row](/reference/row)
+[Row]({{ '/reference/row' | relative_url }})
 
-[Column](/reference/column)
+[Column]({{ '/reference/column' | relative_url }})
 
-[Cell](/reference/cell)
+[Cell]({{ '/reference/cell' | relative_url }})
 
 ### Properties
 
