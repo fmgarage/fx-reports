@@ -9,20 +9,27 @@ nav_order: 7
 
 A cell is the smallest element of an excel workbook. While most properties can and often will be set on higher levels like rows or columns, they can also be adjusted per cell, if necessary.
 
+### Example 
+
 ```json
 "cells": [
     {
         "pos": [0,0],
         "picture": {
             "ref": "logo",
-            "width": 227,
-            "height": 60,
+            "width": 230,
+            "height": 71,
             "position": "move"
         }
     },
     {
-        "pos": [3,1],
-        "value": 42
+        "pos": [0,4,4],
+        "value": "Headline over 4 columns",
+        "format": {
+	    	"fontSize": 20,
+		    "bold": true,
+	    	"fontColor": {"rgb": [30, 140, 250]}
+	    }
     }
 ]
 ```

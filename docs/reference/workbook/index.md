@@ -117,7 +117,7 @@ Represents the Excel workbook, a file containing one or more sheets. Also holds 
 <tr>
     <th>location</th>
     <td>string</td>
-    <td>folder path ('desktop/exports') or field reference (e.g. FxReports::a_container_[2...10])<br>default: desktop/fx-exports</td>
+    <td>folder path ('desktop/exports') or field reference (e.g. FxReports::a_container_[2])<br>default: desktop/fx-exports</td>
 </tr>
 <tr>
     <th>sheets</th>

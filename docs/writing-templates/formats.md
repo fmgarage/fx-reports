@@ -4,10 +4,38 @@ parent: Writing templates
 has_children: false
 nav_order: 8
 ---
-
 ## Formats
 
 Formats are visual properties that alter the appearance of a cell or the cells content.
+
+### Example
+
+```json
+{
+    "cells": [{
+        "pos": [0,0, 6],
+        "height": 50,
+        "value": "Headline - courier, color: 'indigo', 20pt, center",
+        "format": {
+            "fontName": "Courier",
+            "fontSize": 20,
+            "bold": true,
+            "fontColor": {"name": "indigo"},
+            "alignV": 1,
+            "alignH": 2,
+            "wrap": true
+        }
+    }],
+    "rows": [{
+        "pos":3,
+        "values": [ "Title", "Firstname", "Lastname", "Birthday"],
+        "format": {
+            "backgroundColor": {"rgb": [180, 230, 255]},
+            "border": 1
+        }
+    }]
+ }
+```
 
 ### Scope
 
