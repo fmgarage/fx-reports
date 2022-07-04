@@ -10,23 +10,16 @@ nav_order: 3
 
 This article is about how you can integrate **FX Reports** with your own application. There are 2 ways to do that.
 
-### 1. Using the add-on
+### 1. Using the Add-on
 
 Requires FileMaker 19 and up.
 
-The Add-on provides the easiest way to integrate **FX Reports** into your application. To do that, copy the folder from inside the repositories `addon` directory into the FileMaker `AddonModules` folder.
+The Add-on provides the easiest way to integrate **FX Reports** into your application.
+On double-clicking the `FX_Reports.fmaddon` FileMaker file will install an FX_Reports folder in the AddonModules directory.
 
-Here is a uncomplicated way to find that folder: In the FileMaker settings dialog, go to the Plug-ins tab and 'Reveal Plug-in Folder'. Relative to the now open directory, go up 2 steps in the directory structure and into `Extensions`, where you will find `AddonModules`.
+Alternatively can copy the FX_Reports `addon` folder from the repository to `AddonModules` manually.
 
-macOS:
-
-`/Users/<User>/Library/Application Support/FileMaker/Extensions/AddonModules/`
-
-Windows:
-
-`C:\Users\<User>\AppData\Local\FileMaker\Extensions\AddonModules\`
-
-If FileMaker has been running while copying the add-on, it must be restarted. Now, going into layout mode and switching to 'Add-ons' in the left sidebar, add-ons can be added to the application with the `+` button at the bottom. Choose "FX_Reports" in the list to add the elements necessary to talk to **FX Reports**.
+If FileMaker has been running while copying the Add-on, it must be restarted. Now, going into layout mode and switching to 'Add-ons' in the left sidebar, Add-ons can be added to the application with the `+` button at the bottom. Choose "FX_Reports" in the list to add the elements necessary to talk to **FX Reports**.
 
 The add-on does not replace the FX_Reports database but merely provides a connection and simplifies the integration into an existing solution.
 
@@ -46,19 +39,19 @@ First copy the custom functions:
 
 `SError.display_v6`
 
+#### Table: FxReports
+
+Now create the table occurence for `FxReports` in the target file. It must not be renamed.
+
 #### Scripts
 
-Now copy the scripts from the `FxReports` folder beneath `# Connector`:
+At last, copy the scripts from the `FxReports` folder beneath `# Connector`:
 
 `*FxReports.excelGenerate( $filename, $location )`
 
 `*FxReports.excelValidate()` (optional)
 
 The file reference to `FX_Reports.fmp12` should now be present.
-
-#### Table: FxReports
-
-At last, create the table occurence for `FxReports` in the target file. It must not be renamed.
 
 ## Basic Usage
 
