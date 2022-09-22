@@ -5,7 +5,7 @@ nav_order: 1
 
 ## Welcome to FX Reports
 
-**FX Reports** is a powerful extension for genererating fully-featured spreadsheets in xslx format from FileMaker. It can easily be integrated into your existing solution.
+**FX Reports** is a powerful extension for generating fully-featured spreadsheets in xslx format from FileMaker. It can easily be integrated into your existing solution.
 
 ### What can I achieve with it?
 
