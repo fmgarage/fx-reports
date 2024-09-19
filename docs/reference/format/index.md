@@ -226,7 +226,7 @@ Format provides styling and display options for a **cell**, but can also be appl
 	<tr>
 		<th rowspan=2>numberFormat</th>
 		<td>integer</td>
-		<td>individual format options for numbers, dates, currencies, see <a href="https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml">www.mbsplugins.eu/XLFormatSetNumFormat <br/>e.g. 14 for the OS date format</td>
+		<td>individual format options for numbers, dates, currencies, see <a href="https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml">MBS doumentation</a><br/>e.g. 14 for the OS date format</td>
 	</tr>
 	<tr>
 		<th>numberFormatCustom</th>
