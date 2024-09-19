@@ -224,7 +224,7 @@ Format provides styling and display options for a **cell**, but can also be appl
 		<td>Reference to a named format.</td>
 	</tr>
 	<tr>
-		<th rowspan=2>numberFormat</th>
+		<th>numberFormat</th>
 		<td>integer</td>
 		<td>individual format options for numbers, dates, currencies, see <a href="https://www.mbsplugins.eu/XLFormatSetNumFormat.shtml">MBS doumentation</a><br/>e.g. 14 for the OS date format</td>
 	</tr>
