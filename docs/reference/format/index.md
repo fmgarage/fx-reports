@@ -56,6 +56,8 @@ Format provides styling and display options for a **cell**, but can also be appl
 
 ### Implementations
 
+The `format` element can be used in the following components:
+
 - [Workbook]({{ '/reference/workbook' | relative_url }})
 - [Sheet]({{ '/reference/sheet' | relative_url }})
 - [Row]({{ '/reference/row' | relative_url }})
