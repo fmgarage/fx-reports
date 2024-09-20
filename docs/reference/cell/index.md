@@ -69,9 +69,10 @@ Define the content, look, dimensions and place of a single cell. Must be placed 
 
 ### Implementations
 
-[Sheet]({{ '/reference/sheet' | relative_url }})
+The `cell` element can be used in the following components:
 
-[Workbook]({{ '/reference/workbook' | relative_url }})
+- [Sheet]({{ '/reference/sheet' | relative_url }})
+- [Workbook]({{ '/reference/workbook' | relative_url }})
 
 ### Properties
 
