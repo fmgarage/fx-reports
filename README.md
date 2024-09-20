@@ -4,7 +4,7 @@ Generate fully featured Excel spreadsheets from FileMaker, dynamically defined u
 
 > [!TIP]
 > NEW: Please try out out new [Custom GPT for FX Reports](https://chatgpt.com/g/g-aNYQK124E-fx-reports). You can ask questions and get fully working code examples in return! It is still in Beta and ChatGPT is not always correct, so please verify the answers if necessary!
-> 
+
 
 <img src="docs/assets/images/screen1.png" style="magin-bottom: 20px;">
 
