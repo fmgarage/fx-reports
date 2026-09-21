@@ -1,0 +1,22 @@
+{
+	"filename": "data-reference.xlsx",
+	"columnWidth": -1,
+	"rows": [
+		{
+			"values": ["Last Name", "First Name", "Gender"]
+		},
+		{
+			"valuesRef": "myContacts"
+		}
+	],
+    "values": {
+        "myContacts": [
+            ["Waldherr", "Nils", "m"],
+            ["Smith", "John", "m" ],
+            ["Jonson", "James", "m" ],
+            ["Maxwell", "Mary", "f" ],
+            ["McNeil", "Leila", "f" ],
+            ["Smithers", "Jim", "m" ]
+        ]
+    }
+}

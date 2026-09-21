@@ -1,0 +1,15 @@
+{
+	"columnWidth": -1,
+	"rows": [{
+			"values": ["Firstname", "Lastname"],
+			"format": {
+				"bold": true
+			}
+		},
+		{
+			"path": "desktop/examples/simple-header/contacts.xlsx",
+			"fields": ["Contact::b_firstname", "Contact::b_lastname"],
+			"offset": 0
+		}
+	]
+}

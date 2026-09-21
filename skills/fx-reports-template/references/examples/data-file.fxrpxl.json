@@ -1,0 +1,10 @@
+{
+	"columnWidth": -1,
+	"rows": [
+		{"values": [ "Title", "Firstname", "Surname", "Gender", "Language"]},
+		{
+			"path": "desktop/examples/data-file/data-file.xlsx",
+			"fields": [ "Title", "GivenName", "Surname", "Gender", "NameSet" ]
+		}
+	]
+}
